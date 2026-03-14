@@ -1,7 +1,7 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 import multer from 'multer'
-import { extractTextFromFile } from './upload.service.js'
+import { extractTextFromFile, deleteFile } from './upload.service.js'
 import pool from '../../config/database.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -53,5 +53,7 @@ export async function uploadDocument(req, res) {
     })
   } catch (err) {
     return res.status(422).json({ error: err.message })
+  } finally {
+    await deleteFile(filePath)
   }
 }
