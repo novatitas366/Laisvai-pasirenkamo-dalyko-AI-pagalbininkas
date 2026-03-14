@@ -1,19 +1,9 @@
-import { STUDY_PROGRAMS } from '../../data/studyPrograms'
-
-export default function StudyProgramSelect({ value, onChange }) {
-  const isCustom = value !== '' && !STUDY_PROGRAMS.some((p) => p.name === value)
-
-  const handleSelect = (name) => {
-    onChange(name)
-  }
-
-  const handleCustomChange = (e) => {
-    onChange(e.target.value)
-  }
+export default function StudyProgramSelect({ programs = [], value, onChange }) {
+  const isCustom = value !== '' && !programs.some((p) => p.name === value)
 
   return (
     <div className="space-y-2">
-      {STUDY_PROGRAMS.map((program) => (
+      {programs.map((program) => (
         <label
           key={program.id}
           className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors ${
@@ -27,7 +17,7 @@ export default function StudyProgramSelect({ value, onChange }) {
             name="study_program"
             value={program.name}
             checked={value === program.name}
-            onChange={() => handleSelect(program.name)}
+            onChange={() => onChange(program.name)}
             className="accent-brand-600"
           />
           <span className="text-sm font-medium">{program.name}</span>
@@ -54,7 +44,7 @@ export default function StudyProgramSelect({ value, onChange }) {
           placeholder="Įveskite programos pavadinimą..."
           value={isCustom ? value : ''}
           onFocus={() => { if (!isCustom) onChange('') }}
-          onChange={handleCustomChange}
+          onChange={(e) => onChange(e.target.value)}
           className="flex-1 text-sm bg-transparent border-0 focus:outline-none placeholder:text-slate-400"
         />
       </label>
