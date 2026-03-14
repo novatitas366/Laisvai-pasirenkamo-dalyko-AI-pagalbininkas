@@ -4,6 +4,7 @@ import api from '../../services/api'
 export default function SubjectsModal({ program, open, onClose }) {
   const [subjectsBySemester, setSubjectsBySemester] = useState({})
   const [activeTab, setActiveTab] = useState(null)
+  const [searchQuery, setSearchQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -14,6 +15,7 @@ export default function SubjectsModal({ program, open, onClose }) {
     setError(null)
     setSubjectsBySemester({})
     setActiveTab(null)
+    setSearchQuery('')
 
     api.get(`/study-programs/${program.id}/subjects`)
       .then(({ data }) => {
@@ -52,7 +54,6 @@ export default function SubjectsModal({ program, open, onClose }) {
         className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 flex-shrink-0">
           <div>
             <h2 className="text-base font-semibold text-slate-900">{program.name}</h2>
@@ -68,26 +69,48 @@ export default function SubjectsModal({ program, open, onClose }) {
           </button>
         </div>
 
-        {/* Semester tabs */}
         {!loading && !error && semesters.length > 0 && (
-          <div className="flex gap-1 px-6 pt-4 pb-2 overflow-x-auto flex-shrink-0 border-b border-slate-100">
-            {semesters.map((sem) => (
-              <button
-                key={sem}
-                onClick={() => setActiveTab(sem)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${
-                  activeTab === sem
-                    ? 'bg-brand-600 text-white'
-                    : 'text-slate-500 hover:bg-slate-100 hover:text-slate-700'
-                }`}
-              >
-                {sem} semestras
-              </button>
-            ))}
+          <div className="flex flex-col gap-3 px-6 pt-4 pb-2 flex-shrink-0 border-b border-slate-100">
+            <div className="flex gap-1 overflow-x-auto">
+              {semesters.map((sem) => (
+                <button
+                  key={sem}
+                  onClick={() => setActiveTab(sem)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${
+                    activeTab === sem
+                      ? 'bg-brand-600 text-white'
+                      : 'text-slate-500 hover:bg-slate-100 hover:text-slate-700'
+                  }`}
+                >
+                  {sem} semestras ({subjectsBySemester[sem].length})
+                </button>
+              ))}
+            </div>
+            <div className="relative">
+              <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="Ieškoti dalyko pagal pavadinimą arba kodą..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-10 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder:text-slate-400"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
           </div>
         )}
 
-        {/* Content */}
         <div className="flex-1 overflow-y-auto px-6 py-4">
           {loading && (
             <div className="flex items-center justify-center gap-3 py-12 text-slate-400">
@@ -106,9 +129,23 @@ export default function SubjectsModal({ program, open, onClose }) {
             <p className="text-sm text-slate-400 text-center py-10">Dalykų nerasta</p>
           )}
 
-          {!loading && !error && activeTab && subjectsBySemester[activeTab] && (
+          {!loading && !error && activeTab && subjectsBySemester[activeTab] && (() => {
+            const q = searchQuery.trim().toLowerCase()
+            const filtered = q
+              ? subjectsBySemester[activeTab].filter(
+                  (s) =>
+                    s.name.toLowerCase().includes(q) ||
+                    (s.code && s.code.toLowerCase().includes(q))
+                )
+              : subjectsBySemester[activeTab]
+            return (
             <ul className="space-y-2">
-              {subjectsBySemester[activeTab].map((subject) => (
+              {filtered.length === 0 ? (
+                <p className="text-sm text-slate-400 py-6 text-center">
+                  {q ? `Pagal „${searchQuery}" nieko nerasta` : 'Dalykų nerasta'}
+                </p>
+              ) : (
+              filtered.map((subject) => (
                 <li
                   key={subject.id}
                   className="flex items-center justify-between px-4 py-3 bg-slate-50 rounded-xl"
@@ -121,9 +158,11 @@ export default function SubjectsModal({ program, open, onClose }) {
                     {subject.credits} kr.
                   </span>
                 </li>
-              ))}
+              ))
+              )}
             </ul>
-          )}
+            )
+          })()}
         </div>
       </div>
     </div>

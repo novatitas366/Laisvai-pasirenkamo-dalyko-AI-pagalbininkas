@@ -13,6 +13,7 @@ export default function SubjectsCatalogPage() {
   const [subjectsLoading, setSubjectsLoading] = useState(false)
   const [subjectsError, setSubjectsError] = useState(null)
   const [activeTab, setActiveTab] = useState(null)
+  const [searchQuery, setSearchQuery] = useState('')
 
   const storedName = localStorage.getItem(STORAGE_KEY) ?? ''
 
@@ -92,7 +93,6 @@ export default function SubjectsCatalogPage() {
 
       {!programsLoading && !programsError && selectedProgram && (
         <>
-          {/* Program header */}
           <div className="flex items-center justify-between px-5 py-4 bg-white border border-brand-200 rounded-xl mb-6">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-brand-50 flex items-center justify-center flex-shrink-0">
@@ -113,7 +113,6 @@ export default function SubjectsCatalogPage() {
             </Link>
           </div>
 
-          {/* Subjects loading */}
           {subjectsLoading && (
             <div className="flex items-center gap-3 text-slate-400 py-8">
               <svg className="w-5 h-5 animate-spin" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -129,7 +128,6 @@ export default function SubjectsCatalogPage() {
             </div>
           )}
 
-          {/* Semester tabs */}
           {!subjectsLoading && !subjectsError && semesters.length > 0 && (
             <>
               <div className="flex gap-1 overflow-x-auto pb-1 mb-4">
@@ -143,14 +141,53 @@ export default function SubjectsCatalogPage() {
                         : 'text-slate-500 hover:bg-slate-100 hover:text-slate-700'
                     }`}
                   >
-                    {sem} semestras
+                    {sem} semestras ({subjectsBySemester[sem].length})
                   </button>
                 ))}
               </div>
 
-              {activeTab && subjectsBySemester[activeTab] && (
+              <div className="mb-4">
+                <div className="relative">
+                  <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                  </svg>
+                  <input
+                    type="text"
+                    placeholder="Ieškoti dalyko pagal pavadinimą arba kodą..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2.5 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder:text-slate-400"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery('')}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              {activeTab && subjectsBySemester[activeTab] && (() => {
+                const q = searchQuery.trim().toLowerCase()
+                const filtered = q
+                  ? subjectsBySemester[activeTab].filter(
+                      (s) =>
+                        s.name.toLowerCase().includes(q) ||
+                        (s.code && s.code.toLowerCase().includes(q))
+                    )
+                  : subjectsBySemester[activeTab]
+                return (
                 <ul className="space-y-2">
-                  {subjectsBySemester[activeTab].map((subject) => (
+                  {filtered.length === 0 ? (
+                    <p className="text-sm text-slate-400 py-6 text-center">
+                      {q ? `Pagal „${searchQuery}" nieko nerasta` : 'Dalykų nerasta'}
+                    </p>
+                  ) : (
+                  filtered.map((subject) => (
                     <li
                       key={subject.id}
                       className="flex items-center justify-between px-4 py-3 bg-white border border-slate-200 rounded-xl"
@@ -163,9 +200,11 @@ export default function SubjectsCatalogPage() {
                         {subject.credits} kr.
                       </span>
                     </li>
-                  ))}
+                  ))
+                  )}
                 </ul>
-              )}
+                )
+              })()}
             </>
           )}
         </>
