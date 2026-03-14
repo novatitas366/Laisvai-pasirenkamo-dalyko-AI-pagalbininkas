@@ -28,6 +28,94 @@ function FileBadge({ name, size, onRemove }) {
   )
 }
 
+function mimeLabel(mime) {
+  if (mime === 'application/pdf') return 'PDF'
+  if (mime === 'text/plain') return 'TXT'
+  if (mime?.includes('wordprocessingml')) return 'DOCX'
+  if (mime === 'application/msword') return 'DOC'
+  return mime
+}
+
+function ResultPanel({ result, onClose }) {
+  const [tab, setTab] = useState('apzvalga')
+  const kb = (result.sizeBytes / 1024).toFixed(1)
+
+  return (
+    <div className="mt-6 border border-slate-200 rounded-2xl overflow-hidden">
+      {/* Panel header */}
+      <div className="flex items-center justify-between px-5 py-3 bg-green-50 border-b border-green-100">
+        <div className="flex items-center gap-2">
+          <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span className="text-sm font-medium text-green-800">Failas sėkmingai apdorotas</span>
+        </div>
+        <button onClick={onClose} className="text-slate-400 hover:text-slate-600 transition-colors">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex gap-1 px-5 pt-3 pb-0 border-b border-slate-100">
+        {[
+          { id: 'apzvalga', label: 'Apžvalga' },
+          { id: 'tekstas', label: 'Ištrauktas tekstas' },
+        ].map((t) => (
+          <button
+            key={t.id}
+            onClick={() => setTab(t.id)}
+            className={`px-4 py-2 text-xs font-medium rounded-t-lg transition-colors border-b-2 -mb-px ${
+              tab === t.id
+                ? 'text-brand-600 border-brand-600 bg-white'
+                : 'text-slate-500 border-transparent hover:text-slate-700'
+            }`}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Tab content */}
+      <div className="px-5 py-4">
+        {tab === 'apzvalga' && (
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+            <div>
+              <dt className="text-xs text-slate-400 mb-0.5">Failo pavadinimas</dt>
+              <dd className="font-medium text-slate-700 truncate">{result.originalName}</dd>
+            </div>
+            <div>
+              <dt className="text-xs text-slate-400 mb-0.5">Tipas</dt>
+              <dd className="font-medium text-slate-700">{mimeLabel(result.mimeType)}</dd>
+            </div>
+            <div>
+              <dt className="text-xs text-slate-400 mb-0.5">Dydis</dt>
+              <dd className="font-medium text-slate-700">{kb} KB</dd>
+            </div>
+            <div>
+              <dt className="text-xs text-slate-400 mb-0.5">Ištraukta simbolių</dt>
+              <dd className="font-medium text-slate-700">{result.extractedLength.toLocaleString('lt-LT')}</dd>
+            </div>
+          </dl>
+        )}
+
+        {tab === 'tekstas' && (
+          <div>
+            {result.extractedText?.trim() ? (
+              <pre className="whitespace-pre-wrap text-xs text-slate-600 bg-slate-50 rounded-xl p-4 max-h-80 overflow-y-auto leading-relaxed font-sans">
+                {result.extractedText}
+              </pre>
+            ) : (
+              <p className="text-sm text-slate-400 text-center py-6">Tekstas neištrauktas</p>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export default function DocumentUploadPage() {
   const [file, setFile] = useState(null)
   const [dragOver, setDragOver] = useState(false)
@@ -67,6 +155,7 @@ export default function DocumentUploadPage() {
   function handleInputChange(e) {
     const f = e.target.files[0]
     if (f) pickFile(f)
+    e.target.value = ''
   }
 
   async function handleUpload() {
@@ -141,14 +230,6 @@ export default function DocumentUploadPage() {
         </div>
       )}
 
-      {/* Success */}
-      {result && (
-        <div className="mt-4 px-4 py-3 bg-green-50 border border-green-200 rounded-xl text-sm text-green-800">
-          <p className="font-medium mb-1">Failas sėkmingai įkeltas</p>
-          <p className="text-green-700">Ištraukta simbolių: <span className="font-medium">{result.extractedLength.toLocaleString('lt-LT')}</span></p>
-        </div>
-      )}
-
       {/* Upload button */}
       <div className="mt-6">
         <button
@@ -165,6 +246,11 @@ export default function DocumentUploadPage() {
           {uploading ? 'Įkeliama...' : 'Įkelti failą'}
         </button>
       </div>
+
+      {/* Result panel with tabs */}
+      {result && (
+        <ResultPanel result={result} onClose={() => setResult(null)} />
+      )}
     </div>
   )
 }

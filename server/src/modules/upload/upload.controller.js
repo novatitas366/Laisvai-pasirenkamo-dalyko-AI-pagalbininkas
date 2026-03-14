@@ -50,6 +50,7 @@ export async function uploadDocument(req, res) {
       mimeType: mimetype,
       sizeBytes: size,
       extractedLength: extractedText.length,
+      extractedText,
     })
   } catch (err) {
     return res.status(422).json({ error: err.message })
