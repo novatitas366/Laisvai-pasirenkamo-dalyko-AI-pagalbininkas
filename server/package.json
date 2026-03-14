@@ -1,0 +1,10 @@
+{
+  "name": "elective-assistant-server",
+  "version": "1.0.0",
+  "description": "AI elective course assistant - backend",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  }
+}

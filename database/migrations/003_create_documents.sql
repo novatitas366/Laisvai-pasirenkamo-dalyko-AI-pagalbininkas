@@ -1,0 +1,2 @@
+-- Documents - filename, file_path, mime_type, size_bytes, uploaded_at
+-- FK: user_id -> users

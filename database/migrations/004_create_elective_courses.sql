@@ -1,0 +1,1 @@
+-- Elective courses catalog - code, name, description, credits

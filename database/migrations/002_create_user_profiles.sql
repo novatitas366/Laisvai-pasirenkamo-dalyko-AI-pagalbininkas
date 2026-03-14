@@ -1,0 +1,2 @@
+-- User profiles - study_program, completed_courses (JSON), hobbies (JSON)
+-- FK: user_id -> users

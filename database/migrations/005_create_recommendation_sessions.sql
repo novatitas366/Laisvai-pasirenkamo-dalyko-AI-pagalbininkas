@@ -1,0 +1,2 @@
+-- Recommendation sessions - input_data (JSON), ai_response (JSON), created_at
+-- FK: user_id -> users
