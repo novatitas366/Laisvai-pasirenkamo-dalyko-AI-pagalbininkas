@@ -15,6 +15,7 @@ export default function App() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Navigate to="/rekomendacijos" replace />} />
         <Route path="rekomendacijos" element={<RecommendationsPage />} />
+        <Route path="rekomendacijos/:id" element={<RecommendationsPage />} />
         <Route path="dalykai" element={<SubjectsCatalogPage />} />
         <Route path="pasirenkami-dalykai" element={<ElectiveEntryPage />} />
         <Route path="profilis" element={<ProfilePage />} />

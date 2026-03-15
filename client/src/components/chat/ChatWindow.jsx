@@ -1,14 +1,26 @@
 import { useState, useRef, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import ChatMessage from './ChatMessage'
 import ChatInput from './ChatInput'
 import useProfile from '../../hooks/useProfile'
+import mockMessages from '../../data/mockMessages.json'
 
 export default function ChatWindow() {
+  const { id } = useParams()
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(false)
   const [profileOpen, setProfileOpen] = useState(false)
   const bottomRef = useRef(null)
   const { profile, isEmpty, buildSystemPrompt } = useProfile()
+
+  // Load chat history if ID is present, otherwise clear
+  useEffect(() => {
+    if (id && mockMessages[id]) {
+      setMessages(mockMessages[id])
+    } else {
+      setMessages([])
+    }
+  }, [id])
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
