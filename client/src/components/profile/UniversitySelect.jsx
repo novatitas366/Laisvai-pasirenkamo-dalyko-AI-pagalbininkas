@@ -36,9 +36,11 @@ export default function UniversitySelect({ value, onChange }) {
     : UNIVERSITIES
 
   const handleInput = (e) => {
-    setInput(e.target.value)
+    const val = e.target.value.replace(/[^a-zA-ZÀ-žĄąČčĘęĖėĮįŠšŲųŪūŽž\s]/g, '')
+    if (val.length > 70) return
+    setInput(val)
     setOpen(true)
-    if (!e.target.value) onChange('')
+    if (!val) onChange('')
   }
 
   const handleSelect = (uni) => {
