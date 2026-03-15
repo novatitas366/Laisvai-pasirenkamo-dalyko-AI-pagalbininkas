@@ -24,20 +24,13 @@ export default function StudyProgramSelect({ programs = [], value, onChange }) {
         </label>
       ))}
 
-      <label
-        className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors ${
+      <div
+        className={`flex items-center gap-3 px-4 py-3 rounded-lg border transition-colors ${
           isCustom
             ? 'border-brand-400 bg-brand-50'
             : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'
         }`}
       >
-        <input
-          type="radio"
-          name="study_program"
-          checked={isCustom}
-          onChange={() => onChange('')}
-          className="accent-brand-600 flex-shrink-0"
-        />
         <span className="text-sm font-medium text-slate-700 flex-shrink-0">Kita:</span>
         <input
           type="text"
@@ -47,7 +40,7 @@ export default function StudyProgramSelect({ programs = [], value, onChange }) {
           onChange={(e) => onChange(e.target.value)}
           className="flex-1 text-sm bg-transparent border-0 focus:outline-none placeholder:text-slate-400"
         />
-      </label>
+      </div>
     </div>
   )
 }
