@@ -1,21 +1,38 @@
 import { useState, useEffect } from 'react'
 
+const MIN_HOBBY_NAME_LENGTH = 4
+
+function isValidHobby(hobby) {
+  return hobby.name.trim().length >= MIN_HOBBY_NAME_LENGTH
+}
+
+function loadHobbies() {
+  try {
+    const saved = localStorage.getItem('hobbies')
+    return saved ? JSON.parse(saved) : []
+  } catch {
+    return []
+  }
+}
+
 export default function useProfile() {
   const [profile, setProfile] = useState({
     university: '',
     studyProgram: '',
-    hobbies: '',
+    hobbies: [],
   })
 
   useEffect(() => {
     setProfile({
       university: localStorage.getItem('profile_university') || '',
       studyProgram: localStorage.getItem('profile_study_program') || '',
-      hobbies: localStorage.getItem('profile_hobbies') || '',
+      hobbies: loadHobbies(),
     })
   }, [])
 
-  const isEmpty = !profile.university && !profile.studyProgram && !profile.hobbies
+  const validHobbies = profile.hobbies.filter(isValidHobby)
+  const hasValidHobbies = validHobbies.length > 0
+  const isEmpty = !profile.university && !profile.studyProgram && !hasValidHobbies
 
   const buildSystemPrompt = () => {
     if (isEmpty) {
@@ -29,7 +46,10 @@ export default function useProfile() {
 
     if (profile.university) parts.push(`- Universitetas: ${profile.university}`)
     if (profile.studyProgram) parts.push(`- Studijų programa: ${profile.studyProgram}`)
-    if (profile.hobbies) parts.push(`- Hobiai / pomėgiai: ${profile.hobbies}`)
+    if (hasValidHobbies) {
+      const hobbiesList = validHobbies.map(h => h.description ? `${h.name} (${h.description})` : h.name).join(', ')
+      parts.push(`- Hobiai / pomėgiai: ${hobbiesList}`)
+    }
 
     parts.push(
       'Remdamasis šia informacija, teik personalizuotas rekomendacijas apie pasirenkamus dalykus.',
@@ -39,5 +59,5 @@ export default function useProfile() {
     return parts.join('\n')
   }
 
-  return { profile, isEmpty, buildSystemPrompt }
+  return { profile, validHobbies, hasValidHobbies, isEmpty, buildSystemPrompt }
 }

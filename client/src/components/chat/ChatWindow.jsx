@@ -8,13 +8,15 @@ export default function ChatWindow() {
   const [loading, setLoading] = useState(false)
   const [profileOpen, setProfileOpen] = useState(false)
   const bottomRef = useRef(null)
-  const { profile, isEmpty, buildSystemPrompt } = useProfile()
+  const { profile, hasValidHobbies, isEmpty, buildSystemPrompt } = useProfile()
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
   const handleSend = (msg) => {
+    if (!hasValidHobbies) return
+
     const userMessage = { id: Date.now(), role: 'user', ...msg }
     setMessages((prev) => [...prev, userMessage])
 
