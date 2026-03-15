@@ -1,20 +1,25 @@
 import { useState, useEffect } from 'react'
 import api from '../services/api'
+import UniversitySelect from '../components/profile/UniversitySelect'
 import StudyProgramSelect from '../components/profile/StudyProgramSelect'
 import SubjectsModal from '../components/catalog/SubjectsModal'
 
 const STORAGE_KEY = 'profile_study_program'
+const UNI_STORAGE_KEY = 'profile_university'
 
 export default function ProfilePage() {
   const [programs, setPrograms] = useState([])
   const [programsLoading, setProgramsLoading] = useState(true)
   const [programsError, setProgramsError] = useState(null)
 
+  const [university, setUniversity] = useState('')
   const [studyProgram, setStudyProgram] = useState('')
   const [saved, setSaved] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
 
   useEffect(() => {
+    const storedUni = localStorage.getItem(UNI_STORAGE_KEY)
+    if (storedUni) setUniversity(storedUni)
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored) setStudyProgram(stored)
   }, [])
@@ -27,6 +32,7 @@ export default function ProfilePage() {
   }, [])
 
   const handleSave = () => {
+    localStorage.setItem(UNI_STORAGE_KEY, university)
     localStorage.setItem(STORAGE_KEY, studyProgram)
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
@@ -38,6 +44,11 @@ export default function ProfilePage() {
     <div className="max-w-xl">
       <h1 className="text-2xl font-bold text-slate-900 mb-1">Mano profilis</h1>
       <p className="text-sm text-slate-400 mb-8">Studijų programa, išklausyti dalykai, hobiai</p>
+
+      <div className="mb-6">
+        <h2 className="text-sm font-semibold text-slate-700 mb-3">Universitetas</h2>
+        <UniversitySelect value={university} onChange={setUniversity} />
+      </div>
 
       <div className="mb-6">
         <h2 className="text-sm font-semibold text-slate-700 mb-3">Studijų programa</h2>
