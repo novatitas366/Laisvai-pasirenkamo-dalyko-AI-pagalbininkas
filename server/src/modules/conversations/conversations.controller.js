@@ -23,3 +23,24 @@ export async function getMessages(req, res, next) {
     next(error)
   }
 }
+
+export async function rename(req, res, next) {
+  try {
+    const { id } = req.params
+    const { title } = req.body
+
+    if (!title) {
+      return res.status(400).json({ error: 'Pavadinimas privalomas' })
+    }
+
+    const updated = await conversationsService.renameConversation(id, title)
+    
+    if (!updated) {
+      return res.status(404).json({ error: 'Pokalbis nerastas' })
+    }
+
+    res.json(updated)
+  } catch (error) {
+    next(error)
+  }
+}
