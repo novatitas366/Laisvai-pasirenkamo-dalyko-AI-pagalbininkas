@@ -1,74 +1,199 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+// Register page - form, validation
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const PASSWORD_REQUIREMENTS = [
+  { label: "8–12 simbolių", test: (p) => p.length >= 8 && p.length <= 12 },
+  { label: "Bent 1 didžioji raidė", test: (p) => /[A-Z]/.test(p) },
+  { label: "Bent 1 mažoji raidė", test: (p) => /[a-z]/.test(p) },
+  { label: "Bent 1 skaičius", test: (p) => /[0-9]/.test(p) },
+  { label: "Bent 1 specialus simbolis", test: (p) => /[^A-Za-z0-9]/.test(p) },
+];
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validatePassword(password) {
+  return PASSWORD_REQUIREMENTS.every((r) => r.test(password));
+}
 
 export default function RegisterPage() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  const navigate = useNavigate();
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  const [errors, setErrors] = useState({});
+  const [serverError, setServerError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setServerError("");
+
+    const newErrors = {};
+
+    if (!validateEmail(email)) {
+      newErrors.email = "Neteisingas el. pašto formatas";
+    }
+
+    if (!validatePassword(password)) {
+      newErrors.password = "Slaptažodis neatitinka reikalavimų";
+    }
+
+    if (password !== confirmPassword) {
+      newErrors.confirmPassword = "Slaptažodžiai nesutampa";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
+    setLoading(true);
+
+    try {
+      const res = await fetch("http://localhost:3000/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (res.ok) {
+        navigate("/login");
+        return;
+      }
+
+      if (res.status === 409) {
+        setServerError("Toks el. paštas jau užregistruotas");
+      } else {
+        setServerError("Įvyko klaida, bandykite dar kartą");
+      }
+    } catch {
+      setServerError("Įvyko klaida, bandykite dar kartą");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-      <div className="bg-white rounded-xl shadow p-8 w-full max-w-sm">
-        <div className="flex items-center gap-2 mb-6">
-          <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
-            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-            </svg>
-          </div>
-          <span className="font-semibold text-brand-600 text-lg leading-tight">DalykoPagalbininkas</span>
-        </div>
+    <div className="flex min-h-screen items-center justify-center bg-gray-50">
+      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-md">
+        <h1 className="mb-6 text-2xl font-bold text-gray-800">Registracija</h1>
 
-        <h1 className="text-2xl font-bold text-slate-900 mb-1">Sukurkite paskyrą</h1>
-
-        <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4">
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium text-slate-700">El. paštas</label>
+        <form onSubmit={handleSubmit} noValidate className="space-y-5">
+          {/* Email */}
+          <div>
+            <label className="mb-1 block text-sm font-medium text-gray-700">
+              El. paštas
+            </label>
             <input
               type="email"
               value={email}
-              onChange={e => setEmail(e.target.value)}
-              className="border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent"
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setErrors((prev) => ({ ...prev, email: undefined }));
+              }}
+              className={`w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.email ? "border-red-500" : "border-gray-300"
+              }`}
+              placeholder="vardas@example.com"
             />
+            {errors.email && (
+              <p className="mt-1 text-xs text-red-600">{errors.email}</p>
+            )}
           </div>
 
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium text-slate-700">Slaptažodis</label>
+          {/* Password */}
+          <div className="relative">
+            <label className="mb-1 block text-sm font-medium text-gray-700">
+              Slaptažodis
+            </label>
             <input
               type="password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
-              placeholder="8-12 simbolių"
-              className="border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent"
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setErrors((prev) => ({ ...prev, password: undefined }));
+              }}
+              onFocus={() => setShowTooltip(true)}
+              onBlur={() => setShowTooltip(false)}
+              className={`w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.password ? "border-red-500" : "border-gray-300"
+              }`}
+              placeholder="Įveskite slaptažodį"
             />
+            {errors.password && (
+              <p className="mt-1 text-xs text-red-600">{errors.password}</p>
+            )}
+
+            {/* Requirements tooltip */}
+            {showTooltip && (
+              <div className="absolute left-0 top-full z-10 mt-1 w-full rounded-lg border border-gray-200 bg-white p-3 shadow-lg">
+                <p className="mb-2 text-xs font-semibold text-gray-600">
+                  Slaptažodžio reikalavimai:
+                </p>
+                <ul className="space-y-1">
+                  {PASSWORD_REQUIREMENTS.map((req) => (
+                    <li
+                      key={req.label}
+                      className={`flex items-center gap-1.5 text-xs ${
+                        req.test(password) ? "text-green-600" : "text-gray-400"
+                      }`}
+                    >
+                      <span>{req.test(password) ? "✓" : "○"}</span>
+                      {req.label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium text-slate-700">Pakartokite slaptažodį</label>
+          {/* Confirm password */}
+          <div>
+            <label className="mb-1 block text-sm font-medium text-gray-700">
+              Pakartoti slaptažodį
+            </label>
             <input
               type="password"
               value={confirmPassword}
-              onChange={e => setConfirmPassword(e.target.value)}
-              className="border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent"
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+                setErrors((prev) => ({ ...prev, confirmPassword: undefined }));
+              }}
+              className={`w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.confirmPassword ? "border-red-500" : "border-gray-300"
+              }`}
+              placeholder="Pakartokite slaptažodį"
             />
+            {errors.confirmPassword && (
+              <p className="mt-1 text-xs text-red-600">
+                {errors.confirmPassword}
+              </p>
+            )}
           </div>
+
+          {/* Server error */}
+          {serverError && (
+            <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">
+              {serverError}
+            </p>
+          )}
 
           <button
             type="submit"
-            className="mt-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg px-4 py-2 transition-colors"
+            disabled={loading}
+            className="w-full rounded-lg bg-blue-600 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
           >
-            Registruotis
+            {loading ? "Registruojama..." : "Registruotis"}
           </button>
         </form>
-
-        <p className="mt-6 text-sm text-slate-400 text-center">
-          Jau turite paskyrą?{' '}
-          <Link to="/login" className="text-brand-600 hover:underline">Prisijungti</Link>
-        </p>
       </div>
     </div>
-  )
+  );
 }
