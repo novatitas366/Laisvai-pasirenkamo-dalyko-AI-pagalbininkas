@@ -31,12 +31,12 @@ export default function ChatWindow() {
           id: Date.now() + 1,
           role: 'assistant',
           text: isEmpty
-            ? 'Ačiū už klausimą! Užpildykite profilį, kad galėčiau pateikti personalizuotus atsakymus.'
-            : `Ačiū už klausimą! Jūsų profilis (${profile.studyProgram || profile.university}) bus naudojamas personalizuotiems atsakymams generuoti kai DI API bus prijungtas.`,
+            ? 'Užpildykite profilį skiltyje „Mano profilis", kad galėčiau pateikti personalizuotas rekomendacijas.'
+            : 'DI atsakymas bus rodomas čia su rekomendacijomis ir argumentais kai API bus prijungtas.',
         },
       ])
       setLoading(false)
-    }, 1000)
+    }, 1200)
   }
 
   return (
