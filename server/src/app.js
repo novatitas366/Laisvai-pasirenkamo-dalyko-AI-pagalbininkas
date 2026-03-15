@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import apiRoutes from './routes/index.js'
+import authRoutes from './modules/auth/auth.routes.js'
 import uploadRouter from './modules/upload/upload.routes.js'
 
 const app = express()
@@ -9,6 +10,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api', apiRoutes)
+app.use('/api/auth', authRoutes)
 app.use('/api/documents/upload', uploadRouter)
 
 app.use((req, res) => {

@@ -1,4 +1,4 @@
-INSERT INTO study_programs (name, code) VALUES
+INSERT IGNORE INTO study_programs (name, code) VALUES
   ('Informatika',               'INF'),
   ('Programų sistemos',         'PS'),
   ('Matematika',                'MAT'),
@@ -9,3 +9,4 @@ INSERT INTO study_programs (name, code) VALUES
   ('Mechanikos inžinerija',     'MECH'),
   ('Verslo informatika',        'VINF'),
   ('Kibernetinis saugumas',     'KS');
+

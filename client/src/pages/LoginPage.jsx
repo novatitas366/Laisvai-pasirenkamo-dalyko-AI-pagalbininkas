@@ -1,11 +1,16 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import api from '../services/api'
 
 export default function LoginPage() {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   })
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -13,13 +18,30 @@ export default function LoginPage() {
       ...prev,
       [name]: value,
     }))
+    setError('')
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Authorization logic will be implemented in future tasks
-    console.log('Prisijungimo duomenys:', formData)
-    alert('Bandoma prisijungti (simuliacija)')
+    setError('')
+    setLoading(true)
+
+    try {
+      const response = await api.post('/auth/login', formData)
+      setSuccess(true)
+      
+      // Store user info (simplified for now)
+      localStorage.setItem('user', JSON.stringify(response.data.user))
+      
+      // Short delay before redirect to show success message
+      setTimeout(() => {
+        navigate('/')
+      }, 1500)
+    } catch (err) {
+      setError(err.response?.data?.error || 'Prisijungimo klaida. Bandykite dar kartą.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -42,6 +64,24 @@ export default function LoginPage() {
         <h2 className="text-2xl font-bold text-slate-900 mb-2">Sveiki sugrįžę!</h2>
         <p className="text-sm text-slate-400 mb-8">Prisijunkite prie savo paskyros</p>
 
+        {error && (
+          <div className="mb-6 p-4 bg-red-50 border border-red-100 rounded-2xl text-xs text-red-600 flex items-center gap-2">
+            <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+            </svg>
+            {error}
+          </div>
+        )}
+
+        {success && (
+          <div className="mb-6 p-4 bg-green-50 border border-green-100 rounded-2xl text-xs text-green-600 flex items-center gap-2">
+            <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Sėkmingai prisijungta! Nukreipiama...
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium text-slate-700 block ml-1">
@@ -52,10 +92,11 @@ export default function LoginPage() {
               id="email"
               name="email"
               required
+              disabled={loading || success}
               value={formData.email}
               onChange={handleChange}
               placeholder="vardenis.pavardenis@stud.vdu.lt"
-              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all placeholder:text-slate-400 text-sm"
+              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all placeholder:text-slate-400 text-sm disabled:opacity-50"
             />
           </div>
 
@@ -73,18 +114,28 @@ export default function LoginPage() {
               id="password"
               name="password"
               required
+              disabled={loading || success}
               value={formData.password}
               onChange={handleChange}
               placeholder="••••••••"
-              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all placeholder:text-slate-400 text-sm"
+              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all placeholder:text-slate-400 text-sm disabled:opacity-50"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-3.5 bg-brand-600 text-white font-bold rounded-2xl hover:bg-brand-700 transition-all shadow-md hover:shadow-lg active:scale-[0.98] mt-4"
+            disabled={loading || success}
+            className="w-full py-3.5 bg-brand-600 text-white font-bold rounded-2xl hover:bg-brand-700 transition-all shadow-md hover:shadow-lg active:scale-[0.98] mt-4 flex items-center justify-center gap-2 disabled:opacity-70"
           >
-            Prisijungti
+            {loading ? (
+              <>
+                <svg className="w-5 h-5 animate-spin text-white" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                </svg>
+                Jungiamasi...
+              </>
+            ) : 'Prisijungti'}
           </button>
         </form>
 
