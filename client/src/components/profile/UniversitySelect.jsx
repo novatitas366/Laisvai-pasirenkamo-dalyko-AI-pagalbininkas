@@ -65,7 +65,7 @@ export default function UniversitySelect({ value, onChange }) {
         </svg>
         <input
           type="text"
-          placeholder="Įveskite universitetą..."
+          placeholder="Įveskite universitetą"
           value={input}
           onChange={handleInput}
           onFocus={() => setOpen(true)}

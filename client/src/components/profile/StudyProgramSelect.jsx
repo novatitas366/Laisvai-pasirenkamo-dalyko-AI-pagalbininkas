@@ -34,7 +34,7 @@ export default function StudyProgramSelect({ programs = [], value, onChange }) {
         <span className="text-sm font-medium text-slate-700 flex-shrink-0">Kita:</span>
         <input
           type="text"
-          placeholder="Įveskite programos pavadinimą..."
+          placeholder="Įveskite programos pavadinimą"
           value={isCustom ? value : ''}
           onFocus={() => { if (!isCustom) onChange('') }}
           onChange={(e) => onChange(e.target.value)}
