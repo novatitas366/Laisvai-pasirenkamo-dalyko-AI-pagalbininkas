@@ -1,6 +1,12 @@
 import { useState } from 'react'
 
+const NAME_MAX = 20
+const DESC_MAX = 150
+
 function HobbyEntry({ hobby, onRemove, onChange }) {
+  const nameError = hobby.name.length > NAME_MAX
+  const descError = hobby.description.length > DESC_MAX
+
   return (
     <div className="border border-slate-200 rounded-xl mb-3">
       <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100">
@@ -22,26 +28,56 @@ function HobbyEntry({ hobby, onRemove, onChange }) {
         </button>
       </div>
       <div className="p-4 flex flex-col gap-3">
-        <div className="relative">
-          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
-          </svg>
-          <input
-            type="text"
-            placeholder="Pavadinimas"
-            value={hobby.name}
-            onChange={e => onChange({ ...hobby, name: e.target.value })}
-            className="w-full pl-9 pr-4 py-2.5 border border-slate-200 rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-          />
+        <div>
+          <div className="relative">
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Pavadinimas"
+              value={hobby.name}
+              onChange={e => onChange({ ...hobby, name: e.target.value })}
+              className={`w-full pl-9 pr-4 py-2.5 border rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:border-transparent ${
+                nameError
+                  ? 'border-red-400 focus:ring-red-400'
+                  : 'border-slate-200 focus:ring-brand-500'
+              }`}
+            />
+          </div>
+          <div className="flex items-center justify-between mt-1 px-1">
+            {nameError
+              ? <p className="text-xs text-red-500">Pavadinimas negali viršyti {NAME_MAX} simbolių</p>
+              : <span />
+            }
+            <p className={`text-xs ml-auto ${nameError ? 'text-red-500' : 'text-slate-400'}`}>
+              {hobby.name.length}/{NAME_MAX}
+            </p>
+          </div>
         </div>
-        <textarea
-          placeholder="Aprašymas (neprivaloma)"
-          value={hobby.description}
-          onChange={e => onChange({ ...hobby, description: e.target.value })}
-          rows={3}
-          className="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"
-        />
+        <div>
+          <textarea
+            placeholder="Aprašymas (neprivaloma)"
+            value={hobby.description}
+            onChange={e => onChange({ ...hobby, description: e.target.value })}
+            rows={3}
+            className={`w-full px-4 py-2.5 border rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:border-transparent resize-none ${
+              descError
+                ? 'border-red-400 focus:ring-red-400'
+                : 'border-slate-200 focus:ring-brand-500'
+            }`}
+          />
+          <div className="flex items-center justify-between mt-1 px-1">
+            {descError
+              ? <p className="text-xs text-red-500">Aprašymas negali viršyti {DESC_MAX} simbolių</p>
+              : <span />
+            }
+            <p className={`text-xs ml-auto ${descError ? 'text-red-500' : 'text-slate-400'}`}>
+              {hobby.description.length}/{DESC_MAX}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )
