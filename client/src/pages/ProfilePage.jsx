@@ -1,32 +1,36 @@
 import { useState, useEffect } from 'react'
-import api from '../services/api'
+import UniversitySelect from '../components/profile/UniversitySelect'
 import StudyProgramSelect from '../components/profile/StudyProgramSelect'
 import SubjectsModal from '../components/catalog/SubjectsModal'
+import studyPrograms from '../data/studyPrograms'
 
 const STORAGE_KEY = 'profile_study_program'
+const UNI_STORAGE_KEY = 'profile_university'
 
 export default function ProfilePage() {
-  const [programs, setPrograms] = useState([])
-  const [programsLoading, setProgramsLoading] = useState(true)
-  const [programsError, setProgramsError] = useState(null)
-
+  const [university, setUniversity] = useState('')
   const [studyProgram, setStudyProgram] = useState('')
   const [saved, setSaved] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
 
   useEffect(() => {
+    const storedUni = localStorage.getItem(UNI_STORAGE_KEY)
+    if (storedUni) setUniversity(storedUni)
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored) setStudyProgram(stored)
   }, [])
 
-  useEffect(() => {
-    api.get('/study-programs')
-      .then(({ data }) => setPrograms(data))
-      .catch(() => setProgramsError('Nepavyko užkrauti studijų programų'))
-      .finally(() => setProgramsLoading(false))
-  }, [])
+  const programs = studyPrograms[university] || []
+
+  const handleUniversityChange = (uni) => {
+    setUniversity(uni)
+    if (uni !== university) {
+      setStudyProgram('')
+    }
+  }
 
   const handleSave = () => {
+    localStorage.setItem(UNI_STORAGE_KEY, university)
     localStorage.setItem(STORAGE_KEY, studyProgram)
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
@@ -40,36 +44,26 @@ export default function ProfilePage() {
       <p className="text-sm text-slate-400 mb-8">Studijų programa, išklausyti dalykai, hobiai</p>
 
       <div className="mb-6">
-        <h2 className="text-sm font-semibold text-slate-700 mb-3">Studijų programa</h2>
+        <h2 className="text-sm font-semibold text-slate-700 mb-3">Universitetas</h2>
+        <UniversitySelect value={university} onChange={handleUniversityChange} />
+      </div>
 
-        {programsLoading && (
-          <div className="flex items-center gap-2 text-slate-400 py-4">
-            <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-            </svg>
-            <span className="text-sm">Kraunama...</span>
-          </div>
-        )}
+      {university && (
+        <div className="mb-6 fade-in">
+          <h2 className="text-sm font-semibold text-slate-700 mb-3">Studijų programa</h2>
 
-        {programsError && (
-          <div className="px-4 py-3 bg-red-50 border border-red-200 rounded-xl text-sm text-red-600 mb-3">
-            {programsError}
-          </div>
-        )}
-
-        {!programsLoading && (
           <StudyProgramSelect
             programs={programs}
             value={studyProgram}
             onChange={setStudyProgram}
           />
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="flex items-center gap-3">
         <button
           onClick={handleSave}
-          disabled={!studyProgram.trim()}
+          disabled={!university.trim() || !studyProgram.trim()}
           className="px-5 py-2 bg-brand-600 text-white text-sm font-medium rounded-lg hover:bg-brand-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
         >
           {saved ? 'Išsaugota' : 'Išsaugoti'}
