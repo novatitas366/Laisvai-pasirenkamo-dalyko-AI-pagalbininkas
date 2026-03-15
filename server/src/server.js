@@ -5,12 +5,16 @@ import pool from './config/database.js'
 const PORT = process.env.PORT || 3000
 
 async function start() {
-  await pool.getConnection()
-  console.log('Database connected')
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+  try {
+    await pool.query('SELECT 1')
+    console.log('DB prisijungta')
+  } catch (err) {
+    console.warn('DB nepasiekiama:', err.message)
+  }
+
+  app.listen(PORT, () => {
+    console.log(`Serveris veikia: http://localhost:${PORT}`)
+  })
 }
 
-start().catch(err => {
-  console.error('Failed to start server:', err)
-  process.exit(1)
-})
+start()
