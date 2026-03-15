@@ -1,4 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+const STORAGE_KEY = 'hobbies'
+
+function loadFromStorage() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    return saved ? JSON.parse(saved) : null
+  } catch {
+    return null
+  }
+}
 
 const NAME_MAX = 20
 const DESC_MAX = 150
@@ -84,7 +95,13 @@ function HobbyEntry({ hobby, onRemove, onChange }) {
 }
 
 export default function HobbiesForm() {
-  const [hobbies, setHobbies] = useState([{ id: 1, name: '', description: '' }])
+  const [hobbies, setHobbies] = useState(
+    () => loadFromStorage() ?? [{ id: 1, name: '', description: '' }]
+  )
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(hobbies))
+  }, [hobbies])
 
   const addHobby = () => {
     setHobbies(prev => [...prev, { id: Date.now(), name: '', description: '' }])
