@@ -1,9 +1,7 @@
 import express from 'express'
 import cors from 'cors'
-<<<<<<< HEAD
-import studyProgramsRouter from './routes/studyPrograms.routes.js'
-=======
->>>>>>> SCRUM-37-Sistema-turi-ištraukti-duomenis-iš-vartotojų-pateiktų-failų
+import apiRoutes from './routes/index.js'
+import authRoutes from './modules/auth/auth.routes.js'
 import uploadRouter from './modules/upload/upload.routes.js'
 
 const app = express()
@@ -11,10 +9,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-<<<<<<< HEAD
-app.use('/api/study-programs', studyProgramsRouter)
-=======
->>>>>>> SCRUM-37-Sistema-turi-ištraukti-duomenis-iš-vartotojų-pateiktų-failų
+app.use('/api', apiRoutes)
+app.use('/api/auth', authRoutes)
 app.use('/api/documents/upload', uploadRouter)
 
 app.use((req, res) => {
