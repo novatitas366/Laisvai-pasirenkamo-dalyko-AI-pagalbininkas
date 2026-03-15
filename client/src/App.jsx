@@ -4,6 +4,7 @@ import RecommendationsPage from './pages/RecommendationsPage'
 import ProfilePage from './pages/ProfilePage'
 import DocumentUploadPage from './pages/DocumentUploadPage'
 import HistoryPage from './pages/HistoryPage'
+import HobbiesPage from './pages/HobbiesPage'
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route index element={<Navigate to="/rekomendacijos" replace />} />
         <Route path="rekomendacijos" element={<RecommendationsPage />} />
         <Route path="profilis" element={<ProfilePage />} />
+        <Route path="hobiai" element={<HobbiesPage />} />
         <Route path="dokumentai" element={<DocumentUploadPage />} />
         <Route path="istorija" element={<HistoryPage />} />
       </Route>
