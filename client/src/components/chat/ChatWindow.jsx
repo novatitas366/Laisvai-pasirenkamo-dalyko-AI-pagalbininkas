@@ -1,20 +1,28 @@
 import { useState, useRef, useEffect } from 'react'
 import ChatMessage from './ChatMessage'
 import ChatInput from './ChatInput'
+import useProfile from '../../hooks/useProfile'
 
 export default function ChatWindow() {
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(false)
+  const [profileOpen, setProfileOpen] = useState(false)
   const bottomRef = useRef(null)
+  const { profile, isEmpty, buildSystemPrompt } = useProfile()
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
   const handleSend = (msg) => {
-    setMessages((prev) => [...prev, { id: Date.now(), role: 'user', ...msg }])
+    const userMessage = { id: Date.now(), role: 'user', ...msg }
+    setMessages((prev) => [...prev, userMessage])
 
-    // TODO: siųsti į API ir gauti DI atsakymą
+    // Sistemos promptas su vartotojo profiliu (bus naudojamas kai API bus prijungtas)
+    const systemPrompt = buildSystemPrompt()
+    console.log('System prompt:', systemPrompt)
+
+    // TODO: siųsti į API su systemPrompt ir messages
     setLoading(true)
     setTimeout(() => {
       setMessages((prev) => [
@@ -22,7 +30,9 @@ export default function ChatWindow() {
         {
           id: Date.now() + 1,
           role: 'assistant',
-          text: 'Ačiū už klausimą! DI integracija bus pridėta vėliau.',
+          text: isEmpty
+            ? 'Ačiū už klausimą! Užpildykite profilį, kad galėčiau pateikti personalizuotus atsakymus.'
+            : `Ačiū už klausimą! Jūsų profilis (${profile.studyProgram || profile.university}) bus naudojamas personalizuotiems atsakymams generuoti kai DI API bus prijungtas.`,
         },
       ])
       setLoading(false)
@@ -31,6 +41,42 @@ export default function ChatWindow() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-10rem)] bg-white border border-slate-200 rounded-2xl overflow-hidden">
+
+      {/* Profilio konteksto juosta */}
+      <div className="border-b border-slate-100 px-4 py-2">
+        <button
+          onClick={() => setProfileOpen((v) => !v)}
+          className="flex items-center gap-2 text-xs text-slate-500 hover:text-slate-700 transition-colors"
+        >
+          <span
+            className={`w-2 h-2 rounded-full flex-shrink-0 ${isEmpty ? 'bg-amber-400' : 'bg-green-400'}`}
+          />
+          {isEmpty ? 'Profilis neužpildytas — atsakymai nebus personalizuoti' : `Profilis aktyvus: ${[profile.university, profile.studyProgram].filter(Boolean).join(', ')}`}
+          <svg
+            className={`w-3 h-3 transition-transform ${profileOpen ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {profileOpen && (
+          <div className="mt-2 text-xs text-slate-500 space-y-0.5 pl-4 fade-in">
+            {profile.university && <p><span className="text-slate-400">Universitetas:</span> {profile.university}</p>}
+            {profile.studyProgram && <p><span className="text-slate-400">Studijų programa:</span> {profile.studyProgram}</p>}
+            {profile.hobbies && <p><span className="text-slate-400">Hobiai:</span> {profile.hobbies}</p>}
+            {isEmpty && (
+              <p className="text-amber-500">
+                Eikite į <a href="/profilis" className="underline">Mano profilį</a> ir užpildykite informaciją.
+              </p>
+            )}
+          </div>
+        )}
+      </div>
+
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full text-center">
