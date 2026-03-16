@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "setup-db": "node src/scripts/setupDatabase.js"
+    "setup-db": "node src/scripts/setupDatabase.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -17,5 +19,9 @@
     "multer": "^2.1.1",
     "mysql2": "^3.12.0",
     "pdf-parse": "^2.4.5"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "supertest": "^7.2.2"
   }
 }
