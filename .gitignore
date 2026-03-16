@@ -41,8 +41,6 @@ server/uploads/tmp/*
 *.swo
 
 # Project specific
-# We generally keep package-lock.json unless the project explicitly wants to ignore it. 
-# In this case, since it was in the ignore list of the incoming branch, I'll keep it as requested by that branch's logic.
 package-lock.json
 client/package-lock.json
 server/package-lock.json
