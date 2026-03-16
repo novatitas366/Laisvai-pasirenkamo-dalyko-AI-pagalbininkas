@@ -1,4 +1,4 @@
-import { generateRecommendation } from './recommendations.service.js'
+import { generateRecommendation, saveRecommendation } from './recommendations.service.js'
 
 export async function recommendationHandler(req, res, next) {
   try {
@@ -15,8 +15,12 @@ export async function recommendationHandler(req, res, next) {
       completedCourses: completedCourses ?? [],
     }
 
-    const result = await generateRecommendation(context)
-    res.status(200).json(result)
+    const recommendation = await generateRecommendation(context)
+
+    // SCRUM-68: save to DB — req.user is set by auth middleware once implemented
+    await saveRecommendation(req.user?.id ?? null, context, recommendation)
+
+    res.status(200).json(recommendation)
   } catch (err) {
     next(err)
   }
