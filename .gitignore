@@ -34,6 +34,11 @@ server/uploads/*
 server/uploads/tmp/*
 !server/uploads/tmp/.gitkeep
 
+# Test coverage
+coverage/
+client/coverage/
+server/coverage/
+
 # IDE specific files
 .vscode/
 .idea/
