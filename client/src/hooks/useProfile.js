@@ -1,19 +1,5 @@
 import { useState, useEffect } from 'react'
-
-const MIN_HOBBY_NAME_LENGTH = 4
-
-function isValidHobby(hobby) {
-  return hobby.name.trim().length >= MIN_HOBBY_NAME_LENGTH
-}
-
-function loadHobbies() {
-  try {
-    const saved = localStorage.getItem('hobbies')
-    return saved ? JSON.parse(saved) : []
-  } catch {
-    return []
-  }
-}
+import { isValidHobby, loadHobbies } from '../utils/hobbyValidation'
 
 export default function useProfile() {
   const [profile, setProfile] = useState({
