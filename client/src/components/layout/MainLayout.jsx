@@ -28,7 +28,7 @@ export default function MainLayout() {
               <h2 className="text-lg font-bold text-slate-900">Sesija baigiasi</h2>
             </div>
             <p className="text-sm text-slate-500 mb-6">
-              Dėl neaktyvumo po <span className="font-semibold text-slate-700">1 minutės</span> būsite automatiškai atjungtas. Norėdami tęsti – spauskite „Tęsti".
+              Dėl neaktyvumo po <span className="font-semibold text-slate-700">1 minutės</span> būsite automatiškai atjungtas. Jūsų neišsaugoti duomenys bus išsaugoti automatiškai. Norėdami tęsti – spauskite „Tęsti".
             </p>
             <div className="flex gap-3">
               <button

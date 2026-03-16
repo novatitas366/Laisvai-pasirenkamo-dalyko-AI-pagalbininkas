@@ -11,6 +11,7 @@ export default function useSessionTimeout() {
   const [showWarning, setShowWarning] = useState(false)
 
   const logout = useCallback(() => {
+    window.dispatchEvent(new Event('beforeSessionTimeout'))
     localStorage.removeItem('user')
     setShowWarning(false)
     navigate('/login')
