@@ -20,6 +20,17 @@ export default function ProfilePage() {
     if (stored) setStudyProgram(stored)
   }, [])
 
+  useEffect(() => {
+    const autoSave = () => {
+      if (university.trim() && studyProgram.trim()) {
+        localStorage.setItem(UNI_STORAGE_KEY, university)
+        localStorage.setItem(STORAGE_KEY, studyProgram)
+      }
+    }
+    window.addEventListener('beforeSessionTimeout', autoSave)
+    return () => window.removeEventListener('beforeSessionTimeout', autoSave)
+  }, [university, studyProgram])
+
   const programs = studyPrograms[university] || []
 
   const handleUniversityChange = (uni) => {
