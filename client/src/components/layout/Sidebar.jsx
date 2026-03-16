@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import api from '../../services/api'
+import DeleteConfirmationModal from '../common/DeleteConfirmationModal'
 
 const NAV = [
   {
@@ -47,6 +48,7 @@ const NAV = [
 
 export default function Sidebar() {
   const [conversations, setConversations] = useState([])
+  const [deleteModal, setDeleteModal] = useState({ isOpen: false, id: null })
   const location = useLocation()
 
   useEffect(() => {
@@ -66,6 +68,17 @@ export default function Sidebar() {
     window.addEventListener('conversation-renamed', handleRename)
     return () => window.removeEventListener('conversation-renamed', handleRename)
   }, [])
+
+  const openDeleteModal = (e, id) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setDeleteModal({ isOpen: true, id })
+  }
+
+  const handleDelete = () => {
+    console.log(`Ištrinama: ${deleteModal.id}`)
+    setDeleteModal({ isOpen: false, id: null })
+  }
 
   return (
     <aside className="fixed left-0 top-16 bottom-0 w-56 bg-white border-r border-slate-200 flex flex-col py-4 px-3 z-30">
@@ -120,21 +133,38 @@ export default function Sidebar() {
                   key={chat.id}
                   to={`/rekomendacijos/${chat.id}`}
                   className={({ isActive }) =>
-                    `block px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
+                    `group flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
                       isActive
                         ? 'bg-slate-100 text-slate-900'
                         : 'text-slate-500 hover:bg-slate-50 hover:text-slate-700'
                     }`
                   }
                 >
-                  <p className="truncate max-w-full" title={chat.title}>{chat.title}</p>
-                  <p className="text-[10px] text-slate-400 font-normal">{chat.date}</p>
+                  <div className="truncate flex-1 pr-2">
+                    <p className="truncate" title={chat.title}>{chat.title}</p>
+                    <p className="text-[10px] text-slate-400 font-normal">{chat.date}</p>
+                  </div>
+                  <button
+                    onClick={(e) => openDeleteModal(e, chat.id)}
+                    className="opacity-0 group-hover:opacity-100 p-1 text-slate-400 hover:text-red-500 transition-all"
+                    title="Ištrinti pokalbį"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                    </svg>
+                  </button>
                 </NavLink>
               ))}
             </div>
           </div>
         )}
       </div>
+
+      <DeleteConfirmationModal
+        isOpen={deleteModal.isOpen}
+        onClose={() => setDeleteModal({ isOpen: false, id: null })}
+        onConfirm={handleDelete}
+      />
     </aside>
   )
 }
