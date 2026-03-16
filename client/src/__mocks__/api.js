@@ -1,3 +1,5 @@
+import { jest } from '@jest/globals'
+
 const api = {
   get: jest.fn(() => Promise.resolve({ data: [] })),
   post: jest.fn(() => Promise.resolve({ data: {} })),

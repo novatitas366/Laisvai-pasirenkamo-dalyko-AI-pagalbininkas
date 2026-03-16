@@ -7,5 +7,15 @@ module.exports = {
   },
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest'
-  }
+  },
+  coverageProvider: 'v8',
+  collectCoverageFrom: [
+    'src/utils/**/*.js',
+    'src/hooks/**/*.js',
+    '!src/**/*.test.js'
+  ],
+  coverageReporters: ['text', 'lcov'],
+  coverageThreshold: {
+    global: { lines: 60, functions: 80, branches: 90 },
+  },
 };
