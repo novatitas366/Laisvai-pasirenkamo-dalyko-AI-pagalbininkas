@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
+
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 h-16 bg-white border-b border-slate-200 flex items-center px-6">
+    <header className="fixed top-0 left-0 right-0 z-40 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6">
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
           <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -12,6 +14,13 @@ export default function Header() {
           <span className="text-brand-600">Pagalbininkas</span>
         </span>
       </div>
+
+      <Link
+        to="/login"
+        className="px-4 py-2 bg-slate-50 text-slate-700 text-xs font-bold rounded-xl border border-slate-200 hover:bg-brand-50 hover:text-brand-700 hover:border-brand-200 transition-all"
+      >
+        Prisijungti
+      </Link>
     </header>
   )
 }

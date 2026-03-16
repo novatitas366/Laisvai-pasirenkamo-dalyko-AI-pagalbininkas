@@ -1,5 +1,5 @@
 -- Informatika (id=1) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (1, 'Programavimo pagrindai',           'INF-101', 1, 6.0),
   (1, 'Diskretinė matematika',            'INF-102', 1, 5.0),
   (1, 'Matematinė analizė I',             'INF-103', 1, 5.0),
@@ -31,7 +31,7 @@ INSERT INTO study_program_subjects (study_program_id, name, code, semester, cred
   (1, 'Gynimas ir recenzija',             'INF-802', 8, 5.0);
 
 -- Programų sistemos (id=2) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (2, 'Objektinis programavimas',         'PS-101',  1, 6.0),
   (2, 'Matematika programuotojams',       'PS-102',  1, 5.0),
   (2, 'Kompiuterių architektūra',         'PS-103',  1, 4.0),
@@ -61,7 +61,7 @@ INSERT INTO study_program_subjects (study_program_id, name, code, semester, cred
   (2, 'Gynimas ir recenzija',             'PS-802',  8, 5.0);
 
 -- Matematika (id=3) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (3, 'Matematinė analizė I',             'MAT-101', 1, 6.0),
   (3, 'Tiesinė algebra',                  'MAT-102', 1, 6.0),
   (3, 'Analitinė geometrija',             'MAT-103', 1, 4.0),
@@ -87,7 +87,7 @@ INSERT INTO study_program_subjects (study_program_id, name, code, semester, cred
   (3, 'Gynimas ir recenzija',             'MAT-802', 8, 5.0);
 
 -- Taikomoji matematika (id=4) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (4, 'Matematinė analizė I',             'TMAT-101',1, 6.0),
   (4, 'Tiesinė algebra',                  'TMAT-102',1, 5.0),
   (4, 'Programavimo pagrindai',           'TMAT-103',1, 4.0),
@@ -113,7 +113,7 @@ INSERT INTO study_program_subjects (study_program_id, name, code, semester, cred
   (4, 'Gynimas ir recenzija',             'TMAT-802',8, 5.0);
 
 -- Fizika (id=5) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (5, 'Mechanika',                        'FIZ-101', 1, 6.0),
   (5, 'Matematinė analizė I',             'FIZ-102', 1, 5.0),
   (5, 'Tiesinė algebra',                  'FIZ-103', 1, 4.0),
@@ -139,7 +139,7 @@ INSERT INTO study_program_subjects (study_program_id, name, code, semester, cred
   (5, 'Gynimas ir recenzija',             'FIZ-802', 8, 5.0);
 
 -- Elektronikos inžinerija (id=6) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (6, 'Elektronikos pagrindai',           'EL-101',  1, 6.0),
   (6, 'Matematinė analizė I',             'EL-102',  1, 5.0),
   (6, 'Fizika I',                         'EL-103',  1, 4.0),
@@ -165,7 +165,7 @@ INSERT INTO study_program_subjects (study_program_id, name, code, semester, cred
   (6, 'Gynimas ir recenzija',             'EL-802',  8, 5.0);
 
 -- Elektros inžinerija (id=7) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (7, 'Elektros grandinės I',             'EEI-101', 1, 6.0),
   (7, 'Matematinė analizė I',             'EEI-102', 1, 5.0),
   (7, 'Fizika',                           'EEI-103', 1, 4.0),
@@ -191,7 +191,7 @@ INSERT INTO study_program_subjects (study_program_id, name, code, semester, cred
   (7, 'Gynimas ir recenzija',             'EEI-802', 8, 5.0);
 
 -- Mechanikos inžinerija (id=8) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (8, 'Inžinerinė mechanika I',           'MECH-101',1, 6.0),
   (8, 'Matematinė analizė I',             'MECH-102',1, 5.0),
   (8, 'Braižyba ir CAD',                  'MECH-103',1, 4.0),
@@ -217,7 +217,7 @@ INSERT INTO study_program_subjects (study_program_id, name, code, semester, cred
   (8, 'Gynimas ir recenzija',             'MECH-802',8, 5.0);
 
 -- Verslo informatika (id=9) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (9, 'Informacinių sistemų pagrindai',   'VINF-101',1, 6.0),
   (9, 'Verslo procesai',                  'VINF-102',1, 5.0),
   (9, 'Programavimo pagrindai',           'VINF-103',1, 4.0),
@@ -248,7 +248,7 @@ INSERT INTO study_program_subjects (study_program_id, name, code, semester, cred
   (9, 'Gynimas ir recenzija',             'VINF-802',8, 5.0);
 
 -- Kibernetinis saugumas (id=10) – 8 semestrų
-INSERT INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
+INSERT IGNORE INTO study_program_subjects (study_program_id, name, code, semester, credits) VALUES
   (10, 'Tinklų pagrindai',               'KS-101',  1, 5.0),
   (10, 'Programavimo pagrindai (Python)', 'KS-102',  1, 5.0),
   (10, 'Operacinių sistemų pagrindai',   'KS-103',  1, 4.0),
