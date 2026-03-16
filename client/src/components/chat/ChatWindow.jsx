@@ -2,19 +2,26 @@ import { useState, useRef, useEffect } from 'react'
 import ChatMessage from './ChatMessage'
 import ChatInput from './ChatInput'
 import useProfile from '../../hooks/useProfile'
+import Toast from '../ui/Toast'
 
 export default function ChatWindow() {
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(false)
   const [profileOpen, setProfileOpen] = useState(false)
+  const [showHobbyWarning, setShowHobbyWarning] = useState(false)
   const bottomRef = useRef(null)
-  const { profile, isEmpty, buildSystemPrompt } = useProfile()
+  const { profile, hasValidHobbies, isEmpty, buildSystemPrompt } = useProfile()
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
   const handleSend = (msg) => {
+    if (!hasValidHobbies) {
+      setShowHobbyWarning(true)
+      return
+    }
+
     const userMessage = { id: Date.now(), role: 'user', ...msg }
     setMessages((prev) => [...prev, userMessage])
 
@@ -40,7 +47,8 @@ export default function ChatWindow() {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-10rem)] bg-white border border-slate-200 rounded-2xl overflow-hidden">
+    <>
+      <div className="flex flex-col h-[calc(100vh-10rem)] bg-white border border-slate-200 rounded-2xl overflow-hidden">
 
       {/* Profilio konteksto juosta */}
       <div className="border-b border-slate-100 px-4 py-2">
@@ -110,6 +118,14 @@ export default function ChatWindow() {
       </div>
 
       <ChatInput onSend={handleSend} disabled={loading} />
-    </div>
+      </div>
+
+      {showHobbyWarning && (
+        <Toast
+          message='Pridėkite bent vieną tinkamą hobį skiltyje „Hobiai" prieš generuojant rekomendacijas.'
+          onClose={() => setShowHobbyWarning(false)}
+        />
+      )}
+    </>
   )
 }
