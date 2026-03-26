@@ -1,7 +1,0 @@
-CREATE TABLE IF NOT EXISTS elective_courses (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(100) NOT NULL,
-  credits INT,
-  description TEXT,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
