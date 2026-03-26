@@ -1,48 +1,46 @@
-import fs from 'fs/promises'
-import path from 'path'
-import { fileURLToPath } from 'url'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const DATA_DIR = path.join(__dirname, '../../data')
-const CONVERSATIONS_FILE = path.join(DATA_DIR, 'conversations.json')
+import pool from '../../config/database.js'
 
 export async function getConversations() {
-  try {
-    const data = await fs.readFile(CONVERSATIONS_FILE, 'utf8')
-    return JSON.parse(data)
-  } catch (error) {
-    console.error('Error reading conversations:', error)
-    return []
-  }
+  const [rows] = await pool.query(
+    'SELECT id, title, created_at AS date, updated_at FROM conversations ORDER BY updated_at DESC'
+  )
+  return rows
 }
 
 export async function getMessagesByConversationId(id) {
-  try {
-    const data = await fs.readFile(path.join(DATA_DIR, 'messages.json'), 'utf8')
-    const allMessages = JSON.parse(data)
-    return allMessages[id] || null
-  } catch (error) {
-    console.error('Error reading messages:', error)
-    return null
-  }
+  const conversationId = parseInt(id, 10)
+  if (isNaN(conversationId)) return null
+
+  const [conversations] = await pool.execute(
+    'SELECT id FROM conversations WHERE id = ?',
+    [conversationId]
+  )
+  if (conversations.length === 0) return null
+
+  const [messages] = await pool.execute(
+    'SELECT id, role, content, created_at FROM conversation_messages WHERE conversation_id = ? ORDER BY created_at',
+    [conversationId]
+  )
+  return messages
 }
 
 export async function renameConversation(id, newTitle) {
-  try {
-    const conversations = await getConversations()
-    const index = conversations.findIndex(c => c.id === id)
-    
-    if (index === -1) return null
+  const conversationId = parseInt(id, 10)
+  if (isNaN(conversationId)) return null
 
-    // SCRUM-79: Limit title to 100 characters
-    const truncatedTitle = newTitle.substring(0, 100)
-    
-    conversations[index].title = truncatedTitle
-    
-    await fs.writeFile(CONVERSATIONS_FILE, JSON.stringify(conversations, null, 2))
-    return conversations[index]
-  } catch (error) {
-    console.error('Error renaming conversation:', error)
-    throw error
-  }
+  // SCRUM-79: Limit title to 100 characters
+  const truncatedTitle = newTitle.substring(0, 100)
+
+  const [result] = await pool.execute(
+    'UPDATE conversations SET title = ? WHERE id = ?',
+    [truncatedTitle, conversationId]
+  )
+
+  if (result.affectedRows === 0) return null
+
+  const [rows] = await pool.execute(
+    'SELECT id, title, created_at AS date, updated_at FROM conversations WHERE id = ?',
+    [conversationId]
+  )
+  return rows[0] || null
 }

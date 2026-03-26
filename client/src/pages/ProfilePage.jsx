@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import UniversitySelect from '../components/profile/UniversitySelect'
 import StudyProgramSelect from '../components/profile/StudyProgramSelect'
 import SubjectsModal from '../components/catalog/SubjectsModal'
-import studyPrograms from '../data/studyPrograms'
+import api from '../services/api'
 
 const STORAGE_KEY = 'profile_study_program'
 const UNI_STORAGE_KEY = 'profile_university'
@@ -12,6 +12,11 @@ export default function ProfilePage() {
   const [studyProgram, setStudyProgram] = useState('')
   const [saved, setSaved] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
+  const [allPrograms, setAllPrograms] = useState([])
+
+  useEffect(() => {
+    api.get('/study-programs').then(({ data }) => setAllPrograms(data)).catch(() => {})
+  }, [])
 
   useEffect(() => {
     const storedUni = localStorage.getItem(UNI_STORAGE_KEY)
@@ -31,7 +36,7 @@ export default function ProfilePage() {
     return () => window.removeEventListener('beforeSessionTimeout', autoSave)
   }, [university, studyProgram])
 
-  const programs = studyPrograms[university] || []
+  const programs = allPrograms.filter((p) => p.university_name === university)
 
   const handleUniversityChange = (uni) => {
     setUniversity(uni)

@@ -30,7 +30,7 @@ export default function LoginPage() {
       const response = await api.post('/auth/login', formData)
       setSuccess(true)
 
-      // Store user info (simplified for now)
+      localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', JSON.stringify(response.data.user))
 
       // Short delay before redirect to show success message

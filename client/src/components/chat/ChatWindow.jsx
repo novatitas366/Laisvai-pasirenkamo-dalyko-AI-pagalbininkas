@@ -30,7 +30,7 @@ export default function ChatWindow() {
       // Fetch conversation list to get the title (simplified for now)
       api.get('/conversations')
         .then(res => {
-          const conv = res.data.find(c => c.id === id)
+          const conv = res.data.find(c => String(c.id) === id)
           if (conv) setTitle(conv.title)
         })
     } else {

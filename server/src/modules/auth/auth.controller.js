@@ -1,4 +1,5 @@
 import argon2 from 'argon2'
+import jwt from 'jsonwebtoken'
 import * as authService from './auth.service.js'
 
 /**
@@ -21,8 +22,11 @@ export async function login(req, res, next) {
       return res.status(401).json({ error: 'Neteisingas el. paštas arba slaptažodis' })
     }
 
+    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: '7d' })
+
     res.json({
       message: 'Prisijungimas sėkmingas',
+      token,
       user: {
         id: user.id,
         email: user.email
