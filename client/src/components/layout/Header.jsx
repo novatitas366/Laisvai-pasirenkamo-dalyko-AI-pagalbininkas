@@ -6,6 +6,8 @@ export default function Header() {
   const handleLogout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
+    localStorage.removeItem('profile_university')
+    localStorage.removeItem('profile_study_program')
     navigate('/login')
   }
 
