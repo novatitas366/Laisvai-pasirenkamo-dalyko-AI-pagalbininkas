@@ -1,6 +1,14 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    navigate('/login')
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-40 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6">
       <div className="flex items-center gap-2">
@@ -15,12 +23,12 @@ export default function Header() {
         </span>
       </div>
 
-      <Link
-        to="/login"
-        className="px-4 py-2 bg-slate-50 text-slate-700 text-xs font-bold rounded-xl border border-slate-200 hover:bg-brand-50 hover:text-brand-700 hover:border-brand-200 transition-all"
+      <button
+        onClick={handleLogout}
+        className="px-4 py-2 bg-slate-50 text-slate-700 text-xs font-bold rounded-xl border border-slate-200 hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all"
       >
-        Prisijungti
-      </Link>
+        Atsijungti
+      </button>
     </header>
   )
 }

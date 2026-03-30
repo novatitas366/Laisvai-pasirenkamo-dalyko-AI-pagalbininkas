@@ -10,12 +10,22 @@ import HobbiesPage from './pages/HobbiesPage'
 import ElectiveEntryPage from './pages/ElectiveEntryPage'
 import RegisterPage from './pages/RegisterPage'
 
+function PrivateRoute({ children }) {
+  const token = localStorage.getItem('token')
+  return token ? children : <Navigate to="/login" replace />
+}
+
+function GuestRoute({ children }) {
+  const token = localStorage.getItem('token')
+  return token ? <Navigate to="/rekomendacijos" replace /> : children
+}
+
 export default function App() {
   return (
     <Routes>
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/" element={<MainLayout />}>
+      <Route path="/register" element={<GuestRoute><RegisterPage /></GuestRoute>} />
+      <Route path="/login" element={<GuestRoute><LoginPage /></GuestRoute>} />
+      <Route path="/" element={<PrivateRoute><MainLayout /></PrivateRoute>}>
         <Route index element={<Navigate to="/rekomendacijos" replace />} />
         <Route path="rekomendacijos" element={<RecommendationsPage />} />
         <Route path="rekomendacijos/:id" element={<RecommendationsPage />} />
