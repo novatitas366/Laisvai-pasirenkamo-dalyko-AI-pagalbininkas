@@ -4,7 +4,6 @@ import ChatMessage from './ChatMessage'
 import ChatInput from './ChatInput'
 import useProfile from '../../hooks/useProfile'
 import api from '../../services/api'
-import Toast from '../ui/Toast'
 
 export default function ChatWindow() {
   const { id } = useParams()
@@ -13,9 +12,8 @@ export default function ChatWindow() {
   const [profileOpen, setProfileOpen] = useState(false)
   const [title, setTitle] = useState('')
   const [isEditingTitle, setIsEditingTitle] = useState(false)
-  const [showHobbyWarning, setShowHobbyWarning] = useState(false)
   const bottomRef = useRef(null)
-  const { profile, hasValidHobbies, isEmpty, buildSystemPrompt } = useProfile()
+  const { profile, isEmpty, buildSystemPrompt } = useProfile()
 
   // Load chat history from API
   useEffect(() => {
@@ -60,11 +58,6 @@ export default function ChatWindow() {
   }
 
   const handleSend = (msg) => {
-    if (!hasValidHobbies) {
-      setShowHobbyWarning(true)
-      return
-    }
-
     const userMessage = { id: Date.now(), role: 'user', ...msg }
     setMessages((prev) => [...prev, userMessage])
 
@@ -191,12 +184,6 @@ export default function ChatWindow() {
 
       <ChatInput onSend={handleSend} disabled={loading} />
 
-      {showHobbyWarning && (
-        <Toast
-          message='Pridėkite bent vieną tinkamą hobį skiltyje „Hobiai" prieš generuojant rekomendacijas.'
-          onClose={() => setShowHobbyWarning(false)}
-        />
-      )}
     </div>
   )
 }
