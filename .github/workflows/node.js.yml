@@ -17,9 +17,9 @@ jobs:
         with:
           node-version: 20.x                                                                                                                             
           cache: 'npm'
-      - run: npm ci                                                                                                                                      
-      - run: cd client && npm ci
-      - run: cd server && npm ci
+      - run: npm install                                                                                                                                     
+      - run: cd client && npm install
+      - run: cd server && npm install
       - run: cd client && npm run build
                                                                                                                                                          
     test:
@@ -33,9 +33,9 @@ jobs:
         with:                                                                                                                                            
           node-version: 20.x
           cache: 'npm'                                                                                                                                   
-      - run: npm ci
-      - run: cd client && npm ci
-      - run: cd server && npm ci
+      - run: npm install
+      - run: cd client && npm install
+      - run: cd server && npm install
       - name: Test client
         run: cd client && npm test                                                                                                                       
       - name: Test server
