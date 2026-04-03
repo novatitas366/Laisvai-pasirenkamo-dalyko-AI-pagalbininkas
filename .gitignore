@@ -51,6 +51,6 @@ server/uploads/tmp/*
 coverage/
 client/coverage/
 server/coverage/
-package-lock.json
+//package-lock.json
 client/package-lock.json
 server/package-lock.json
