@@ -6,7 +6,7 @@ jest.useFakeTimers()
 
 const mockNavigate = jest.fn()
 jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+  MemoryRouter: ({ children }) => children,
   useNavigate: () => mockNavigate,
 }))
 

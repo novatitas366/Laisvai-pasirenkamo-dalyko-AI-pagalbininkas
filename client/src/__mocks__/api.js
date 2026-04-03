@@ -5,4 +5,4 @@ const api = {
   delete: jest.fn(() => Promise.resolve({ data: {} }))
 };
 
-export default api;
+module.exports = api;

@@ -68,7 +68,7 @@ jobs:
         run: cd server && npm ci
 
       - name: Run client tests
-        run: cd client && npm test -- --ci --forceExit
+        run: cd client && npm test -- --ci
 
       - name: Run server tests
         run: cd server && npm test
