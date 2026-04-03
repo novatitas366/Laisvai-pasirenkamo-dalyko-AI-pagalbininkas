@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - "SCRUM-**"
-      - "HotFix"
+      #- "HotFix"
   pull_request:
     branches:
       - "Develop"
