@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test": "node node_modules/.bin/jest --config jest.config.cjs",
+    "test:coverage": "node node_modules/.bin/jest --config jest.config.cjs --coverage"
   },
   "dependencies": {
     "@jridgewell/sourcemap-codec": "^1.5.5",

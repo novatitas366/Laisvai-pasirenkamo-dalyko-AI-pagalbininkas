@@ -43,17 +43,21 @@ export default function useSessionTimeout() {
     }, TIMEOUT_MS)
   }, [logout])
 
+  const resetTimerRef = useRef(resetTimer)
+  resetTimerRef.current = resetTimer
+
   useEffect(() => {
     const events = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart']
-    events.forEach((e) => window.addEventListener(e, resetTimer))
-    resetTimer()
+    const onActivity = () => resetTimerRef.current()
+    events.forEach((e) => window.addEventListener(e, onActivity))
+    resetTimerRef.current()
 
     return () => {
-      events.forEach((e) => window.removeEventListener(e, resetTimer))
+      events.forEach((e) => window.removeEventListener(e, onActivity))
       clearTimeout(timeoutRef.current)
       clearTimeout(warningRef.current)
     }
-  }, [resetTimer])
+  }, [])
 
   return { showWarning, resetTimer, logout }
 }
