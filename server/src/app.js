@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import router from './routes/index.js'
-import uploadRouter from './modules/upload/upload.routes.js'
+import documentsRouter from './modules/documents/documents.routes.js'
 
 const app = express()
 
@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api', router)
-app.use('/api/documents/upload', uploadRouter)
+app.use('/api/documents', documentsRouter)
 
 app.use((req, res) => {
   res.status(404).json({ error: 'Puslapis nerastas' })

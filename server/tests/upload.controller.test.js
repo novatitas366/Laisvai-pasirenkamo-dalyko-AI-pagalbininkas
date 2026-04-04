@@ -60,6 +60,14 @@ function buildFile(overrides = {}) {
   }
 }
 
+function buildReq(file, overrides = {}) {
+  return {
+    file,
+    user: { id: 7 },
+    ...overrides,
+  }
+}
+
 beforeEach(() => {
   jest.clearAllMocks()
 })
@@ -83,7 +91,7 @@ describe('uploadDocument', () => {
   describe('when file is present and extraction succeeds', () => {
     it('returns 201 with the correct response body', async () => {
       const file    = buildFile()
-      const req     = { file }
+      const req     = buildReq(file)
       const res     = buildRes()
       const text    = 'extracted text content'
       const insertId = 42
@@ -107,7 +115,7 @@ describe('uploadDocument', () => {
 
     it('inserts the document into the database with correct parameters', async () => {
       const file = buildFile()
-      const req  = { file }
+      const req  = buildReq(file)
       const res  = buildRes()
 
       mockExtractTextFromFile.mockResolvedValue('text')
@@ -118,6 +126,7 @@ describe('uploadDocument', () => {
       expect(mockPoolExecute).toHaveBeenCalledWith(
         expect.stringContaining('INSERT INTO documents'),
         expect.arrayContaining([
+          req.user.id,
           expect.stringContaining('abc123'), // path.basename of /tmp/abc123
           file.originalname,
           file.mimetype,
@@ -129,7 +138,7 @@ describe('uploadDocument', () => {
 
     it('always calls deleteFile with the file path (cleanup in finally)', async () => {
       const file = buildFile()
-      const req  = { file }
+      const req  = buildReq(file)
       const res  = buildRes()
 
       mockExtractTextFromFile.mockResolvedValue('text')
@@ -145,7 +154,7 @@ describe('uploadDocument', () => {
   describe('when extractTextFromFile throws an error', () => {
     it('returns 422 with the error message', async () => {
       const file = buildFile()
-      const req  = { file }
+      const req  = buildReq(file)
       const res  = buildRes()
 
       mockExtractTextFromFile.mockRejectedValue(
@@ -162,7 +171,7 @@ describe('uploadDocument', () => {
 
     it('still calls deleteFile even when extraction fails (cleanup in finally)', async () => {
       const file = buildFile()
-      const req  = { file }
+      const req  = buildReq(file)
       const res  = buildRes()
 
       mockExtractTextFromFile.mockRejectedValue(new Error('timeout'))
@@ -177,7 +186,7 @@ describe('uploadDocument', () => {
   describe('when pool.execute throws an error', () => {
     it('returns 422 with the DB error message', async () => {
       const file = buildFile()
-      const req  = { file }
+      const req  = buildReq(file)
       const res  = buildRes()
 
       mockExtractTextFromFile.mockResolvedValue('text')
@@ -191,7 +200,7 @@ describe('uploadDocument', () => {
 
     it('still calls deleteFile when DB insert fails', async () => {
       const file = buildFile()
-      const req  = { file }
+      const req  = buildReq(file)
       const res  = buildRes()
 
       mockExtractTextFromFile.mockResolvedValue('text')
