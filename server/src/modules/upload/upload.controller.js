@@ -39,9 +39,9 @@ export async function uploadDocument(req, res) {
     const extractedText = await extractTextFromFile(filePath, mimetype)
 
     const [result] = await pool.execute(
-      `INSERT INTO documents (filename, original_name, mime_type, size_bytes, extracted_text)
-       VALUES (?, ?, ?, ?, ?)`,
-      [path.basename(filePath), originalname, mimetype, size, extractedText]
+      `INSERT INTO documents (user_id, filename, original_name, mime_type, size_bytes, extracted_text)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [req.user.id, path.basename(filePath), originalname, mimetype, size, extractedText]
     )
 
     return res.status(201).json({
