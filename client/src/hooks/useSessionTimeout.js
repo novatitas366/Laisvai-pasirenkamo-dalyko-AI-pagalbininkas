@@ -8,21 +8,33 @@ export default function useSessionTimeout() {
   const navigate = useNavigate()
   const timeoutRef = useRef(null)
   const warningRef = useRef(null)
+  const showWarningRef = useRef(false)
   const [showWarning, setShowWarning] = useState(false)
 
   const logout = useCallback(() => {
+    clearTimeout(timeoutRef.current)
+    clearTimeout(warningRef.current)
+    showWarningRef.current = false
     window.dispatchEvent(new Event('beforeSessionTimeout'))
+    localStorage.removeItem('token')
     localStorage.removeItem('user')
     setShowWarning(false)
     navigate('/login')
   }, [navigate])
 
-  const resetTimer = useCallback(() => {
+  /** Kol rodomas įspėjimas, neaktyvumo įvykiai nepratęsia sesijos — kitaip pelės judesys iškart atšauktų automatinį atsijungimą. Tęsti tik su force (mygtukas „Tęsti"). */
+  const resetTimer = useCallback((force = false) => {
+    if (showWarningRef.current && !force) {
+      return
+    }
+
     clearTimeout(timeoutRef.current)
     clearTimeout(warningRef.current)
+    showWarningRef.current = false
     setShowWarning(false)
 
     warningRef.current = setTimeout(() => {
+      showWarningRef.current = true
       setShowWarning(true)
     }, TIMEOUT_MS - WARNING_MS)
 

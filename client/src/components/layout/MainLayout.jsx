@@ -38,7 +38,8 @@ export default function MainLayout() {
                 Atsijungti
               </button>
               <button
-                onClick={resetTimer}
+                type="button"
+                onClick={() => resetTimer(true)}
                 className="flex-1 py-2.5 text-sm font-bold text-white bg-brand-600 rounded-2xl hover:bg-brand-700 transition-colors"
               >
                 Tęsti
