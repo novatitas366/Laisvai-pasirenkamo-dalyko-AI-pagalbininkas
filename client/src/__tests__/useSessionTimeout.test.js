@@ -16,6 +16,7 @@ beforeEach(() => {
   jest.clearAllMocks()
   jest.clearAllTimers()
   localStorage.clear()
+  localStorage.setItem('token', 'test-token')
   localStorage.setItem('user', JSON.stringify({ id: 1, email: 'test@test.lt' }))
 })
 
@@ -43,6 +44,23 @@ describe('useSessionTimeout', () => {
     })
 
     expect(localStorage.getItem('user')).toBeNull()
+    expect(localStorage.getItem('token')).toBeNull()
+    expect(mockNavigate).toHaveBeenCalledWith('/login')
+  })
+
+  test('įspėjimo metu pelės judesys nepratęsia sesijos — po viso 10 min vis tiek atjungia', () => {
+    renderHook(() => useSessionTimeout(), { wrapper })
+
+    act(() => {
+      jest.advanceTimersByTime(9 * 60 * 1000)
+    })
+
+    act(() => {
+      window.dispatchEvent(new Event('mousemove'))
+      jest.advanceTimersByTime(1 * 60 * 1000)
+    })
+
+    expect(localStorage.getItem('user')).toBeNull()
     expect(mockNavigate).toHaveBeenCalledWith('/login')
   })
 
@@ -55,7 +73,7 @@ describe('useSessionTimeout', () => {
     expect(result.current.showWarning).toBe(true)
 
     act(() => {
-      result.current.resetTimer()
+      result.current.resetTimer(true)
     })
     expect(result.current.showWarning).toBe(false)
 
@@ -138,7 +156,7 @@ describe('useSessionTimeout', () => {
     window.removeEventListener('beforeSessionTimeout', listener)
   })
 
-  test('logout pašalina user iš localStorage', () => {
+  test('logout pašalina user ir token iš localStorage', () => {
     const { result } = renderHook(() => useSessionTimeout(), { wrapper })
 
     act(() => {
@@ -146,6 +164,7 @@ describe('useSessionTimeout', () => {
     })
 
     expect(localStorage.getItem('user')).toBeNull()
+    expect(localStorage.getItem('token')).toBeNull()
   })
 
   test('logout nukreipia į /login', () => {

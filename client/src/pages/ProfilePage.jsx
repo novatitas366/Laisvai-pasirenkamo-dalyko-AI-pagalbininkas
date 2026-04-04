@@ -19,10 +19,23 @@ export default function ProfilePage() {
   }, [])
 
   useEffect(() => {
-    const storedUni = localStorage.getItem(UNI_STORAGE_KEY)
-    if (storedUni) setUniversity(storedUni)
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored) setStudyProgram(stored)
+    api.get('/profile')
+      .then(({ data }) => {
+        if (data?.university_name) {
+          setUniversity(data.university_name)
+          localStorage.setItem(UNI_STORAGE_KEY, data.university_name)
+        }
+        if (data?.study_program_name) {
+          setStudyProgram(data.study_program_name)
+          localStorage.setItem(STORAGE_KEY, data.study_program_name)
+        }
+      })
+      .catch(() => {
+        const storedUni = localStorage.getItem(UNI_STORAGE_KEY)
+        if (storedUni) setUniversity(storedUni)
+        const stored = localStorage.getItem(STORAGE_KEY)
+        if (stored) setStudyProgram(stored)
+      })
   }, [])
 
   useEffect(() => {
@@ -45,9 +58,22 @@ export default function ProfilePage() {
     }
   }
 
-  const handleSave = () => {
+  const handleSave = async () => {
+    const selectedProgramObj = allPrograms.find(
+      (p) => p.name === studyProgram && p.university_name === university
+    )
+    const universityId = selectedProgramObj?.university_id || null
+    const studyProgramId = selectedProgramObj?.id || null
+
     localStorage.setItem(UNI_STORAGE_KEY, university)
     localStorage.setItem(STORAGE_KEY, studyProgram)
+
+    try {
+      await api.put('/profile', { universityId, studyProgramId })
+    } catch {
+      // localStorage jau atnaujintas, tęsiame
+    }
+
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
   }

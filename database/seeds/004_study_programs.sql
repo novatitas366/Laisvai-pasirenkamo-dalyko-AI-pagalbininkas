@@ -6,6 +6,16 @@ INSERT IGNORE INTO study_programs (university_id, name, code) VALUES
   (1, 'Programų sistemos',            'VU-PS'),
   (1, 'Kibernetinis saugumas',        'VU-KS');
 
+-- VU papildomos programos (id=41..47)
+INSERT IGNORE INTO study_programs (university_id, name, code) VALUES
+  (1, 'Chemija',                        'VU-CHEM'),
+  (1, 'Biologija',                      'VU-BIO'),
+  (1, 'Ekonomika',                      'VU-EKON'),
+  (1, 'Psichologija',                   'VU-PSI'),
+  (1, 'Teisė',                          'VU-TEI'),
+  (1, 'Filosofija',                     'VU-FIL'),
+  (1, 'Istorija',                       'VU-IST');
+
 -- KTU (id=2)
 INSERT IGNORE INTO study_programs (university_id, name, code) VALUES
   (2, 'Programų sistemos',            'KTU-PS'),
