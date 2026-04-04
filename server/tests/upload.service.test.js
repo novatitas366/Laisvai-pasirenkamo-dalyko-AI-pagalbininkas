@@ -2,8 +2,7 @@
  * Unit tests for upload.service.js (SCRUM-37)
  *
  * Uses Jest native ESM (--experimental-vm-modules).
- * Modules loaded via createRequire (pdf-parse) are mocked at the CJS registry
- * level using jest.mock() before the service is imported.
+ * pdf-parse v2 exports PDFParse class (mocked below).
  */
 
 import { jest, describe, it, expect, beforeEach, afterEach } from '@jest/globals'
@@ -26,10 +25,18 @@ await jest.unstable_mockModule('mammoth', () => ({
   default: mockMammoth,
 }))
 
-// pdf-parse is loaded via createRequire (CJS require). Jest intercepts
-// CJS Module._load, so jest.mock() works even for createRequire'd modules.
-const mockPdfParse = jest.fn()
-jest.mock('pdf-parse', () => mockPdfParse)
+let lastPdfParseOpts
+await jest.unstable_mockModule('pdf-parse', () => ({
+  PDFParse: class {
+    constructor(opts) {
+      lastPdfParseOpts = opts
+    }
+    async getText() {
+      return { text: 'extracted pdf text' }
+    }
+    async destroy() {}
+  },
+}))
 
 // ── Load module under test after mocks are set up ───────────────────────────
 const { extractTextFromFile, deleteFile } =
@@ -38,6 +45,7 @@ const { extractTextFromFile, deleteFile } =
 // ── Helpers ──────────────────────────────────────────────────────────────────
 beforeEach(() => {
   jest.clearAllMocks()
+  lastPdfParseOpts = undefined
 })
 
 // ── extractTextFromFile ───────────────────────────────────────────────────────
@@ -45,15 +53,14 @@ beforeEach(() => {
 describe('extractTextFromFile', () => {
   // ── PDF ──────────────────────────────────────────────────────────────────
   describe('PDF (application/pdf)', () => {
-    it('reads the file buffer and returns text from pdfParse', async () => {
+    it('reads the file buffer and returns text from PDFParse.getText()', async () => {
       const fakeBuf = Buffer.from('fake pdf bytes')
       mockReadFile.mockResolvedValue(fakeBuf)
-      mockPdfParse.mockResolvedValue({ text: 'extracted pdf text' })
 
       const result = await extractTextFromFile('/tmp/doc.pdf', 'application/pdf')
 
       expect(mockReadFile).toHaveBeenCalledWith('/tmp/doc.pdf')
-      expect(mockPdfParse).toHaveBeenCalledWith(fakeBuf)
+      expect(lastPdfParseOpts?.data).toEqual(fakeBuf)
       expect(result).toBe('extracted pdf text')
     })
   })
