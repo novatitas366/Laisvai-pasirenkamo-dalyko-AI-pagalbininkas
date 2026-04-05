@@ -1,6 +1,18 @@
+import { useNavigate } from 'react-router-dom'
+
 export default function Header() {
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    localStorage.removeItem('profile_university')
+    localStorage.removeItem('profile_study_program')
+    navigate('/login')
+  }
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 h-16 bg-white border-b border-slate-200 flex items-center px-6">
+    <header className="fixed top-0 left-0 right-0 z-40 h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6">
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
           <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -12,6 +24,13 @@ export default function Header() {
           <span className="text-brand-600">Pagalbininkas</span>
         </span>
       </div>
+
+      <button
+        onClick={handleLogout}
+        className="px-4 py-2 bg-slate-50 text-slate-700 text-xs font-bold rounded-xl border border-slate-200 hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all"
+      >
+        Atsijungti
+      </button>
     </header>
   )
 }
