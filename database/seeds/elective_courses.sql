@@ -1,1 +1,0 @@
--- Seed elective courses catalog (optional initial data)
