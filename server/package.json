@@ -9,7 +9,8 @@
     "dev": "node --watch src/server.js",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
     "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --coverage",
-    "test:integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.integration.config.cjs --runInBand --forceExit",
+    "test:integration": "npm run test:integration:document-extract",
+    "test:integration:document-extract": "node --experimental-vm-modules node_modules/.bin/jest --config jest.integration.config.cjs --runInBand --forceExit integration/document-extract",
     "setup-db": "node src/scripts/setupDatabase.js"
   },
   "dependencies": {

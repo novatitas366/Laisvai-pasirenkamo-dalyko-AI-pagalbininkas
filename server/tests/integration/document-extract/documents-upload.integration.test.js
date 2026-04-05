@@ -10,8 +10,8 @@
 import 'dotenv/config'
 import { describe, it, expect, beforeAll, afterAll } from '@jest/globals'
 import request from 'supertest'
-import app from '../../src/app.js'
-import pool from '../../src/config/database.js'
+import app from '../../../src/app.js'
+import pool from '../../../src/config/database.js'
 
 const TEST_EMAIL = `integ_${Date.now()}@test.lt`
 const TEST_PASSWORD = 'Secret123!'
