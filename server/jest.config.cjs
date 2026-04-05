@@ -1,6 +1,7 @@
 /** @type {import('jest').Config} */
 module.exports = {
   testEnvironment: 'node',
+  setupFiles: ['<rootDir>/tests/setupIntegrationEnv.cjs'],
   transform: {},
   collectCoverage: true,
   collectCoverageFrom: [
