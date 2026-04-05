@@ -9,7 +9,7 @@
     "dev": "node --watch src/server.js",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
     "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --coverage",
-    "test:profile-integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --testPathPatterns profile.integration --no-coverage",
+    "test:integration:profile": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --testPathPatterns profile.integration --no-coverage",
     "setup-db": "node src/scripts/setupDatabase.js"
   },
   "dependencies": {
