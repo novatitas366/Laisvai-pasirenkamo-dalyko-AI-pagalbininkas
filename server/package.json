@@ -9,6 +9,9 @@
     "dev": "node --watch src/server.js",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
     "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --coverage",
+    "test:integration:hobbies": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns='integration/hobbies'",
+    "test:integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns='integration'",
+    "test:all": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
     "setup-db": "node src/scripts/setupDatabase.js"
   },
   "dependencies": {

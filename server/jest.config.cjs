@@ -15,6 +15,6 @@ module.exports = {
       statements: 90,
     },
   },
-  testMatch: ['**/tests/**/*.test.js'],
+  testMatch: ['**/tests/**/*.test.js', '**/tests/integration/**/*.test.js'],
   testTimeout: 10000,
 }
