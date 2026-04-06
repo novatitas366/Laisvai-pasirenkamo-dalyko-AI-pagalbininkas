@@ -23,7 +23,8 @@ app.use((err, _req, res, _next) => {
   if (err.message?.includes('Netinkamas failo tipas')) {
     return res.status(415).json({ error: err.message })
   }
-  res.status(500).json({ error: err.message || 'Vidinė serverio klaida' })
+  const status = err.statusCode ?? 500
+  res.status(status).json({ error: err.message || 'Vidinė serverio klaida' })
 })
 
 export default app
