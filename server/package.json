@@ -9,7 +9,8 @@
     "dev": "node --watch src/server.js",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
     "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --coverage",
-    "setup-db": "node src/scripts/setupDatabase.js"
+    "setup-db": "node src/scripts/setupDatabase.js",
+    "test:chat-integration": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --testPathPatterns=integration/chat --runInBand --forceExit --no-coverage"
   },
   "dependencies": {
     "argon2": "^0.41.1",
