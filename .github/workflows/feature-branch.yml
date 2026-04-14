@@ -75,3 +75,6 @@ jobs:
 
       - name: Run server integration tests (chat)
         run: cd server && npm run test:chat-integration
+
+      - name: Run server integration tests (profile)
+        run: cd server && npm run test:integration:profile

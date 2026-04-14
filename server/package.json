@@ -12,6 +12,7 @@
     "test:auth-integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns auth.integration",
     "test:chat-integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns=chat.integration",
     "test:integration:hobbies": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns='integration/hobbies'",
+    "test:integration:profile": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --testPathPatterns profile.integration --no-coverage",
     "test:integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns='integration'",
     "test:all": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
     "setup-db": "node src/scripts/setupDatabase.js"
