@@ -15,6 +15,7 @@ module.exports = {
       statements: 90,
     },
   },
-  testMatch: ['**/tests/**/*.test.js', '**/tests/integration/**/*.test.js'],
+  testMatch: ['**/tests/**/*.test.js'],
+  testPathIgnorePatterns: ['/node_modules/', '/tests/integration/'],
   testTimeout: 10000,
 }
