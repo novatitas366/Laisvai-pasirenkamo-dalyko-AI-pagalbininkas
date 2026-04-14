@@ -7,10 +7,11 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
-    "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --coverage",
-    "setup-db": "node src/scripts/setupDatabase.js",
-    "test:chat-integration": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --testPathPatterns=integration/chat --runInBand --forceExit --no-coverage"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --runInBand --forceExit",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --runInBand --forceExit --coverage",
+    "test:auth-integration": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns auth.integration",
+    "test:chat-integration": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --testPathPatterns=integration/chat --runInBand --forceExit --no-coverage",
+    "setup-db": "node src/scripts/setupDatabase.js"
   },
   "dependencies": {
     "argon2": "^0.41.1",
@@ -30,6 +31,7 @@
     "babel-jest": "^30.3.0",
     "babel-plugin-transform-import-meta": "^2.3.3",
     "jest": "^30.3.0",
+    "ms": "^2.1.3",
     "supertest": "^7.2.2"
   }
 }
