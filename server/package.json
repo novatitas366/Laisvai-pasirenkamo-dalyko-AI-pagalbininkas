@@ -7,10 +7,13 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --runInBand --forceExit",
-    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --runInBand --forceExit --coverage",
-    "test:auth-integration": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns auth.integration",
-    "test:chat-integration": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --testPathPatterns=chat.integration --runInBand --forceExit --no-coverage",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
+    "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --coverage",
+    "test:auth-integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns auth.integration",
+    "test:chat-integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns=chat.integration",
+    "test:integration:hobbies": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns='integration/hobbies'",
+    "test:integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns='integration'",
+    "test:all": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
     "setup-db": "node src/scripts/setupDatabase.js"
   },
   "dependencies": {
