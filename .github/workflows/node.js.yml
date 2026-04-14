@@ -105,3 +105,9 @@ jobs:
 
       - name: Run server integration tests (document-extract)
         run: cd server && npm run test:integration:document-extract
+
+      - name: Run server integration tests (auth)
+        run: cd server && npm run test:auth-integration
+
+      - name: Run server integration tests (hobbies)
+        run: cd server && npm run test:integration:hobbies
