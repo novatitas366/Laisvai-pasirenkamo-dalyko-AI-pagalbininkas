@@ -18,7 +18,7 @@ import { jest, describe, it, expect, beforeEach, afterAll } from '@jest/globals'
 const mockPoolQuery   = jest.fn()
 const mockPoolExecute = jest.fn()
 
-await jest.unstable_mockModule('../../src/config/database.js', () => ({
+await jest.unstable_mockModule('../src/config/database.js', () => ({
   default: {
     query:   mockPoolQuery,
     execute: mockPoolExecute,
@@ -29,7 +29,7 @@ await jest.unstable_mockModule('../../src/config/database.js', () => ({
 process.env.JWT_SECRET = process.env.JWT_SECRET || 'integration-test-jwt-secret'
 
 // ── Importuojame app ir supertest po mock'ų ───────────────────────────────────
-const { default: app }        = await import('../../src/app.js')
+const { default: app }        = await import('../src/app.js')
 const { default: supertest }  = await import('supertest')
 const { default: jwt }        = await import('jsonwebtoken')
 
