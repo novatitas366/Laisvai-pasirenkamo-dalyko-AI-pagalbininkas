@@ -51,3 +51,4 @@ server/uploads/tmp/*
 coverage/
 client/coverage/
 server/coverage/
+docs/
