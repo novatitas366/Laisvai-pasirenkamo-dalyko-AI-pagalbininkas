@@ -45,7 +45,7 @@ describe('useSessionTimeout', () => {
 
     expect(localStorage.getItem('user')).toBeNull()
     expect(localStorage.getItem('token')).toBeNull()
-    expect(mockNavigate).toHaveBeenCalledWith('/login')
+    expect(mockNavigate).toHaveBeenCalledWith('/login?sessionExpired=true')
   })
 
   test('įspėjimo metu pelės judesys nepratęsia sesijos — po viso 10 min vis tiek atjungia', () => {
@@ -61,7 +61,7 @@ describe('useSessionTimeout', () => {
     })
 
     expect(localStorage.getItem('user')).toBeNull()
-    expect(mockNavigate).toHaveBeenCalledWith('/login')
+    expect(mockNavigate).toHaveBeenCalledWith('/login?sessionExpired=true')
   })
 
   test('resetTimer atšaukia įspėjimą ir iš naujo paleidžia laikmatį', () => {
@@ -174,7 +174,7 @@ describe('useSessionTimeout', () => {
       result.current.logout()
     })
 
-    expect(mockNavigate).toHaveBeenCalledWith('/login')
+    expect(mockNavigate).toHaveBeenCalledWith('/login?sessionExpired=true')
   })
 
   test('komponentui išmontuojant pašalinami event listeners ir laikmatiai', () => {
