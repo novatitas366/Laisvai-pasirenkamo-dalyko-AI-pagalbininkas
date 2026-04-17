@@ -53,9 +53,7 @@ export default function ProfilePage() {
 
   const handleUniversityChange = (uni) => {
     setUniversity(uni)
-    if (uni !== university) {
-      setStudyProgram('')
-    }
+    setStudyProgram('')
   }
 
   const handleSave = async () => {

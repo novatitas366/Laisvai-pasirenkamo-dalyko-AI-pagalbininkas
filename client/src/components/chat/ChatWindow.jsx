@@ -5,15 +5,36 @@ import ChatInput from './ChatInput'
 import useProfile from '../../hooks/useProfile'
 import api from '../../services/api'
 
+const SESSION_KEY = 'chat_new_messages'
+
 export default function ChatWindow() {
   const { id } = useParams()
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState(() => {
+    if (!id) {
+      try {
+        const saved = sessionStorage.getItem(SESSION_KEY)
+        return saved ? JSON.parse(saved) : []
+      } catch { return [] }
+    }
+    return []
+  })
   const [loading, setLoading] = useState(false)
   const [profileOpen, setProfileOpen] = useState(false)
   const [title, setTitle] = useState('')
   const [isEditingTitle, setIsEditingTitle] = useState(false)
   const bottomRef = useRef(null)
   const { profile, isEmpty, buildSystemPrompt } = useProfile()
+
+  // Persist new-conversation messages to sessionStorage
+  useEffect(() => {
+    if (!id) {
+      if (messages.length > 0) {
+        sessionStorage.setItem(SESSION_KEY, JSON.stringify(messages))
+      } else {
+        sessionStorage.removeItem(SESSION_KEY)
+      }
+    }
+  }, [messages, id])
 
   // Load chat history from API
   useEffect(() => {
@@ -32,7 +53,6 @@ export default function ChatWindow() {
           if (conv) setTitle(conv.title)
         })
     } else {
-      setMessages([])
       setTitle('')
     }
   }, [id])
@@ -57,29 +77,32 @@ export default function ChatWindow() {
     }
   }
 
-  const handleSend = (msg) => {
+  const handleSend = async (msg) => {
     const userMessage = { id: Date.now(), role: 'user', ...msg }
     setMessages((prev) => [...prev, userMessage])
-
-    // Sistemos promptas su vartotojo profiliu (bus naudojamas kai API bus prijungtas)
-    const systemPrompt = buildSystemPrompt()
-    console.log('System prompt:', systemPrompt)
-
-    // TODO: siųsti į API su systemPrompt ir messages
     setLoading(true)
-    setTimeout(() => {
+
+    try {
+      const systemPrompt = buildSystemPrompt()
+      const allMessages = [...messages, userMessage].map(m => ({
+        role: m.role,
+        content: m.text || m.content || '',
+      })).filter(m => m.content)
+
+      const res = await api.post('/chat', { systemPrompt, messages: allMessages })
+
       setMessages((prev) => [
         ...prev,
-        {
-          id: Date.now() + 1,
-          role: 'assistant',
-          text: isEmpty
-            ? 'Užpildykite profilį skiltyje „Mano profilis", kad galėčiau pateikti personalizuotas rekomendacijas.'
-            : 'DI atsakymas bus rodomas čia su rekomendacijomis ir argumentais kai API bus prijungtas.',
-        },
+        { id: Date.now() + 1, role: 'assistant', text: res.data.text },
       ])
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        { id: Date.now() + 1, role: 'assistant', text: 'Atsiprašome, įvyko klaida. Bandykite dar kartą.' },
+      ])
+    } finally {
       setLoading(false)
-    }, 1200)
+    }
   }
 
   return (

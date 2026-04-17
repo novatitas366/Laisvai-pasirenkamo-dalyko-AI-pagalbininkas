@@ -7,6 +7,7 @@ import recommendationsRoutes from '../modules/recommendations/recommendations.ro
 import usersRouter from '../modules/users/users.routes.js'
 import hobbiesRoutes from '../modules/hobbies/hobbies.routes.js'
 import profileRoutes from '../modules/profile/profile.routes.js'
+import chatRoutes from '../modules/ai/chat.routes.js'
 
 const router = Router()
 
@@ -18,5 +19,6 @@ router.use('/recommendations', recommendationsRoutes)
 router.use('/user', usersRouter)
 router.use('/hobbies', hobbiesRoutes)
 router.use('/profile', profileRoutes)
+router.use('/chat', chatRoutes)
 
 export default router
