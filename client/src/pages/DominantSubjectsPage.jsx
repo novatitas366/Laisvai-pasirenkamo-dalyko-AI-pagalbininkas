@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import dominantSubjects from '../data/dominantSubjects'
 import api from '../services/api'
 
@@ -9,6 +9,12 @@ export default function DominantSubjectsPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState(null)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+
+  useEffect(() => {
+    api.get('/user/dominant-subjects')
+      .then(({ data }) => setSelectedIds(data.subjects ?? []))
+      .catch(() => {})
+  }, [])
 
   const handleToggle = (id) => {
     setSelectedIds(prev =>
@@ -62,7 +68,8 @@ export default function DominantSubjectsPage() {
                       onChange={() => handleToggle(subject.id)}
                       className="w-4 h-4 accent-brand-600"
                     />
-                    <span className="text-sm text-slate-700">{subject.name}</span>
+                    <span className="text-sm text-slate-700 flex-1">{subject.name}</span>
+                    <span className="text-xs text-slate-400 font-mono">{subject.credits} kr.</span>
                   </label>
                 ))}
               </div>

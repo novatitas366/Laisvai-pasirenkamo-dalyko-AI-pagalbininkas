@@ -1,4 +1,13 @@
-import { saveDominantSubjects } from './users.service.js'
+import { getDominantSubjects, saveDominantSubjects } from './users.service.js'
+
+export async function getDominantSubjectsHandler(req, res, next) {
+  try {
+    const subjectIds = await getDominantSubjects(req.user.id)
+    res.status(200).json({ subjects: subjectIds })
+  } catch (err) {
+    next(err)
+  }
+}
 
 export async function saveDominantSubjectsHandler(req, res, next) {
   try {

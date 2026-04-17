@@ -8,6 +8,15 @@ function parseDocumentId(raw) {
   return id
 }
 
+export async function getDocumentTexts(req, res, next) {
+  try {
+    const docs = await documentsService.getDocumentTextsByUser(req.user.id)
+    res.json({ documents: docs })
+  } catch (err) {
+    next(err)
+  }
+}
+
 export async function listDocuments(req, res, next) {
   try {
     const rows = await documentsService.listDocumentsByUser(req.user.id)

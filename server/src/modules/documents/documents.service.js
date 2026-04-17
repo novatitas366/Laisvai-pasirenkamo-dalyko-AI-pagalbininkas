@@ -21,6 +21,17 @@ export async function getDocumentForUser(userId, documentId) {
   return rows[0] ?? null
 }
 
+export async function getDocumentTextsByUser(userId) {
+  const [rows] = await pool.execute(
+    `SELECT original_name, extracted_text
+     FROM documents
+     WHERE user_id = ? AND extracted_text IS NOT NULL AND extracted_text != ''
+     ORDER BY created_at DESC`,
+    [userId]
+  )
+  return rows.map(r => ({ name: r.original_name, text: r.extracted_text }))
+}
+
 export async function deleteDocumentForUser(userId, documentId) {
   const [result] = await pool.execute(
     `DELETE FROM documents WHERE id = ? AND user_id = ?`,

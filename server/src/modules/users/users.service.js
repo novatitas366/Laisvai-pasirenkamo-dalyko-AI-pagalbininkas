@@ -1,5 +1,13 @@
 import pool from '../../config/database.js'
 
+export async function getDominantSubjects(userId) {
+  const [rows] = await pool.execute(
+    'SELECT subject_id FROM user_dominant_subjects WHERE user_id = ?',
+    [userId]
+  )
+  return rows.map(r => r.subject_id)
+}
+
 export async function saveDominantSubjects(userId, subjectIds) {
   const conn = await pool.getConnection()
   try {

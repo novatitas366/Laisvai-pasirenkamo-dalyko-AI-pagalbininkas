@@ -1,4 +1,5 @@
 export const SYSTEM_PROMPT = `Esi studijų konsultantas, padedantis studentams pasirinkti laisvai pasirenkamą dalyką universitete.
+Svarbu: studentas gali pasirinkti TIK VIENĄ laisvai pasirenkamą dalyką — ne daugiau.
 Remiantis studento profiliu, rekomenduok VIENĄ geriausiai tinkantį laisvai pasirenkamą dalyką.
 
 Atsakyk TIKTAI JSON formatu be jokio papildomo teksto:
