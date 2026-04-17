@@ -3,6 +3,27 @@ import { SYSTEM_PROMPT, buildUserMessage } from './prompts.js'
 
 const client = new Anthropic()
 
+const RECOMMENDATION_TOOL = {
+  name: 'save_recommendation',
+  description: 'Iškviesti kai pateiki galutinę rekomendaciją studentui. Naudok tik tada, kai esi pasiruošęs pateikti konkrečius rekomenduojamus dalykus.',
+  input_schema: {
+    type: 'object',
+    properties: {
+      subjects: {
+        type: 'array',
+        items: { type: 'string' },
+        description: 'Rekomenduojamų dalykų pavadinimai',
+      },
+      explanations: {
+        type: 'array',
+        items: { type: 'string' },
+        description: 'Kiekvieno dalyko paaiškinimas kodėl jis tinka šiam studentui',
+      },
+    },
+    required: ['subjects', 'explanations'],
+  },
+}
+
 export async function getChatResponse(systemPrompt, messages) {
   const response = await client.messages.create({
     model: 'claude-haiku-4-5',
@@ -18,9 +39,15 @@ export async function getChatResponse(systemPrompt, messages) {
       role: m.role,
       content: m.text || m.content || '',
     })),
+    tools: [RECOMMENDATION_TOOL],
+    tool_choice: { type: 'auto' },
   })
 
-  return response.content.find(b => b.type === 'text')?.text ?? ''
+  const text = response.content.find(b => b.type === 'text')?.text ?? ''
+  const toolUse = response.content.find(b => b.type === 'tool_use' && b.name === 'save_recommendation')
+  const recommendation = toolUse?.input ?? null
+
+  return { text, recommendation }
 }
 
 export async function getRecommendation(context) {
