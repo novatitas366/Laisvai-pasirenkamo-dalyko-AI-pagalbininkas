@@ -128,8 +128,12 @@ export default function HobbiesForm() {
           name: h.name,
           description: h.description || '',
         }))
-        setHobbies(apiHobbies)
-        saveToStorage(apiHobbies)
+        if (apiHobbies.length > 0) {
+          setHobbies(apiHobbies)
+          saveToStorage(apiHobbies)
+        } else {
+          setHobbies(loadHobbies())
+        }
       })
       .catch(() => {
         setHobbies(loadHobbies())
@@ -138,6 +142,19 @@ export default function HobbiesForm() {
         saveRef.current = true
       })
   }, [])
+
+  useEffect(() => {
+    const autoSave = async () => {
+      if (hobbies.length === 0) return
+      const payload = hobbies.map(({ name, description }) => ({ name, description }))
+      try {
+        await api.put('/hobbies', { hobbies: payload })
+        saveToStorage(hobbies)
+      } catch {}
+    }
+    window.addEventListener('beforeSessionTimeout', autoSave)
+    return () => window.removeEventListener('beforeSessionTimeout', autoSave)
+  }, [hobbies])
 
   const handleSave = async () => {
     if (!canSave || saveStatus === 'saving') return
