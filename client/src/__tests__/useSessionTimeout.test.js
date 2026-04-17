@@ -42,6 +42,9 @@ describe('useSessionTimeout', () => {
     act(() => {
       jest.advanceTimersByTime(10 * 60 * 1000)
     })
+    act(() => {
+      jest.advanceTimersByTime(500)
+    })
 
     expect(localStorage.getItem('user')).toBeNull()
     expect(localStorage.getItem('token')).toBeNull()
@@ -58,6 +61,9 @@ describe('useSessionTimeout', () => {
     act(() => {
       window.dispatchEvent(new Event('mousemove'))
       jest.advanceTimersByTime(1 * 60 * 1000)
+    })
+    act(() => {
+      jest.advanceTimersByTime(500)
     })
 
     expect(localStorage.getItem('user')).toBeNull()
@@ -162,6 +168,9 @@ describe('useSessionTimeout', () => {
     act(() => {
       result.current.logout()
     })
+    act(() => {
+      jest.advanceTimersByTime(500)
+    })
 
     expect(localStorage.getItem('user')).toBeNull()
     expect(localStorage.getItem('token')).toBeNull()
@@ -172,6 +181,9 @@ describe('useSessionTimeout', () => {
 
     act(() => {
       result.current.logout()
+    })
+    act(() => {
+      jest.advanceTimersByTime(500)
     })
 
     expect(mockNavigate).toHaveBeenCalledWith('/login?sessionExpired=true')

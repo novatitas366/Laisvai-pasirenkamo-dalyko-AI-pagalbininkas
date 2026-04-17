@@ -21,14 +21,10 @@ export default function ProfilePage() {
   useEffect(() => {
     api.get('/profile')
       .then(({ data }) => {
-        if (data?.university_name) {
-          setUniversity(data.university_name)
-          localStorage.setItem(UNI_STORAGE_KEY, data.university_name)
-        }
-        if (data?.study_program_name) {
-          setStudyProgram(data.study_program_name)
-          localStorage.setItem(STORAGE_KEY, data.study_program_name)
-        }
+        const uni = data?.university_name || localStorage.getItem(UNI_STORAGE_KEY) || ''
+        const prog = data?.study_program_name || localStorage.getItem(STORAGE_KEY) || ''
+        if (uni) { setUniversity(uni); localStorage.setItem(UNI_STORAGE_KEY, uni) }
+        if (prog) { setStudyProgram(prog); localStorage.setItem(STORAGE_KEY, prog) }
       })
       .catch(() => {
         const storedUni = localStorage.getItem(UNI_STORAGE_KEY)
@@ -39,15 +35,23 @@ export default function ProfilePage() {
   }, [])
 
   useEffect(() => {
-    const autoSave = () => {
-      if (university.trim() && studyProgram.trim()) {
-        localStorage.setItem(UNI_STORAGE_KEY, university)
-        localStorage.setItem(STORAGE_KEY, studyProgram)
-      }
+    const autoSave = async () => {
+      if (!university.trim() || !studyProgram.trim()) return
+      localStorage.setItem(UNI_STORAGE_KEY, university)
+      localStorage.setItem(STORAGE_KEY, studyProgram)
+      const selectedProgramObj = allPrograms.find(
+        (p) => p.name === studyProgram && p.university_name === university
+      )
+      try {
+        await api.put('/profile', {
+          universityId: selectedProgramObj?.university_id || null,
+          studyProgramId: selectedProgramObj?.id || null,
+        })
+      } catch {}
     }
     window.addEventListener('beforeSessionTimeout', autoSave)
     return () => window.removeEventListener('beforeSessionTimeout', autoSave)
-  }, [university, studyProgram])
+  }, [university, studyProgram, allPrograms])
 
   const programs = allPrograms.filter((p) => p.university_name === university)
 

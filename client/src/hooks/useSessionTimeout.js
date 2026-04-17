@@ -15,11 +15,13 @@ export default function useSessionTimeout() {
     clearTimeout(timeoutRef.current)
     clearTimeout(warningRef.current)
     showWarningRef.current = false
-    window.dispatchEvent(new Event('beforeSessionTimeout'))
-    localStorage.removeItem('token')
-    localStorage.removeItem('user')
     setShowWarning(false)
-    navigate('/login?sessionExpired=true')
+    window.dispatchEvent(new Event('beforeSessionTimeout'))
+    setTimeout(() => {
+      localStorage.removeItem('token')
+      localStorage.removeItem('user')
+      navigate('/login?sessionExpired=true')
+    }, 500)
   }, [navigate])
 
   /** Kol rodomas įspėjimas, neaktyvumo įvykiai nepratęsia sesijos — kitaip pelės judesys iškart atšauktų automatinį atsijungimą. Tęsti tik su force (mygtukas „Tęsti"). */
