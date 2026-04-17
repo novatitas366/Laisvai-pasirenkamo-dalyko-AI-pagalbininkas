@@ -7,6 +7,7 @@ import ProfilePage from './pages/ProfilePage'
 import DocumentUploadPage from './pages/DocumentUploadPage'
 import HistoryPage from './pages/HistoryPage'
 import HobbiesPage from './pages/HobbiesPage'
+import DominantSubjectsPage from './pages/DominantSubjectsPage'
 import ElectiveEntryPage from './pages/ElectiveEntryPage'
 import RegisterPage from './pages/RegisterPage'
 
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="pasirenkami-dalykai" element={<ElectiveEntryPage />} />
         <Route path="profilis" element={<ProfilePage />} />
         <Route path="hobiai" element={<HobbiesPage />} />
+        <Route path="dominantus-dalykai" element={<DominantSubjectsPage />} />
         <Route path="dokumentai" element={<DocumentUploadPage />} />
         <Route path="istorija" element={<HistoryPage />} />
       </Route>
