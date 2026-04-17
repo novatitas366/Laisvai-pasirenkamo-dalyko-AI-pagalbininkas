@@ -6,6 +6,8 @@ module.exports = {
   collectCoverageFrom: [
     'src/modules/upload/upload.service.js',
     'src/modules/upload/upload.controller.js',
+    'src/modules/recommendations/recommendations.service.js',
+    'src/modules/recommendations/recommendations.controller.js',
   ],
   coverageThreshold: {
     global: {
