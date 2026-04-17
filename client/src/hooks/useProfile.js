@@ -76,8 +76,9 @@ export default function useProfile() {
     }
 
     parts.push(
-      'Svarbu: studentas gali pasirinkti TIK VIENĄ laisvai pasirenkamą dalyką — ne daugiau.',
-      'Remdamasis šia informacija, rekomenduok vieną tinkamiausią pasirenkamą dalyką.',
+      'Remdamasis šia informacija, rekomenduok 2–3 tinkamiausius pasirenkamus dalykus.',
+      'Kiekvieną rekomendaciją pateik aiškiai ir struktūrizuotai tokiu formatu:',
+      '**[Dalyko pavadinimas]** — [trumpas paaiškinimas, kodėl šis dalykas tinka šiam studentui]',
       'Atsižvelk į vartotojo studijų programą, pomėgius, dominančius dalykus ir pateiktus dokumentus.',
     )
 
