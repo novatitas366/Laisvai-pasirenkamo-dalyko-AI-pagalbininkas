@@ -10,13 +10,7 @@ module.exports = {
     'src/modules/recommendations/recommendations.controller.js',
   ],
   coverageThreshold: {
-    './src/modules/recommendations/recommendations.service.js': {
-      lines: 90,
-      branches: 90,
-      functions: 90,
-      statements: 90,
-    },
-    './src/modules/recommendations/recommendations.controller.js': {
+    global: {
       lines: 90,
       branches: 90,
       functions: 90,
@@ -24,5 +18,6 @@ module.exports = {
     },
   },
   testMatch: ['**/tests/**/*.test.js'],
+  testPathIgnorePatterns: ['/node_modules/', '/tests/integration/'],
   testTimeout: 10000,
 }

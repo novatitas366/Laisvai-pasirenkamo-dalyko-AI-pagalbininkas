@@ -2,9 +2,10 @@ export default function ChatMessage({ message }) {
   const isUser = message.role === 'user'
 
   if (isUser) {
+    const textContent = message.text || message.content
     return (
       <div className="flex justify-end">
-        <div className="max-w-[75%] px-4 py-3 rounded-2xl rounded-br-md text-sm bg-brand-600 text-white">
+        <div className="max-w-[75%] px-4 py-3 rounded-2xl rounded-br-md text-sm bg-brand-600 text-white shadow-sm">
           {message.image && (
             <img
               src={message.image}
@@ -12,23 +13,24 @@ export default function ChatMessage({ message }) {
               className="max-w-full max-h-48 rounded-lg mb-2"
             />
           )}
-          {message.text && <p className="whitespace-pre-wrap">{message.text}</p>}
+          {textContent && <p className="whitespace-pre-wrap">{textContent}</p>}
         </div>
       </div>
     )
   }
 
   // DI atsakymas — struktūrizuotas arba paprastas
-  const { text, recommendations, arguments: args, disclaimer } = message
+  const { text, content, recommendations, arguments: args, disclaimer } = message
+  const assistantText = text || content
 
   return (
     <div className="flex justify-start">
-      <div className="max-w-[80%] rounded-2xl rounded-bl-md text-sm bg-white border border-slate-200 text-slate-700 overflow-hidden">
+      <div className="max-w-[80%] rounded-2xl rounded-bl-md text-sm bg-white border border-slate-200 text-slate-700 overflow-hidden shadow-sm">
 
         {/* Paprastas tekstas arba įžanga */}
-        {text && (
+        {assistantText && (
           <div className="px-4 py-3">
-            <p className="whitespace-pre-wrap">{text}</p>
+            <p className="whitespace-pre-wrap">{assistantText}</p>
           </div>
         )}
 

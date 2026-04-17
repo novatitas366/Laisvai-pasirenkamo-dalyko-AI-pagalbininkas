@@ -1,10 +1,6 @@
 import fs from 'fs/promises'
-import path from 'path'
-import { createRequire } from 'module'
 import mammoth from 'mammoth'
-
-const require = createRequire(import.meta.url)
-const pdfParse = require('pdf-parse')
+import { PDFParse } from 'pdf-parse'
 
 const PROCESSING_TIMEOUT_MS = 15_000
 const TEXT_LIMIT = 100_000
@@ -22,8 +18,13 @@ function withTimeout(promise, ms) {
 async function doExtract(filePath, mimeType) {
   if (mimeType === 'application/pdf') {
     const buffer = await fs.readFile(filePath)
-    const data = await pdfParse(buffer)
-    return data.text
+    const parser = new PDFParse({ data: buffer })
+    try {
+      const textResult = await parser.getText()
+      return textResult.text ?? ''
+    } finally {
+      await parser.destroy()
+    }
   }
 
   if (

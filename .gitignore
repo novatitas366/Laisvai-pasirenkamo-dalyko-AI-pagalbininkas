@@ -7,12 +7,14 @@ server/node_modules/
 .env
 server/.env
 .env.local
+.env.*.local
 .env.development.local
 .env.test.local
 .env.production.local
 
 # Build outputs
 dist/
+dist-ssr/
 client/dist/
 build/
 .vite/
@@ -23,6 +25,8 @@ Thumbs.db
 desktop.ini
 
 # Logs
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -34,15 +38,17 @@ server/uploads/*
 server/uploads/tmp/*
 !server/uploads/tmp/.gitkeep
 
-# IDE specific files
+# IDE / AI editor
 .vscode/
 .idea/
+.cursor/
+.claude/
 *.swp
 *.swo
+*~
 
 # Project specific
-# We generally keep package-lock.json unless the project explicitly wants to ignore it. 
-# In this case, since it was in the ignore list of the incoming branch, I'll keep it as requested by that branch's logic.
-package-lock.json
-client/package-lock.json
-server/package-lock.json
+coverage/
+client/coverage/
+server/coverage/
+docs/

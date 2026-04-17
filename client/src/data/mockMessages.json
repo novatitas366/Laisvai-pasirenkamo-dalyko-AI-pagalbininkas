@@ -1,0 +1,14 @@
+{
+  "1": [
+    { "id": 101, "role": "user", "text": "Kokie yra geriausi programavimo dalykai 3 semestre?" },
+    { "id": 102, "role": "assistant", "text": "Informatikos programoje 3 semestre rekomenduoju rinktis „Objektinį programavimą“ (6 kr.) arba „Duomenų struktūras“ (5 kr.)." }
+  ],
+  "2": [
+    { "id": 201, "role": "user", "text": "Ar verta rinktis diskrečiąją matematiką?" },
+    { "id": 202, "role": "assistant", "text": "Taip, tai suteikia tvirtus pagrindus algoritmams ir duomenų struktūroms." }
+  ],
+  "3": [
+    { "id": 301, "role": "user", "text": "Kokie yra lengviausi laisvai pasirenkami dalykai?" },
+    { "id": 302, "role": "assistant", "text": "Dažnai studentai rekomenduoja „Šiuolaikinę psichologiją“ arba „Verslo vadybą“." }
+  ]
+}

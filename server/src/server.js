@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import app from './app.js'
 import pool from './config/database.js'
+import { runMigrations } from './config/migrate.js'
 
 const PORT = process.env.PORT || 3000
 
@@ -8,6 +9,7 @@ async function start() {
   try {
     await pool.query('SELECT 1')
     console.log('DB prisijungta')
+    await runMigrations()
   } catch (err) {
     console.warn('DB nepasiekiama:', err.message)
   }

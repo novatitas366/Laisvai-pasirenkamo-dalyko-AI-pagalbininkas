@@ -1,9 +1,14 @@
 import { jest, describe, it, expect, beforeEach } from '@jest/globals'
 
 const mockExecute = jest.fn()
+const mockGetRecommendation = jest.fn()
 
 await jest.unstable_mockModule('../src/config/database.js', () => ({
   default: { execute: mockExecute },
+}))
+
+await jest.unstable_mockModule('../src/modules/ai/ai.service.js', () => ({
+  getRecommendation: mockGetRecommendation,
 }))
 
 const { generateRecommendation, saveRecommendation } =
@@ -11,6 +16,10 @@ const { generateRecommendation, saveRecommendation } =
 
 beforeEach(() => {
   jest.clearAllMocks()
+  mockGetRecommendation.mockResolvedValue({
+    recommendedSubject: 'Dirbtinis intelektas',
+    explanation: 'Šis dalykas atitinka jūsų profilį.',
+  })
 })
 
 describe('generateRecommendation', () => {

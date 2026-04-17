@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import api from '../services/api'
 
 export default function LoginPage() {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const sessionExpired = searchParams.get('sessionExpired') === 'true'
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -29,10 +31,10 @@ export default function LoginPage() {
     try {
       const response = await api.post('/auth/login', formData)
       setSuccess(true)
-      
-      // Store user info (simplified for now)
+
+      localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', JSON.stringify(response.data.user))
-      
+
       // Short delay before redirect to show success message
       setTimeout(() => {
         navigate('/')
@@ -63,6 +65,15 @@ export default function LoginPage() {
       <div className="w-full max-w-md bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 p-8 md:p-10">
         <h2 className="text-2xl font-bold text-slate-900 mb-2">Sveiki sugrįžę!</h2>
         <p className="text-sm text-slate-400 mb-8">Prisijunkite prie savo paskyros</p>
+
+        {sessionExpired && (
+          <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl text-xs text-emerald-700 flex items-center gap-2">
+            <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+            Jūsų sesija baigėsi dėl neaktyvumo. Prisijunkite iš naujo, kad galėtumėte tęsti.
+          </div>
+        )}
 
         {error && (
           <div className="mb-6 p-4 bg-red-50 border border-red-100 rounded-2xl text-xs text-red-600 flex items-center gap-2">
