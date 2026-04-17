@@ -4,7 +4,8 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-    '^../../services/api$': '<rootDir>/src/__mocks__/api.cjs',
+    'services/api$': '<rootDir>/src/__mocks__/api.cjs',
+    'data/dominantSubjects$': '<rootDir>/src/__mocks__/dominantSubjects.cjs',
   },
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
