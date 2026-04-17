@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const TIMEOUT_MS = 30 * 1000   // 10 minučių
-const WARNING_MS = 15 * 1000         // įspėjimas likus 1 minutei
+const TIMEOUT_MS = 10 * 60 * 1000   // 10 minučių
+const WARNING_MS = 60 * 1000         // įspėjimas likus 1 minutei
 
 export default function useSessionTimeout() {
   const navigate = useNavigate()
@@ -11,16 +11,17 @@ export default function useSessionTimeout() {
   const showWarningRef = useRef(false)
   const [showWarning, setShowWarning] = useState(false)
 
-  const logout = useCallback(async () => {
+  const logout = useCallback(() => {
     clearTimeout(timeoutRef.current)
     clearTimeout(warningRef.current)
     showWarningRef.current = false
-    window.dispatchEvent(new Event('beforeSessionTimeout'))
-    await new Promise(resolve => setTimeout(resolve, 500))
-    localStorage.removeItem('token')
-    localStorage.removeItem('user')
     setShowWarning(false)
-    navigate('/login?sessionExpired=true')
+    window.dispatchEvent(new Event('beforeSessionTimeout'))
+    setTimeout(() => {
+      localStorage.removeItem('token')
+      localStorage.removeItem('user')
+      navigate('/login?sessionExpired=true')
+    }, 500)
   }, [navigate])
 
   /** Kol rodomas įspėjimas, neaktyvumo įvykiai nepratęsia sesijos — kitaip pelės judesys iškart atšauktų automatinį atsijungimą. Tęsti tik su force (mygtukas „Tęsti"). */
