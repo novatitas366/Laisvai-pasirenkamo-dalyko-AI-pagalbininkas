@@ -19,7 +19,7 @@ export default function useSessionTimeout() {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     setShowWarning(false)
-    navigate('/login')
+    navigate('/login?sessionExpired=true')
   }, [navigate])
 
   /** Kol rodomas įspėjimas, neaktyvumo įvykiai nepratęsia sesijos — kitaip pelės judesys iškart atšauktų automatinį atsijungimą. Tęsti tik su force (mygtukas „Tęsti"). */

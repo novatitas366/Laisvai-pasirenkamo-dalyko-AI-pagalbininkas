@@ -16,5 +16,6 @@ module.exports = {
     },
   },
   testMatch: ['**/tests/**/*.test.js'],
+  testPathIgnorePatterns: ['/node_modules/', '/tests/integration/'],
   testTimeout: 10000,
 }
