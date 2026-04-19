@@ -2,7 +2,7 @@ import * as conversationsService from './conversations.service.js'
 
 export async function list(req, res, next) {
   try {
-    const conversations = await conversationsService.getConversations()
+    const conversations = await conversationsService.getConversations(req.user.id)
     res.json(conversations)
   } catch (error) {
     next(error)
