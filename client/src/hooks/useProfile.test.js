@@ -3,6 +3,33 @@ import { renderHook, waitFor } from '@testing-library/react'
 import useProfile from './useProfile'
 import api from '../services/api'
 
+describe('SCRUM-41: useProfile – hasValidHobbies', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+    localStorage.clear()
+    api.get.mockResolvedValue({ data: { subjects: [], documents: [] } })
+  })
+
+  test('hasValidHobbies yra false kai hobių nėra', async () => {
+    const { result } = renderHook(() => useProfile())
+    await waitFor(() => expect(result.current.profile).toBeDefined())
+    expect(result.current.hasValidHobbies).toBe(false)
+  })
+
+  test('hasValidHobbies yra false kai hobių pavadinimas per trumpas (< 4 simboliai)', async () => {
+    localStorage.setItem('hobbies', JSON.stringify([{ name: 'ab' }]))
+    const { result } = renderHook(() => useProfile())
+    await waitFor(() => expect(result.current.profile).toBeDefined())
+    expect(result.current.hasValidHobbies).toBe(false)
+  })
+
+  test('hasValidHobbies yra true kai yra bent 1 validus hobis', async () => {
+    localStorage.setItem('hobbies', JSON.stringify([{ name: 'kinas' }]))
+    const { result } = renderHook(() => useProfile())
+    await waitFor(() => expect(result.current.hasValidHobbies).toBe(true))
+  })
+})
+
 describe('SCRUM-53, AC#2: useProfile – buildSystemPrompt', () => {
   beforeEach(() => {
     jest.clearAllMocks()
