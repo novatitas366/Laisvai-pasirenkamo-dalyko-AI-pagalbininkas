@@ -1,10 +1,9 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import api from '../services/api'
 
-const ALLOWED_EXTENSIONS = ['.pdf', '.doc', '.docx', '.txt']
+const ALLOWED_EXTENSIONS = ['.pdf', '.docx', '.txt']
 const ALLOWED_MIMES = [
   'application/pdf',
-  'application/msword',
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
   'text/plain',
 ]
@@ -162,10 +161,10 @@ export default function DocumentUploadPage() {
 
   function validateFile(f) {
     if (!ALLOWED_MIMES.includes(f.type)) {
-      return 'Netinkamas failo tipas. Leidžiami: PDF, DOCX, DOC, TXT'
+      return 'Netinkamas failo tipas. Leidžiami: PDF, DOCX, TXT'
     }
-    if (f.size > 10 * 1024 * 1024) {
-      return 'Failas per didelis. Maksimalus dydis: 10 MB'
+    if (f.size > 100 * 1024 * 1024) {
+      return 'Failas per didelis. Maksimalus dydis: 100 MB'
     }
     return null
   }
@@ -281,7 +280,7 @@ export default function DocumentUploadPage() {
             </svg>
             <div className="text-center">
               <p className="text-sm font-medium text-slate-700">Vilkite failą čia arba <span className="text-brand-600">pasirinkite</span></p>
-              <p className="text-xs text-slate-400 mt-1">PDF, DOCX, DOC, TXT · maks. 10 MB</p>
+              <p className="text-xs text-slate-400 mt-1">PDF, DOCX, TXT · maks. 100 MB</p>
             </div>
           </div>
 

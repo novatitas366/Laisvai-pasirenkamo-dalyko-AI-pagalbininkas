@@ -16,6 +16,8 @@
     "test:integration:document-extract": "node --experimental-vm-modules node_modules/.bin/jest --config jest.integration.config.cjs --runInBand --forceExit integration/document-extract",
     "test:integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns='integration'",
     "test:all": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
+    "test:document-extract": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns=document-extract",
+    "test:study-programs": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns=studyPrograms",
     "setup-db": "node src/scripts/setupDatabase.js"
   },
   "dependencies": {
