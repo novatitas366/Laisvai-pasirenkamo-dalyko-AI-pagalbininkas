@@ -3,7 +3,10 @@ import pool from '../config/database.js'
 export async function getAll(req, res, next) {
   try {
     const [rows] = await pool.query(
-      'SELECT id, name, code FROM study_programs ORDER BY name'
+      `SELECT sp.id, sp.name, sp.code, sp.university_id, u.name AS university_name
+       FROM study_programs sp
+       JOIN universities u ON u.id = sp.university_id
+       ORDER BY u.name, sp.name`
     )
     res.json(rows)
   } catch (err) {

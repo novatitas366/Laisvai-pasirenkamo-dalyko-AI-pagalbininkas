@@ -1,0 +1,113 @@
+name: Develop Branch CI
+
+on:
+  push:
+    branches:
+      - "Develop"
+  pull_request:
+    branches:
+      - "Develop"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: "npm"
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install client dependencies
+        run: cd client && npm ci
+
+      - name: Install server dependencies
+        run: cd server && npm ci
+
+      - name: Build client
+        run: cd client && npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: client-build-develop
+          path: client/dist
+          retention-days: 7
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    needs: build
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: testpass
+          MYSQL_DATABASE: elective_assistant_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    env:
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: testpass
+      DB_NAME: elective_assistant_test
+      JWT_SECRET: ci-test-secret
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: "npm"
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install client dependencies
+        run: cd client && npm ci
+
+      - name: Install server dependencies
+        run: cd server && npm ci
+
+      - name: Run client tests
+        run: cd client && npm test -- --ci
+
+      - name: Run server tests
+        run: cd server && npm test
+
+      - name: Run database migrations
+        run: cd server && npm run setup-db
+
+      - name: Run server integration tests (chat)
+        run: cd server && npm run test:chat-integration
+
+      - name: Run server integration tests (profile)
+        run: cd server && npm run test:integration:profile
+
+      - name: Run server integration tests (document-extract)
+        run: cd server && npm run test:integration:document-extract
+
+      - name: Run server integration tests (auth)
+        run: cd server && npm run test:auth-integration
+
+      - name: Run server integration tests (hobbies)
+        run: cd server && npm run test:integration:hobbies

@@ -1,1 +1,24 @@
-// Routes index - mount auth, users, documents, recommendations
+import { Router } from 'express'
+import authRoutes from '../modules/auth/auth.routes.js'
+import studyProgramsRoutes from './studyPrograms.routes.js'
+import electiveCoursesRoutes from './electiveCourses.routes.js'
+import conversationsRoutes from '../modules/conversations/conversations.routes.js'
+import recommendationsRoutes from '../modules/recommendations/recommendations.routes.js'
+import usersRouter from '../modules/users/users.routes.js'
+import hobbiesRoutes from '../modules/hobbies/hobbies.routes.js'
+import profileRoutes from '../modules/profile/profile.routes.js'
+import chatRoutes from '../modules/ai/chat.routes.js'
+
+const router = Router()
+
+router.use('/auth', authRoutes)
+router.use('/study-programs', studyProgramsRoutes)
+router.use('/elective-courses', electiveCoursesRoutes)
+router.use('/conversations', conversationsRoutes)
+router.use('/recommendations', recommendationsRoutes)
+router.use('/user', usersRouter)
+router.use('/hobbies', hobbiesRoutes)
+router.use('/profile', profileRoutes)
+router.use('/chat', chatRoutes)
+
+export default router
