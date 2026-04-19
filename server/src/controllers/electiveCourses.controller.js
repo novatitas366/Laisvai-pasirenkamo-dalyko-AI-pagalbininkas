@@ -15,13 +15,26 @@ export async function createElectives(req, res, next) {
       return res.status(400).json({ error: 'Nėra galiojančių duomenų išsaugojimui' })
     }
 
+    // Validate credits are non-negative
+    for (const e of validEntries) {
+      if (e.credits !== '' && e.credits != null) {
+        const credits = parseInt(e.credits, 10)
+        if (isNaN(credits) || credits <= 0) {
+          return res.status(400).json({ error: `Kreditai turi būti teigiamas skaičius: "${e.name}"` })
+        }
+      }
+    }
+
     // Prepare for bulk insert: [[user_id, name, credits, description], [...]]
-    const values = validEntries.map(e => [
-      req.user.id,
-      e.name.trim(),
-      parseInt(e.credits, 10) || null,
-      e.description?.trim() || null
-    ])
+    const values = validEntries.map(e => {
+      const credits = parseInt(e.credits, 10)
+      return [
+        req.user.id,
+        e.name.trim(),
+        !isNaN(credits) && credits > 0 ? credits : null,
+        e.description?.trim() || null
+      ]
+    })
 
     const query = 'INSERT INTO user_elective_courses (user_id, name, credits, description) VALUES ?'
     const [result] = await pool.query(query, [values])
