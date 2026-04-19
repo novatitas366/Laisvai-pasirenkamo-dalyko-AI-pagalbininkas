@@ -27,10 +27,7 @@ async function doExtract(filePath, mimeType) {
     }
   }
 
-  if (
-    mimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ||
-    mimeType === 'application/msword'
-  ) {
+  if (mimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
     const result = await mammoth.extractRawText({ path: filePath })
     return result.value
   }
@@ -39,7 +36,7 @@ async function doExtract(filePath, mimeType) {
     return await fs.readFile(filePath, 'utf-8')
   }
 
-  throw new Error('Netinkamas failo tipas. Leidžiami: PDF, DOCX, DOC, TXT')
+  throw new Error('Netinkamas failo tipas. Leidžiami: PDF, DOCX, TXT')
 }
 
 export async function extractTextFromFile(filePath, mimeType) {

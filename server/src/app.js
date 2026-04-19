@@ -18,7 +18,7 @@ app.use((req, res) => {
 app.use((err, _req, res, _next) => {
   console.error(err)
   if (err.code === 'LIMIT_FILE_SIZE') {
-    return res.status(413).json({ error: `Failas per didelis. Maksimalus dydis: ${process.env.UPLOAD_MAX_SIZE_MB || 10} MB` })
+    return res.status(413).json({ error: `Failas per didelis. Maksimalus dydis: ${process.env.UPLOAD_MAX_SIZE_MB || 100} MB` })
   }
   if (err.message?.includes('Netinkamas failo tipas')) {
     return res.status(415).json({ error: err.message })

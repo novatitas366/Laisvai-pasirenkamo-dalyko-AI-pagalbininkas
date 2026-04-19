@@ -10,11 +10,10 @@ const TMP_DIR = path.resolve(__dirname, '../../../../uploads/tmp')
 const ALLOWED_MIMES = [
   'application/pdf',
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  'application/msword',
   'text/plain',
 ]
 
-const MAX_SIZE_BYTES = (Number(process.env.UPLOAD_MAX_SIZE_MB) || 10) * 1024 * 1024
+const MAX_SIZE_BYTES = (Number(process.env.UPLOAD_MAX_SIZE_MB) || 100) * 1024 * 1024
 
 export const upload = multer({
   dest: TMP_DIR,
@@ -23,7 +22,7 @@ export const upload = multer({
     if (ALLOWED_MIMES.includes(file.mimetype)) {
       cb(null, true)
     } else {
-      cb(new Error('Netinkamas failo tipas. Leidžiami: PDF, DOCX, DOC, TXT'))
+      cb(new Error('Netinkamas failo tipas. Leidžiami: PDF, DOCX, TXT'))
     }
   },
 })
