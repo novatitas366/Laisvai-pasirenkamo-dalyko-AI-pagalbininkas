@@ -81,13 +81,10 @@ describe('extractTextFromFile', () => {
   })
 
   describe('DOC (application/msword)', () => {
-    it('handles application/msword (legacy Word) via mammoth', async () => {
-      mockMammoth.extractRawText.mockResolvedValue({ value: 'doc content' })
-
-      const result = await extractTextFromFile('/tmp/doc.doc', 'application/msword')
-
-      expect(mockMammoth.extractRawText).toHaveBeenCalledWith({ path: '/tmp/doc.doc' })
-      expect(result).toBe('doc content')
+    it('throws error for application/msword (no longer supported)', async () => {
+      await expect(
+        extractTextFromFile('/tmp/doc.doc', 'application/msword')
+      ).rejects.toThrow('Netinkamas failo tipas. Leidžiami: PDF, DOCX, TXT')
     })
   })
 
@@ -108,7 +105,7 @@ describe('extractTextFromFile', () => {
     it('throws an error with the expected Lithuanian message', async () => {
       await expect(
         extractTextFromFile('/tmp/image.png', 'image/png')
-      ).rejects.toThrow('Netinkamas failo tipas. Leidžiami: PDF, DOCX, DOC, TXT')
+      ).rejects.toThrow('Netinkamas failo tipas. Leidžiami: PDF, DOCX, TXT')
     })
   })
 
