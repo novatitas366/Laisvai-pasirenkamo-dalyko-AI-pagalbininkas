@@ -37,6 +37,8 @@ export default function ElectiveEntryPage() {
           updated.error = 'Pavadinimas negali viršyti 50 simbolių'
         } else if (field === 'description' && value.length > 2000) {
           updated.error = 'Aprašymas negali viršyti 2000 simbolių'
+        } else if (field === 'credits' && value !== '' && (isNaN(Number(value)) || Number(value) <= 0)) {
+          updated.error = 'Kreditai turi būti teigiamas skaičius'
         }
         
         return updated
@@ -77,6 +79,18 @@ export default function ElectiveEntryPage() {
 
       if (entry.description.length > 2000) {
         newEntries[i] = { ...entry, error: 'Aprašymas per ilgas (maks. 2000)' }
+        isValid = false
+        continue
+      }
+
+      if (entry.credits === '' || entry.credits == null) {
+        newEntries[i] = { ...entry, error: 'Kreditai privalomi' }
+        isValid = false
+        continue
+      }
+
+      if (isNaN(Number(entry.credits)) || Number(entry.credits) <= 0) {
+        newEntries[i] = { ...entry, error: 'Kreditai turi būti teigiamas skaičius' }
         isValid = false
         continue
       }
