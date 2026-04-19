@@ -83,8 +83,13 @@ export default function ElectiveEntryPage() {
         continue
       }
 
-      // credits must be non-negative if provided
-      if (entry.credits !== '' && (isNaN(Number(entry.credits)) || Number(entry.credits) <= 0)) {
+      if (entry.credits === '' || entry.credits == null) {
+        newEntries[i] = { ...entry, error: 'Kreditai privalomi' }
+        isValid = false
+        continue
+      }
+
+      if (isNaN(Number(entry.credits)) || Number(entry.credits) <= 0) {
         newEntries[i] = { ...entry, error: 'Kreditai turi būti teigiamas skaičius' }
         isValid = false
         continue

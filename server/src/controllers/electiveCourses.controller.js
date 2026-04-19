@@ -15,13 +15,14 @@ export async function createElectives(req, res, next) {
       return res.status(400).json({ error: 'Nėra galiojančių duomenų išsaugojimui' })
     }
 
-    // Validate credits are non-negative
+    // Validate credits are required and positive
     for (const e of validEntries) {
-      if (e.credits !== '' && e.credits != null) {
-        const credits = parseInt(e.credits, 10)
-        if (isNaN(credits) || credits <= 0) {
-          return res.status(400).json({ error: `Kreditai turi būti teigiamas skaičius: "${e.name}"` })
-        }
+      if (e.credits === '' || e.credits == null) {
+        return res.status(400).json({ error: `Kreditai privalomi: "${e.name}"` })
+      }
+      const credits = parseInt(e.credits, 10)
+      if (isNaN(credits) || credits <= 0) {
+        return res.status(400).json({ error: `Kreditai turi būti teigiamas skaičius: "${e.name}"` })
       }
     }
 
