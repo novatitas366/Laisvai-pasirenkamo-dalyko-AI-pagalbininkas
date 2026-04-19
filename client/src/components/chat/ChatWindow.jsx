@@ -23,7 +23,7 @@ export default function ChatWindow() {
   const [title, setTitle] = useState('')
   const [isEditingTitle, setIsEditingTitle] = useState(false)
   const bottomRef = useRef(null)
-  const { profile, isEmpty, buildSystemPrompt } = useProfile()
+  const { profile, isEmpty, hasValidHobbies, buildSystemPrompt } = useProfile()
 
   // Persist new-conversation messages to sessionStorage
   useEffect(() => {
@@ -164,7 +164,12 @@ export default function ChatWindow() {
         <div className="bg-slate-50 border-b border-slate-100 p-4 text-xs text-slate-500 space-y-0.5 animate-in slide-in-from-top-1">
           {profile.university && <p><span className="text-slate-400">Universitetas:</span> {profile.university}</p>}
           {profile.studyProgram && <p><span className="text-slate-400">Studijų programa:</span> {profile.studyProgram}</p>}
-          {profile.hobbies && <p><span className="text-slate-400">Hobiai:</span> {profile.hobbies}</p>}
+          {hasValidHobbies && <p><span className="text-slate-400">Hobiai:</span> {profile.hobbies.map(h => h.name).join(', ')}</p>}
+          {!hasValidHobbies && (
+            <p className="text-amber-500">
+              Hobių informacija nepakankama — pridėkite bent 1 hobį <a href="/profilis" className="underline font-bold">profilyje</a> geresnėms rekomendacijoms.
+            </p>
+          )}
           {isEmpty && (
             <p className="text-amber-500">
               Eikite į <a href="/profilis" className="underline font-bold">Mano profilį</a> ir užpildykite informaciją.
