@@ -26,6 +26,18 @@ export async function createElectives(req, res, next) {
       }
     }
 
+    // Check for duplicates in DB (same name + credits for this user)
+    for (const e of validEntries) {
+      const credits = parseInt(e.credits, 10)
+      const [existing] = await pool.query(
+        'SELECT id FROM user_elective_courses WHERE user_id = ? AND LOWER(name) = LOWER(?) AND credits = ?',
+        [req.user.id, e.name.trim(), credits]
+      )
+      if (existing.length > 0) {
+        return res.status(409).json({ error: `Dalykas "${e.name}" su ${credits} kreditais jau yra išsaugotas` })
+      }
+    }
+
     // Prepare for bulk insert: [[user_id, name, credits, description], [...]]
     const values = validEntries.map(e => {
       const credits = parseInt(e.credits, 10)
