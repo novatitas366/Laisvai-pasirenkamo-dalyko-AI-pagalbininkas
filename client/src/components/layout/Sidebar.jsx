@@ -138,7 +138,7 @@ export default function Sidebar() {
                   }
                 >
                   <p className="truncate max-w-full" title={chat.title}>{chat.title}</p>
-                  <p className="text-[10px] text-slate-400 font-normal">{chat.date}</p>
+                  <p className="text-[10px] text-slate-400 font-normal">{chat.date ? chat.date.slice(0, 16).replace('T', ' ') : ''}</p>
                 </NavLink>
               ))}
             </div>

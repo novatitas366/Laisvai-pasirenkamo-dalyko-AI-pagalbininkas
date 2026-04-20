@@ -1,8 +1,9 @@
 import pool from '../../config/database.js'
 
-export async function getConversations() {
+export async function getConversations(userId) {
   const [rows] = await pool.query(
-    'SELECT id, title, created_at AS date, updated_at FROM conversations ORDER BY updated_at DESC'
+    'SELECT id, title, created_at AS date, updated_at FROM conversations WHERE user_id = ? ORDER BY updated_at DESC',
+    [userId]
   )
   return rows
 }

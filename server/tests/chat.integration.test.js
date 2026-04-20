@@ -78,9 +78,10 @@ describe('TA-01 | GET /api/conversations — sėkmingas gavimas ir rūšiavimas'
       expect(current).toBeGreaterThanOrEqual(next)
     }
 
-    // Patikrinti, kad DB užklausa iškviestas su ORDER BY updated_at DESC
+    // Patikrinti, kad DB užklausa iškviestas su WHERE user_id ir ORDER BY updated_at DESC
     expect(mockPoolQuery).toHaveBeenCalledWith(
-      expect.stringContaining('ORDER BY updated_at DESC')
+      expect.stringContaining('ORDER BY updated_at DESC'),
+      expect.arrayContaining([1])
     )
   })
 
