@@ -15,6 +15,13 @@ export async function createElectives(req, res, next) {
       return res.status(400).json({ error: 'Nėra galiojančių duomenų išsaugojimui' })
     }
 
+    // Validate name length
+    for (const e of validEntries) {
+      if (e.name.trim().length > 50) {
+        return res.status(400).json({ error: `Pavadinimas per ilgas (maks. 50 simbolių): "${e.name.trim().substring(0, 20)}..."` })
+      }
+    }
+
     // Validate credits are required and positive
     for (const e of validEntries) {
       if (e.credits === '' || e.credits == null) {
