@@ -1,0 +1,2173 @@
+[
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 28,
+  "name": "Function 'HobbyEntry'",
+  "cc": 14,
+  "cog": 17
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 50,
+  "cog": 15,
+  "name": "Arrow function",
+  "cc": 11
+ },
+ {
+  "file": "server/src/controllers/electiveCourses.controller.js",
+  "line": 3,
+  "name": "Async function 'createElectives'",
+  "cc": 15,
+  "cog": 14
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 31,
+  "cog": 8,
+  "name": "Arrow function",
+  "cc": 10
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 33,
+  "name": "Async function 'handleSubmit'",
+  "cc": 8,
+  "cog": 8
+ },
+ {
+  "file": "server/src/scripts/setupDatabase.js",
+  "line": 14,
+  "name": "Async function 'setupDatabase'",
+  "cc": 11,
+  "cog": 7
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 10,
+  "name": "Function 'ChatWindow'",
+  "cc": 16,
+  "cog": 6
+ },
+ {
+  "file": "client/src/hooks/useProfile.js",
+  "line": 49,
+  "cog": 6,
+  "name": "Arrow function",
+  "cc": 7
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 170,
+  "cog": 6,
+  "name": "Arrow function",
+  "cc": 10
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 12,
+  "cog": 5,
+  "name": "Arrow function",
+  "cc": 4
+ },
+ {
+  "file": "server/src/config/migrate.js",
+  "line": 9,
+  "name": "Async function 'runMigrations'",
+  "cc": 4,
+  "cog": 5
+ },
+ {
+  "file": "server/src/modules/ai/chat.routes.js",
+  "line": 7,
+  "cog": 5,
+  "name": "Async arrow function",
+  "cc": 8
+ },
+ {
+  "file": "server/src/modules/ai/prompts.js",
+  "line": 10,
+  "name": "Function 'buildUserMessage'",
+  "cc": 8,
+  "cog": 5
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 132,
+  "cog": 4,
+  "name": "Arrow function",
+  "cc": 4
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 29,
+  "cog": 4,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 31,
+  "name": "Function 'mimeLabel'",
+  "cc": 6,
+  "cog": 4
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 21,
+  "name": "Function 'RegisterPage'",
+  "cc": 10,
+  "cog": 4
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 174,
+  "cog": 4,
+  "name": "Arrow function",
+  "cc": 4
+ },
+ {
+  "file": "server/src/controllers/studyPrograms.controller.js",
+  "line": 17,
+  "name": "Async function 'getSubjects'",
+  "cc": 5,
+  "cog": 4
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 130,
+  "name": "Function 'DocumentUploadPage'",
+  "cc": 18,
+  "cog": 3
+ },
+ {
+  "file": "server/src/modules/auth/auth.controller.js",
+  "line": 8,
+  "name": "Async function 'login'",
+  "cc": 9,
+  "cog": 3
+ },
+ {
+  "file": "server/src/modules/conversations/conversations.controller.js",
+  "line": 27,
+  "name": "Async function 'rename'",
+  "cc": 4,
+  "cog": 3
+ },
+ {
+  "file": "server/src/modules/documents/documents.controller.js",
+  "line": 36,
+  "name": "Async function 'getDocument'",
+  "cc": 6,
+  "cog": 3
+ },
+ {
+  "file": "server/src/modules/documents/documents.controller.js",
+  "line": 62,
+  "name": "Async function 'deleteDocument'",
+  "cc": 4,
+  "cog": 3
+ },
+ {
+  "file": "server/src/modules/hobbies/hobbies.controller.js",
+  "line": 14,
+  "name": "Async function 'save'",
+  "cc": 4,
+  "cog": 3
+ },
+ {
+  "file": "server/src/modules/upload/upload.service.js",
+  "line": 18,
+  "name": "Async function 'doExtract'",
+  "cc": 5,
+  "cog": 3
+ },
+ {
+  "file": "client/src/components/chat/ChatInput.jsx",
+  "line": 5,
+  "name": "Function 'ChatInput'",
+  "cc": 5,
+  "cog": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatInput.jsx",
+  "line": 29,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/components/chat/ChatInput.jsx",
+  "line": 36,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 40,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 64,
+  "cog": 2,
+  "name": "Async arrow function",
+  "cc": 4
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 125,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 147,
+  "cog": 2,
+  "name": "Async arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 159,
+  "cog": 2,
+  "name": "Async arrow function",
+  "cc": 4
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 25,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 38,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/hooks/useProfile.js",
+  "line": 29,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 4
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 28,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 4
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 39,
+  "name": "Function 'formatDate'",
+  "cc": 3,
+  "cog": 2
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 162,
+  "name": "Function 'validateFile'",
+  "cc": 3,
+  "cog": 2
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 196,
+  "name": "Async function 'handleUpload'",
+  "cc": 7,
+  "cog": 2
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 232,
+  "name": "Async function 'handleDelete'",
+  "cc": 7,
+  "cog": 2
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 111,
+  "cog": 2,
+  "name": "Async arrow function",
+  "cc": 6
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 23,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 9
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 29,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 38,
+  "cog": 2,
+  "name": "Async arrow function",
+  "cc": 8
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 141,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/utils/hobbyValidation.js",
+  "line": 15,
+  "name": "Function 'loadHobbies'",
+  "cc": 3,
+  "cog": 2
+ },
+ {
+  "file": "server/src/app.js",
+  "line": 18,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 7
+ },
+ {
+  "file": "server/src/controllers/electiveCourses.controller.js",
+  "line": 49,
+  "cog": 2,
+  "name": "Arrow function",
+  "cc": 5
+ },
+ {
+  "file": "server/src/middleware/auth.js",
+  "line": 3,
+  "name": "Function 'authenticate'",
+  "cc": 4,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/ai/ai.service.js",
+  "line": 53,
+  "name": "Async function 'getRecommendation'",
+  "cc": 6,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/conversations/conversations.controller.js",
+  "line": 12,
+  "name": "Async function 'getMessages'",
+  "cc": 3,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/conversations/conversations.service.js",
+  "line": 11,
+  "name": "Async function 'getMessagesByConversationId'",
+  "cc": 3,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/conversations/conversations.service.js",
+  "line": 28,
+  "name": "Async function 'renameConversation'",
+  "cc": 4,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/hobbies/hobbies.service.js",
+  "line": 11,
+  "name": "Async function 'replaceHobbies'",
+  "cc": 5,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/profile/profile.service.js",
+  "line": 16,
+  "name": "Async function 'saveProfile'",
+  "cc": 6,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/recommendations/recommendations.controller.js",
+  "line": 3,
+  "name": "Async function 'recommendationHandler'",
+  "cc": 8,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/upload/upload.controller.js",
+  "line": 21,
+  "cog": 2,
+  "name": "Method 'fileFilter'",
+  "cc": 2
+ },
+ {
+  "file": "server/src/modules/upload/upload.controller.js",
+  "line": 30,
+  "name": "Async function 'uploadDocument'",
+  "cc": 3,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/users/users.controller.js",
+  "line": 12,
+  "name": "Async function 'saveDominantSubjectsHandler'",
+  "cc": 4,
+  "cog": 2
+ },
+ {
+  "file": "server/src/modules/users/users.service.js",
+  "line": 11,
+  "name": "Async function 'saveDominantSubjects'",
+  "cc": 3,
+  "cog": 2
+ },
+ {
+  "file": "client/src/App.jsx",
+  "line": 14,
+  "name": "Function 'PrivateRoute'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/App.jsx",
+  "line": 19,
+  "name": "Function 'GuestRoute'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 4,
+  "name": "Function 'SubjectsModal'",
+  "cc": 17,
+  "cog": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 11,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 23,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 35,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 37,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 75,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 136,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/components/chat/ChatInput.jsx",
+  "line": 13,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/components/chat/ChatInput.jsx",
+  "line": 23,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatInput.jsx",
+  "line": 84,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatMessage.jsx",
+  "line": 1,
+  "name": "Function 'ChatMessage'",
+  "cc": 12,
+  "cog": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 51,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 80,
+  "cog": 1,
+  "name": "Async arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 121,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 128,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 110,
+  "name": "Function 'HobbiesForm'",
+  "cc": 9,
+  "cog": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 115,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 4
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 173,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 183,
+  "name": "Arrow function",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 71,
+  "name": "Arrow function",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 105,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 128,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 132,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/profile/StudyProgramSelect.jsx",
+  "line": 19,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 15,
+  "name": "Function 'UniversitySelect'",
+  "cc": 7,
+  "cog": 1
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 80,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/recommendations/RecommendationResult.jsx",
+  "line": 1,
+  "name": "Function 'RecommendationResult'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/components/subjects/SubjectCheckboxItem.jsx",
+  "line": 1,
+  "name": "Function 'SubjectCheckboxItem'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/hooks/useProfile.js",
+  "line": 8,
+  "name": "Function 'useProfile'",
+  "cc": 5,
+  "cog": 1
+ },
+ {
+  "file": "client/src/hooks/useProfile.js",
+  "line": 62,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/hooks/useProfile.js",
+  "line": 70,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 51,
+  "name": "Function 'ResultPanel'",
+  "cc": 8,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 76,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 144,
+  "cog": 1,
+  "name": "Async arrow function",
+  "cc": 6
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 172,
+  "name": "Function 'pickFile'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 183,
+  "name": "Function 'handleDrop'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 190,
+  "name": "Function 'handleInputChange'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 218,
+  "name": "Async function 'openDocument'",
+  "cc": 5,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 261,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 4
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 328,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 7,
+  "name": "Function 'DominantSubjectsPage'",
+  "cc": 5,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 20,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 25,
+  "cog": 1,
+  "name": "Async arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 4,
+  "name": "Function 'ElectiveEntryPage'",
+  "cc": 4,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 21,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/LoginPage.jsx",
+  "line": 5,
+  "name": "Function 'LoginPage'",
+  "cc": 8,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/LoginPage.jsx",
+  "line": 26,
+  "cog": 1,
+  "name": "Async arrow function",
+  "cc": 5
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 10,
+  "name": "Function 'ProfilePage'",
+  "cc": 6,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 43,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 63,
+  "cog": 1,
+  "name": "Async arrow function",
+  "cc": 6
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 65,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 6,
+  "name": "Method 'test'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 29,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 40,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 134,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 178,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/services/api.js",
+  "line": 7,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "server/src/controllers/studyPrograms.controller.js",
+  "line": 3,
+  "name": "Async function 'getAll'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/ai/ai.service.js",
+  "line": 47,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "server/src/modules/ai/prompts.js",
+  "line": 20,
+  "cog": 1,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "server/src/modules/auth/auth.controller.js",
+  "line": 40,
+  "name": "Async function 'registerHandler'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/auth/auth.service.js",
+  "line": 17,
+  "name": "Async function 'register'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/conversations/conversations.controller.js",
+  "line": 3,
+  "name": "Async function 'list'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/documents/documents.controller.js",
+  "line": 3,
+  "name": "Function 'parseDocumentId'",
+  "cc": 4,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/documents/documents.controller.js",
+  "line": 11,
+  "name": "Async function 'getDocumentTexts'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/documents/documents.controller.js",
+  "line": 20,
+  "name": "Async function 'listDocuments'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/hobbies/hobbies.controller.js",
+  "line": 5,
+  "name": "Async function 'list'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/profile/profile.controller.js",
+  "line": 3,
+  "name": "Async function 'getProfileHandler'",
+  "cc": 3,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/profile/profile.controller.js",
+  "line": 12,
+  "name": "Async function 'saveProfileHandler'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/upload/upload.service.js",
+  "line": 42,
+  "name": "Async function 'extractTextFromFile'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/upload/upload.service.js",
+  "line": 52,
+  "name": "Async function 'deleteFile'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/modules/users/users.controller.js",
+  "line": 3,
+  "name": "Async function 'getDominantSubjectsHandler'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "server/src/server.js",
+  "line": 8,
+  "name": "Async function 'start'",
+  "cc": 2,
+  "cog": 1
+ },
+ {
+  "file": "client/src/App.jsx",
+  "line": 24,
+  "name": "Function 'App'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 21,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 28,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 31,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 32,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 39,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 44,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 55,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 78,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 97,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 102,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/catalog/SubjectsModal.jsx",
+  "line": 148,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatInput.jsx",
+  "line": 19,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatInput.jsx",
+  "line": 63,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatInput.jsx",
+  "line": 93,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatMessage.jsx",
+  "line": 44,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatMessage.jsx",
+  "line": 68,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 45,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 46,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 47,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 52,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 60,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 82,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 87,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 90,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 94,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 99,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 120,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 142,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 167,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/chat/ChatWindow.jsx",
+  "line": 196,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 10,
+  "name": "Function 'saveToStorage'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 14,
+  "name": "Function 'EmptyState'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 46,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 72,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 123,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 126,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 138,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 141,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 146,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 149,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 156,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 163,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 167,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 175,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 178,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 179,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 182,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 191,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 195,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/forms/HobbiesForm.jsx",
+  "line": 196,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/Header.jsx",
+  "line": 3,
+  "name": "Function 'Header'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/Header.jsx",
+  "line": 6,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/MainLayout.jsx",
+  "line": 6,
+  "name": "Function 'MainLayout'",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/layout/MainLayout.jsx",
+  "line": 42,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 58,
+  "name": "Function 'Sidebar'",
+  "cc": 2
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 62,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 65,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 66,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 69,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 77,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 95,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/layout/Sidebar.jsx",
+  "line": 100,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/StudyProgramSelect.jsx",
+  "line": 5,
+  "name": "Function 'StudyProgramSelect'",
+  "cc": 3
+ },
+ {
+  "file": "client/src/components/profile/StudyProgramSelect.jsx",
+  "line": 9,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/StudyProgramSelect.jsx",
+  "line": 33,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/StudyProgramSelect.jsx",
+  "line": 45,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/StudyProgramSelect.jsx",
+  "line": 58,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 20,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 24,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 31,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 35,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 46,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 73,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/profile/UniversitySelect.jsx",
+  "line": 83,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/subjects/SubjectCheckboxItem.jsx",
+  "line": 13,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/subjects/SubjectCheckboxList.jsx",
+  "line": 3,
+  "name": "Function 'SubjectCheckboxList'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/subjects/SubjectCheckboxList.jsx",
+  "line": 6,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/ui/Toast.jsx",
+  "line": 3,
+  "name": "Function 'Toast'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/ui/Toast.jsx",
+  "line": 4,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/components/ui/Toast.jsx",
+  "line": 6,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useProfile.js",
+  "line": 17,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "client/src/hooks/useProfile.js",
+  "line": 32,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useProfile.js",
+  "line": 33,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 7,
+  "name": "Function 'useSessionTimeout'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 14,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 20,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 38,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 43,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 51,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 53,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 54,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 57,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/hooks/useSessionTimeout.js",
+  "line": 58,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 11,
+  "name": "Function 'FileBadge'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 80,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 158,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 260,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 263,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 264,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 289,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 333,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 344,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DocumentUploadPage.jsx",
+  "line": 382,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 5,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 13,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 15,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 16,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 19,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 21,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 54,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 55,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 60,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/DominantSubjectsPage.jsx",
+  "line": 68,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 12,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 25,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 28,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 56,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 179,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 201,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 219,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ElectiveEntryPage.jsx",
+  "line": 235,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/HistoryPage.jsx",
+  "line": 1,
+  "name": "Function 'HistoryPage'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/HobbiesPage.jsx",
+  "line": 3,
+  "name": "Function 'HobbiesPage'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/LoginPage.jsx",
+  "line": 17,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/LoginPage.jsx",
+  "line": 19,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/LoginPage.jsx",
+  "line": 39,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 17,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 18,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 21,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 37,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 53,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 56,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 58,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 80,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 83,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 118,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/ProfilePage.jsx",
+  "line": 132,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RecommendationsPage.jsx",
+  "line": 3,
+  "name": "Function 'RecommendationsPage'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 7,
+  "name": "Method 'test'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 8,
+  "name": "Method 'test'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 9,
+  "name": "Method 'test'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 10,
+  "name": "Method 'test'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 13,
+  "name": "Function 'validateEmail'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 17,
+  "name": "Function 'validatePassword'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 18,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 97,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 99,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 119,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 121,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 123,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 124,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 165,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/RegisterPage.jsx",
+  "line": 167,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 7,
+  "name": "Function 'SubjectsCatalogPage'",
+  "cc": 20
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 20,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 22,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 23,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 24,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 27,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 38,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 45,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 48,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 49,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 52,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 137,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 158,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 163,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/pages/SubjectsCatalogPage.jsx",
+  "line": 190,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "client/src/utils/hobbyValidation.js",
+  "line": 3,
+  "name": "Function 'isValidHobby'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/utils/hobbyValidation.js",
+  "line": 7,
+  "name": "Function 'getValidHobbies'",
+  "cc": 1
+ },
+ {
+  "file": "client/src/utils/hobbyValidation.js",
+  "line": 11,
+  "name": "Function 'hasValidHobbies'",
+  "cc": 1
+ },
+ {
+  "file": "server/src/app.js",
+  "line": 14,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/config/migrate.js",
+  "line": 20,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/config/migrate.js",
+  "line": 23,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/config/migrate.js",
+  "line": 30,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/controllers/electiveCourses.controller.js",
+  "line": 12,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/ai/ai.service.js",
+  "line": 27,
+  "name": "Async function 'getChatResponse'",
+  "cc": 5
+ },
+ {
+  "file": "server/src/modules/ai/ai.service.js",
+  "line": 38,
+  "name": "Arrow function",
+  "cc": 3
+ },
+ {
+  "file": "server/src/modules/ai/ai.service.js",
+  "line": 46,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/ai/ai.service.js",
+  "line": 72,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/ai/chat.routes.js",
+  "line": 20,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/ai/chat.routes.js",
+  "line": 22,
+  "name": "Arrow function",
+  "cc": 2
+ },
+ {
+  "file": "server/src/modules/auth/auth.service.js",
+  "line": 9,
+  "name": "Async function 'findUserByEmail'",
+  "cc": 2
+ },
+ {
+  "file": "server/src/modules/conversations/conversations.service.js",
+  "line": 3,
+  "name": "Async function 'getConversations'",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/documents/documents.controller.js",
+  "line": 23,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/documents/documents.service.js",
+  "line": 3,
+  "name": "Async function 'listDocumentsByUser'",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/documents/documents.service.js",
+  "line": 14,
+  "name": "Async function 'getDocumentForUser'",
+  "cc": 2
+ },
+ {
+  "file": "server/src/modules/documents/documents.service.js",
+  "line": 24,
+  "name": "Async function 'getDocumentTextsByUser'",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/documents/documents.service.js",
+  "line": 32,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/documents/documents.service.js",
+  "line": 35,
+  "name": "Async function 'deleteDocumentForUser'",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/hobbies/hobbies.service.js",
+  "line": 3,
+  "name": "Async function 'getHobbies'",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/profile/profile.service.js",
+  "line": 3,
+  "name": "Async function 'getProfile'",
+  "cc": 2
+ },
+ {
+  "file": "server/src/modules/recommendations/recommendations.service.js",
+  "line": 4,
+  "name": "Async function 'generateRecommendation'",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/recommendations/recommendations.service.js",
+  "line": 9,
+  "name": "Async function 'saveRecommendation'",
+  "cc": 2
+ },
+ {
+  "file": "server/src/modules/upload/upload.service.js",
+  "line": 8,
+  "name": "Function 'withTimeout'",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/upload/upload.service.js",
+  "line": 9,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/upload/upload.service.js",
+  "line": 11,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/users/users.service.js",
+  "line": 3,
+  "name": "Async function 'getDominantSubjects'",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/users/users.service.js",
+  "line": 8,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/modules/users/users.service.js",
+  "line": 22,
+  "name": "Arrow function",
+  "cc": 1
+ },
+ {
+  "file": "server/src/server.js",
+  "line": 17,
+  "name": "Arrow function",
+  "cc": 1
+ }
+]

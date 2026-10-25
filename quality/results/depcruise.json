@@ -1,0 +1,2758 @@
+{
+  "modules": [
+    {
+      "source": "client/src/App.jsx",
+      "dependencies": [
+        {
+          "module": "./components/layout/MainLayout",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/layout/MainLayout.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/DocumentUploadPage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/DocumentUploadPage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/DominantSubjectsPage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/DominantSubjectsPage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/ElectiveEntryPage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/ElectiveEntryPage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/HistoryPage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/HistoryPage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/HobbiesPage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/HobbiesPage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/LoginPage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/LoginPage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/ProfilePage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/ProfilePage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/RecommendationsPage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/RecommendationsPage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/RegisterPage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/RegisterPage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./pages/SubjectsCatalogPage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/pages/SubjectsCatalogPage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/main.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/layout/MainLayout.jsx",
+      "dependencies": [
+        {
+          "module": "../../hooks/useSessionTimeout",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/hooks/useSessionTimeout.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./Header",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/layout/Header.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./Sidebar",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/layout/Sidebar.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/hooks/useSessionTimeout.js",
+      "dependencies": [],
+      "dependents": [
+        "client/src/components/layout/MainLayout.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/layout/Header.jsx",
+      "dependencies": [],
+      "dependents": [
+        "client/src/components/layout/MainLayout.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/layout/Sidebar.jsx",
+      "dependencies": [
+        {
+          "module": "../../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/components/layout/MainLayout.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/services/api.js",
+      "dependencies": [],
+      "dependents": [
+        "client/src/components/layout/Sidebar.jsx",
+        "client/src/pages/DocumentUploadPage.jsx",
+        "client/src/pages/DominantSubjectsPage.jsx",
+        "client/src/pages/ElectiveEntryPage.jsx",
+        "client/src/components/forms/HobbiesForm.jsx",
+        "client/src/pages/LoginPage.jsx",
+        "client/src/pages/ProfilePage.jsx",
+        "client/src/components/catalog/SubjectsModal.jsx",
+        "client/src/components/chat/ChatWindow.jsx",
+        "client/src/hooks/useProfile.js",
+        "client/src/pages/SubjectsCatalogPage.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/DocumentUploadPage.jsx",
+      "dependencies": [
+        {
+          "module": "../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/DominantSubjectsPage.jsx",
+      "dependencies": [
+        {
+          "module": "../data/dominantSubjects",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/data/dominantSubjects.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/data/dominantSubjects.js",
+      "dependencies": [],
+      "dependents": [
+        "client/src/pages/DominantSubjectsPage.jsx",
+        "client/src/hooks/useProfile.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/ElectiveEntryPage.jsx",
+      "dependencies": [
+        {
+          "module": "../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/HistoryPage.jsx",
+      "dependencies": [],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/HobbiesPage.jsx",
+      "dependencies": [
+        {
+          "module": "../components/forms/HobbiesForm",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/forms/HobbiesForm.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/forms/HobbiesForm.jsx",
+      "dependencies": [
+        {
+          "module": "../../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../../utils/hobbyValidation",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/utils/hobbyValidation.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/pages/HobbiesPage.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/utils/hobbyValidation.js",
+      "dependencies": [],
+      "dependents": [
+        "client/src/components/forms/HobbiesForm.jsx",
+        "client/src/hooks/useProfile.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/LoginPage.jsx",
+      "dependencies": [
+        {
+          "module": "../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/ProfilePage.jsx",
+      "dependencies": [
+        {
+          "module": "../components/catalog/SubjectsModal",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/catalog/SubjectsModal.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../components/profile/StudyProgramSelect",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/profile/StudyProgramSelect.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../components/profile/UniversitySelect",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/profile/UniversitySelect.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/catalog/SubjectsModal.jsx",
+      "dependencies": [
+        {
+          "module": "../../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/pages/ProfilePage.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/profile/StudyProgramSelect.jsx",
+      "dependencies": [],
+      "dependents": [
+        "client/src/pages/ProfilePage.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/profile/UniversitySelect.jsx",
+      "dependencies": [],
+      "dependents": [
+        "client/src/pages/ProfilePage.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/RecommendationsPage.jsx",
+      "dependencies": [
+        {
+          "module": "../components/chat/ChatWindow",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/chat/ChatWindow.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/chat/ChatWindow.jsx",
+      "dependencies": [
+        {
+          "module": "../../hooks/useProfile",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/hooks/useProfile.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./ChatInput",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/chat/ChatInput.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./ChatMessage",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/chat/ChatMessage.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/pages/RecommendationsPage.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/hooks/useProfile.js",
+      "dependencies": [
+        {
+          "module": "../data/dominantSubjects",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/data/dominantSubjects.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../utils/hobbyValidation",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/utils/hobbyValidation.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/components/chat/ChatWindow.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/chat/ChatInput.jsx",
+      "dependencies": [],
+      "dependents": [
+        "client/src/components/chat/ChatWindow.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/chat/ChatMessage.jsx",
+      "dependencies": [],
+      "dependents": [
+        "client/src/components/chat/ChatWindow.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/RegisterPage.jsx",
+      "dependencies": [],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/SubjectsCatalogPage.jsx",
+      "dependencies": [
+        {
+          "module": "../services/api",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/services/api.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "client/src/App.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/forms/CompletedCoursesForm.jsx",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/forms/ElectivesListForm.jsx",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/forms/StudyProgramForm.jsx",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/recommendations/RecommendationResult.jsx",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/subjects/SubjectCheckboxItem.jsx",
+      "dependencies": [],
+      "dependents": [
+        "client/src/components/subjects/SubjectCheckboxList.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/subjects/SubjectCheckboxList.jsx",
+      "dependencies": [
+        {
+          "module": "./SubjectCheckboxItem",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/components/subjects/SubjectCheckboxItem.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/components/ui/Toast.jsx",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "client/src/context/AuthContext.jsx",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "client/src/data/studyPrograms.js",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "client/src/main.jsx",
+      "dependencies": [
+        {
+          "module": "./App",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/App.jsx",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./index.css",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "client/src/index.css",
+          "coreModule": false,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/index.css",
+      "followable": false,
+      "coreModule": false,
+      "couldNotResolve": false,
+      "matchesDoNotFollow": false,
+      "dependencyTypes": [
+        "local",
+        "import"
+      ],
+      "dependencies": [],
+      "dependents": [
+        "client/src/main.jsx"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "client/src/pages/DashboardPage.jsx",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "server/src/app.js",
+      "dependencies": [
+        {
+          "module": "./modules/documents/documents.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/documents/documents.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./routes/index.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/routes/index.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/server.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/documents/documents.routes.js",
+      "dependencies": [
+        {
+          "module": "../../middleware/auth.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/middleware/auth.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../upload/upload.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/upload/upload.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./documents.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/documents/documents.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/app.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/middleware/auth.js",
+      "dependencies": [],
+      "dependents": [
+        "server/src/modules/documents/documents.routes.js",
+        "server/src/modules/conversations/conversations.routes.js",
+        "server/src/modules/hobbies/hobbies.routes.js",
+        "server/src/modules/profile/profile.routes.js",
+        "server/src/modules/users/users.routes.js",
+        "server/src/routes/electiveCourses.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/upload/upload.controller.js",
+      "dependencies": [
+        {
+          "module": "../../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./upload.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/upload/upload.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "path",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "core",
+            "import"
+          ],
+          "resolved": "path",
+          "coreModule": true,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "url",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "core",
+            "import"
+          ],
+          "resolved": "url",
+          "coreModule": true,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/documents/documents.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "path",
+      "followable": false,
+      "coreModule": true,
+      "couldNotResolve": false,
+      "matchesDoNotFollow": false,
+      "dependencyTypes": [
+        "core",
+        "import"
+      ],
+      "dependencies": [],
+      "dependents": [
+        "server/src/modules/upload/upload.controller.js",
+        "server/src/config/migrate.js",
+        "server/src/scripts/setupDatabase.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "url",
+      "followable": false,
+      "coreModule": true,
+      "couldNotResolve": false,
+      "matchesDoNotFollow": false,
+      "dependencyTypes": [
+        "core",
+        "import"
+      ],
+      "dependencies": [],
+      "dependents": [
+        "server/src/modules/upload/upload.controller.js",
+        "server/src/config/migrate.js",
+        "server/src/scripts/setupDatabase.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/config/database.js",
+      "dependencies": [],
+      "dependents": [
+        "server/src/modules/upload/upload.controller.js",
+        "server/src/modules/documents/documents.service.js",
+        "server/src/modules/recommendations/recommendations.service.js",
+        "server/src/modules/auth/auth.service.js",
+        "server/src/modules/conversations/conversations.service.js",
+        "server/src/modules/hobbies/hobbies.service.js",
+        "server/src/modules/profile/profile.service.js",
+        "server/src/modules/users/users.service.js",
+        "server/src/controllers/electiveCourses.controller.js",
+        "server/src/controllers/studyPrograms.controller.js",
+        "server/src/config/migrate.js",
+        "server/src/server.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/upload/upload.service.js",
+      "dependencies": [
+        {
+          "module": "fs/promises",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "core",
+            "import"
+          ],
+          "resolved": "fs/promises",
+          "coreModule": true,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/upload/upload.controller.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "fs/promises",
+      "followable": false,
+      "coreModule": true,
+      "couldNotResolve": false,
+      "matchesDoNotFollow": false,
+      "dependencyTypes": [
+        "core",
+        "import"
+      ],
+      "dependencies": [],
+      "dependents": [
+        "server/src/modules/upload/upload.service.js",
+        "server/src/config/migrate.js",
+        "server/src/scripts/setupDatabase.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/documents/documents.controller.js",
+      "dependencies": [
+        {
+          "module": "./documents.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/documents/documents.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/documents/documents.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/documents/documents.service.js",
+      "dependencies": [
+        {
+          "module": "../../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/documents/documents.controller.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/routes/index.js",
+      "dependencies": [
+        {
+          "module": "../modules/ai/chat.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/ai/chat.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../modules/auth/auth.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/auth/auth.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../modules/conversations/conversations.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/conversations/conversations.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../modules/hobbies/hobbies.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/hobbies/hobbies.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../modules/profile/profile.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/profile/profile.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../modules/recommendations/recommendations.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/recommendations/recommendations.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../modules/users/users.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/users/users.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./electiveCourses.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/routes/electiveCourses.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./studyPrograms.routes.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/routes/studyPrograms.routes.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/app.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/ai/chat.routes.js",
+      "dependencies": [
+        {
+          "module": "../recommendations/recommendations.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/recommendations/recommendations.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./ai.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/ai/ai.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/index.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/recommendations/recommendations.service.js",
+      "dependencies": [
+        {
+          "module": "../../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../ai/ai.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/ai/ai.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/ai/chat.routes.js",
+        "server/src/modules/recommendations/recommendations.controller.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/ai/ai.service.js",
+      "dependencies": [
+        {
+          "module": "./prompts.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/ai/prompts.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/ai/chat.routes.js",
+        "server/src/modules/recommendations/recommendations.service.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/ai/prompts.js",
+      "dependencies": [],
+      "dependents": [
+        "server/src/modules/ai/ai.service.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/auth/auth.routes.js",
+      "dependencies": [
+        {
+          "module": "./auth.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/auth/auth.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/index.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/auth/auth.controller.js",
+      "dependencies": [
+        {
+          "module": "./auth.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/auth/auth.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/auth/auth.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/auth/auth.service.js",
+      "dependencies": [
+        {
+          "module": "../../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/auth/auth.controller.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/conversations/conversations.routes.js",
+      "dependencies": [
+        {
+          "module": "../../middleware/auth.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/middleware/auth.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./conversations.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/conversations/conversations.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/index.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/conversations/conversations.controller.js",
+      "dependencies": [
+        {
+          "module": "./conversations.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/conversations/conversations.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/conversations/conversations.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/conversations/conversations.service.js",
+      "dependencies": [
+        {
+          "module": "../../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/conversations/conversations.controller.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/hobbies/hobbies.routes.js",
+      "dependencies": [
+        {
+          "module": "../../middleware/auth.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/middleware/auth.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./hobbies.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/hobbies/hobbies.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/index.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/hobbies/hobbies.controller.js",
+      "dependencies": [
+        {
+          "module": "./hobbies.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/hobbies/hobbies.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/hobbies/hobbies.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/hobbies/hobbies.service.js",
+      "dependencies": [
+        {
+          "module": "../../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/hobbies/hobbies.controller.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/profile/profile.routes.js",
+      "dependencies": [
+        {
+          "module": "../../middleware/auth.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/middleware/auth.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./profile.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/profile/profile.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/index.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/profile/profile.controller.js",
+      "dependencies": [
+        {
+          "module": "./profile.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/profile/profile.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/profile/profile.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/profile/profile.service.js",
+      "dependencies": [
+        {
+          "module": "../../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/profile/profile.controller.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/recommendations/recommendations.routes.js",
+      "dependencies": [
+        {
+          "module": "./recommendations.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/recommendations/recommendations.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/index.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/recommendations/recommendations.controller.js",
+      "dependencies": [
+        {
+          "module": "./recommendations.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/recommendations/recommendations.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/recommendations/recommendations.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/users/users.routes.js",
+      "dependencies": [
+        {
+          "module": "../../middleware/auth.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/middleware/auth.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./users.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/users/users.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/index.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/users/users.controller.js",
+      "dependencies": [
+        {
+          "module": "./users.service.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/modules/users/users.service.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/users/users.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/modules/users/users.service.js",
+      "dependencies": [
+        {
+          "module": "../../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/modules/users/users.controller.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/routes/electiveCourses.routes.js",
+      "dependencies": [
+        {
+          "module": "../controllers/electiveCourses.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/controllers/electiveCourses.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "../middleware/auth.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/middleware/auth.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/index.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/controllers/electiveCourses.controller.js",
+      "dependencies": [
+        {
+          "module": "../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/electiveCourses.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/routes/studyPrograms.routes.js",
+      "dependencies": [
+        {
+          "module": "../controllers/studyPrograms.controller.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/controllers/studyPrograms.controller.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/index.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/controllers/studyPrograms.controller.js",
+      "dependencies": [
+        {
+          "module": "../config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/routes/studyPrograms.routes.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/config/index.js",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "server/src/config/migrate.js",
+      "dependencies": [
+        {
+          "module": "./database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "fs/promises",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "core",
+            "import"
+          ],
+          "resolved": "fs/promises",
+          "coreModule": true,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "path",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "core",
+            "import"
+          ],
+          "resolved": "path",
+          "coreModule": true,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "url",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "core",
+            "import"
+          ],
+          "resolved": "url",
+          "coreModule": true,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [
+        "server/src/server.js"
+      ],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/middleware/errorHandler.js",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "server/src/middleware/rateLimiter.js",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "server/src/middleware/validateRequest.js",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "server/src/scripts/setupDatabase.js",
+      "dependencies": [
+        {
+          "module": "fs/promises",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "core",
+            "import"
+          ],
+          "resolved": "fs/promises",
+          "coreModule": true,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "path",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "core",
+            "import"
+          ],
+          "resolved": "path",
+          "coreModule": true,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "url",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "core",
+            "import"
+          ],
+          "resolved": "url",
+          "coreModule": true,
+          "followable": false,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/server.js",
+      "dependencies": [
+        {
+          "module": "./app.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/app.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./config/database.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/database.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        },
+        {
+          "module": "./config/migrate.js",
+          "moduleSystem": "es6",
+          "dynamic": false,
+          "exoticallyRequired": false,
+          "dependencyTypes": [
+            "local",
+            "import"
+          ],
+          "resolved": "server/src/config/migrate.js",
+          "coreModule": false,
+          "followable": true,
+          "couldNotResolve": false,
+          "matchesDoNotFollow": false,
+          "circular": false,
+          "valid": true
+        }
+      ],
+      "dependents": [],
+      "orphan": false,
+      "valid": true
+    },
+    {
+      "source": "server/src/utils/errors.js",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    },
+    {
+      "source": "server/src/utils/logger.js",
+      "dependencies": [],
+      "dependents": [],
+      "orphan": true,
+      "valid": true
+    }
+  ],
+  "summary": {
+    "violations": [],
+    "error": 0,
+    "warn": 0,
+    "info": 0,
+    "ignore": 0,
+    "advisedExitCode": 0,
+    "totalCruised": 84,
+    "totalDependenciesCruised": 102,
+    "optionsUsed": {
+      "baseDir": "/home/nova/Laisvai-pasirenkamo-dalyko-AI-pagalbininkas",
+      "combinedDependencies": false,
+      "detectImportsInAmbientModules": false,
+      "detectJSDocImports": false,
+      "detectProcessBuiltinModuleCalls": false,
+      "exclude": {
+        "path": "node_modules|\\.test\\.|__tests__|__mocks__"
+      },
+      "exoticRequireStrings": [],
+      "externalModuleResolutionStrategy": "node_modules",
+      "metrics": false,
+      "moduleSystems": [
+        "es6",
+        "cjs",
+        "tsd",
+        "amd"
+      ],
+      "outputTo": "-",
+      "outputType": "json",
+      "preserveSymlinks": false,
+      "skipAnalysisNotInRules": false,
+      "tsPreCompilationDeps": false,
+      "args": "server/src client/src"
+    },
+    "environment": {
+      "version": "18.7.0",
+      "nodeVersionSupported": "^22||^24||>=26",
+      "nodeVersionFound": "v26.12.1",
+      "osVersionFound": "x64 linux@7.3.0-rc6-2-cachyos-rc",
+      "transpilersFound": [
+        {
+          "name": "javascript",
+          "version": "*",
+          "available": true,
+          "currentVersion": "acorn@8.19.0"
+        },
+        {
+          "name": "babel",
+          "version": ">=7.0.0 <8.0.0",
+          "available": true,
+          "currentVersion": "@babel/core@7.29.7"
+        },
+        {
+          "name": "coffee-script",
+          "version": ">=1.0.0 <2.0.0",
+          "available": false,
+          "currentVersion": "-"
+        },
+        {
+          "name": "coffeescript",
+          "version": ">=1.0.0 <3.0.0",
+          "available": false,
+          "currentVersion": "-"
+        },
+        {
+          "name": "livescript",
+          "version": ">=1.0.0 <2.0.0",
+          "available": false,
+          "currentVersion": "-"
+        },
+        {
+          "name": "svelte",
+          "version": ">=3.0.0 <6.0.0",
+          "available": false,
+          "currentVersion": "-"
+        },
+        {
+          "name": "swc",
+          "version": ">=1.0.0 <2.0.0",
+          "available": false,
+          "currentVersion": "-"
+        },
+        {
+          "name": "typescript",
+          "version": ">=2.0.0 <7.0.0",
+          "available": true,
+          "currentVersion": "typescript@6.0.3"
+        },
+        {
+          "name": "vue-template-compiler",
+          "version": ">=2.0.0 <3.0.0",
+          "available": false,
+          "currentVersion": "-"
+        },
+        {
+          "name": "@vue/compiler-sfc",
+          "version": ">=3.0.0 <4.0.0",
+          "available": false,
+          "currentVersion": "-"
+        }
+      ],
+      "extensionsFound": [
+        {
+          "extension": ".js",
+          "available": true
+        },
+        {
+          "extension": ".cjs",
+          "available": true
+        },
+        {
+          "extension": ".mjs",
+          "available": true
+        },
+        {
+          "extension": ".jsx",
+          "available": true
+        },
+        {
+          "extension": ".ts",
+          "available": true
+        },
+        {
+          "extension": ".tsx",
+          "available": true
+        },
+        {
+          "extension": ".d.ts",
+          "available": true
+        },
+        {
+          "extension": ".cts",
+          "available": true
+        },
+        {
+          "extension": ".d.cts",
+          "available": true
+        },
+        {
+          "extension": ".mts",
+          "available": true
+        },
+        {
+          "extension": ".d.mts",
+          "available": true
+        },
+        {
+          "extension": ".vue",
+          "available": false
+        },
+        {
+          "extension": ".svelte",
+          "available": false
+        },
+        {
+          "extension": ".ls",
+          "available": false
+        },
+        {
+          "extension": ".coffee",
+          "available": false
+        },
+        {
+          "extension": ".litcoffee",
+          "available": false
+        },
+        {
+          "extension": ".coffee.md",
+          "available": false
+        },
+        {
+          "extension": ".csx",
+          "available": false
+        },
+        {
+          "extension": ".cjsx",
+          "available": false
+        }
+      ]
+    }
+  }
+}

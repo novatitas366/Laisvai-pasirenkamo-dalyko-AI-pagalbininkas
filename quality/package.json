@@ -1,0 +1,24 @@
+{
+  "name": "nd1-kodo-kokybe",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "metrics:lizard": ".venv/bin/lizard -C 10 -x '*/node_modules/*' -x '*.test.*' -x '*/__tests__/*' -x '*/__mocks__/*' ../server/src ../client/src",
+    "lint": "cd .. && quality/node_modules/.bin/eslint -c quality/eslint.config.js server/src client/src",
+    "lint:json": "cd .. && quality/node_modules/.bin/eslint -c quality/eslint.config.js server/src client/src -f json -o quality/results/eslint.json",
+    "metrics:deps": "cd .. && quality/node_modules/.bin/depcruise --no-config --exclude 'node_modules|\\\\.test\\\\.|__tests__|__mocks__' --output-type text server/src client/src",
+    "sonar:setup": "bash scripts/sonar-setup.sh",
+    "sonar": "bash scripts/sonar-scan.sh",
+    "sonar:results": "node scripts/sonar-results.mjs",
+    "all": "npm run metrics:lizard; npm run lint; npm run metrics:deps; npm run sonar && npm run sonar:results"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "dependency-cruiser": "^18.7.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-sonarjs": "^4.2.2",
+    "globals": "^17.13.0"
+  }
+}
