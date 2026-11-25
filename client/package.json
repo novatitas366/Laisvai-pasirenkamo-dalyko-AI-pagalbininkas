@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "node node_modules/.bin/jest --config jest.config.cjs",
-    "test:coverage": "node node_modules/.bin/jest --config jest.config.cjs --coverage"
+    "test:coverage": "node node_modules/.bin/jest --config jest.config.cjs --coverage",
+    "test:chat-catalog": "node node_modules/.bin/jest --config jest.config.cjs src/components/chat/ChatWindow.test.jsx src/pages/SubjectsCatalogPage.test.jsx src/utils/subjects.test.js",
+    "test:chat-catalog:coverage": "node node_modules/.bin/jest --config jest.config.cjs src/components/chat/ChatWindow.test.jsx src/pages/SubjectsCatalogPage.test.jsx src/utils/subjects.test.js --coverage --coverageThreshold='{}' --collectCoverageFrom='src/components/chat/{ChatWindow,ConversationTitle,ProfileStatus,ChatPlaceholders}.jsx' --collectCoverageFrom='src/hooks/{useChatMessages,useConversationTitle,useSubjectsCatalog}.js' --collectCoverageFrom='src/components/catalog/{CatalogStatus,NoProgramSelected,ProgramCard,ProgramSubjects,SemesterTabs,SubjectList,SubjectSearch}.jsx' --collectCoverageFrom='src/pages/SubjectsCatalogPage.jsx' --collectCoverageFrom='src/utils/subjects.js'"
   },
   "dependencies": {
     "@jridgewell/sourcemap-codec": "^1.5.5",
