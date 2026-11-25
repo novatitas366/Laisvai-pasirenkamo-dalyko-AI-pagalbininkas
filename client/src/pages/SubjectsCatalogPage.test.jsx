@@ -43,6 +43,17 @@ describe('SubjectsCatalogPage: kraujimas', () => {
     expect(screen.getByText('Kraunama...')).toBeInTheDocument()
   })
 
+  test('rodomas dalykų kraunamas indikatorius kol gaunami dalykai', async () => {
+    localStorage.setItem('profile_study_program', 'Informatika')
+    api.get.mockImplementation((url) =>
+      url === '/study-programs' ? Promise.resolve({ data: PROGRAMS }) : new Promise(() => {})
+    )
+
+    renderPage()
+
+    expect(await screen.findByText('Kraunami dalykai...')).toBeInTheDocument()
+  })
+
   test('rodomas klaidos pranešimas kai programų API grąžina klaidą', async () => {
     api.get.mockRejectedValue(new Error('Network error'))
 
