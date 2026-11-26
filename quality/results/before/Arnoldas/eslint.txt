@@ -1,0 +1,12 @@
+
+client/src/components/forms/HobbiesForm.jsx
+   28:1   warning  Function 'HobbyEntry' has a complexity of 14. Maximum allowed is 10                  complexity
+   28:10  warning  Refactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed  sonarjs/cognitive-complexity
+   50:21  error    Extract this nested ternary operation into an independent statement                  sonarjs/no-nested-conditional
+   59:17  error    Extract this nested ternary operation into an independent statement                  sonarjs/no-nested-conditional
+   77:19  error    Extract this nested ternary operation into an independent statement                  sonarjs/no-nested-conditional
+   85:17  error    Extract this nested ternary operation into an independent statement                  sonarjs/no-nested-conditional
+  153:15  error    Empty block statement                                                                no-empty
+
+✖ 7 problems (5 errors, 2 warnings)
+
