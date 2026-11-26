@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { loadHobbies, MIN_HOBBY_NAME_LENGTH } from '../../utils/hobbyValidation'
+import { getFieldStatus, FIELD_STATUS } from '../../utils/hobbyFieldStatus'
 import api from '../../services/api'
 
 const NAME_MAX = 20
@@ -25,10 +26,37 @@ function EmptyState() {
   )
 }
 
+// Lauko būsena → rėmelio ir skaitiklio spalvos (vietoj įdėtų sąlygos operatorių)
+const FIELD_STYLES = {
+  [FIELD_STATUS.ERROR]: { border: 'border-red-400 focus:ring-red-400', counter: 'text-red-500' },
+  [FIELD_STATUS.SHORT]: { border: 'border-amber-300 focus:ring-amber-400', counter: 'text-slate-400' },
+  [FIELD_STATUS.OK]: { border: 'border-slate-200 focus:ring-brand-500', counter: 'text-slate-400' },
+}
+
+function FieldMessage({ status, label, max }) {
+  if (status === FIELD_STATUS.ERROR) {
+    return <p className="text-xs text-red-500">{label} negali viršyti {max} simbolių</p>
+  }
+  if (status === FIELD_STATUS.SHORT) {
+    return <p className="text-xs text-amber-500">{label} per trumpas (min. {MIN_HOBBY_NAME_LENGTH} simboliai)</p>
+  }
+  return <span />
+}
+
+function FieldHint({ status, label, value, max }) {
+  return (
+    <div className="flex items-center justify-between mt-1 px-1">
+      <FieldMessage status={status} label={label} max={max} />
+      <p className={`text-xs ml-auto ${FIELD_STYLES[status].counter}`}>
+        {value.length}/{max}
+      </p>
+    </div>
+  )
+}
+
 function HobbyEntry({ hobby, onRemove, onChange }) {
-  const nameTooShort = hobby.name.trim().length > 0 && hobby.name.trim().length < MIN_HOBBY_NAME_LENGTH
-  const nameError = hobby.name.length > NAME_MAX
-  const descError = hobby.description.length > DESC_MAX
+  const nameStatus = getFieldStatus(hobby.name, NAME_MAX)
+  const descStatus = getFieldStatus(hobby.description, DESC_MAX)
 
   return (
     <div className="border border-slate-200 rounded-xl mb-3">
@@ -44,26 +72,10 @@ function HobbyEntry({ hobby, onRemove, onChange }) {
               placeholder={`Pavadinimas (min. ${MIN_HOBBY_NAME_LENGTH} simboliai)`}
               value={hobby.name}
               onChange={e => onChange({ ...hobby, name: e.target.value })}
-              className={`w-full pl-9 pr-4 py-2.5 border rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:border-transparent ${
-                nameError
-                  ? 'border-red-400 focus:ring-red-400'
-                  : nameTooShort
-                  ? 'border-amber-300 focus:ring-amber-400'
-                  : 'border-slate-200 focus:ring-brand-500'
-              }`}
+              className={`w-full pl-9 pr-4 py-2.5 border rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:border-transparent ${FIELD_STYLES[nameStatus].border}`}
             />
           </div>
-          <div className="flex items-center justify-between mt-1 px-1">
-            {nameError
-              ? <p className="text-xs text-red-500">Pavadinimas negali viršyti {NAME_MAX} simbolių</p>
-              : nameTooShort
-              ? <p className="text-xs text-amber-500">Pavadinimas per trumpas (min. {MIN_HOBBY_NAME_LENGTH} simboliai)</p>
-              : <span />
-            }
-            <p className={`text-xs ml-auto ${nameError ? 'text-red-500' : 'text-slate-400'}`}>
-              {hobby.name.length}/{NAME_MAX}
-            </p>
-          </div>
+          <FieldHint status={nameStatus} label="Pavadinimas" value={hobby.name} max={NAME_MAX} />
         </div>
         <div>
           <textarea
@@ -71,25 +83,9 @@ function HobbyEntry({ hobby, onRemove, onChange }) {
             value={hobby.description}
             onChange={e => onChange({ ...hobby, description: e.target.value })}
             rows={3}
-            className={`w-full px-4 py-2.5 border rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:border-transparent resize-none ${
-              descError
-                ? 'border-red-400 focus:ring-red-400'
-                : hobby.description.trim().length > 0 && hobby.description.trim().length < MIN_HOBBY_NAME_LENGTH
-                ? 'border-amber-300 focus:ring-amber-400'
-                : 'border-slate-200 focus:ring-brand-500'
-            }`}
+            className={`w-full px-4 py-2.5 border rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:border-transparent resize-none ${FIELD_STYLES[descStatus].border}`}
           />
-          <div className="flex items-center justify-between mt-1 px-1">
-            {descError
-              ? <p className="text-xs text-red-500">Aprašymas negali viršyti {DESC_MAX} simbolių</p>
-              : hobby.description.trim().length > 0 && hobby.description.trim().length < MIN_HOBBY_NAME_LENGTH
-              ? <p className="text-xs text-amber-500">Aprašymas per trumpas (min. {MIN_HOBBY_NAME_LENGTH} simboliai)</p>
-              : <span />
-            }
-            <p className={`text-xs ml-auto ${descError ? 'text-red-500' : 'text-slate-400'}`}>
-              {hobby.description.length}/{DESC_MAX}
-            </p>
-          </div>
+          <FieldHint status={descStatus} label="Aprašymas" value={hobby.description} max={DESC_MAX} />
         </div>
         <div className="flex justify-start">
           <button

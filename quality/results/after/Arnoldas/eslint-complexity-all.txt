@@ -1,0 +1,72 @@
+
+client/src/components/forms/HobbiesForm.jsx
+   11:1   warning  Function 'saveToStorage' has a complexity of 1. Maximum allowed is 0               complexity
+   15:1   warning  Function 'EmptyState' has a complexity of 1. Maximum allowed is 0                  complexity
+   36:1   warning  Function 'FieldMessage' has a complexity of 3. Maximum allowed is 0                complexity
+   36:10  warning  Refactor this function to reduce its Cognitive Complexity from 2 to the 0 allowed  sonarjs/cognitive-complexity
+   46:1   warning  Function 'FieldHint' has a complexity of 1. Maximum allowed is 0                   complexity
+   57:1   warning  Function 'HobbyEntry' has a complexity of 1. Maximum allowed is 0                  complexity
+   74:27  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+   84:25  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  106:16  warning  Function 'HobbiesForm' has a complexity of 9. Maximum allowed is 0                 complexity
+  106:25  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+  111:59  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+  111:59  warning  Arrow function has a complexity of 4. Maximum allowed is 0                         complexity
+  119:16  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  121:17  warning  Refactor this function to reduce its Cognitive Complexity from 2 to the 0 allowed  sonarjs/cognitive-complexity
+  121:17  warning  Arrow function has a complexity of 2. Maximum allowed is 0                         complexity
+  122:43  warning  Arrow function has a complexity of 2. Maximum allowed is 0                         complexity
+  134:17  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  137:19  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  142:16  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  143:31  warning  Refactor this function to reduce its Cognitive Complexity from 2 to the 0 allowed  sonarjs/cognitive-complexity
+  143:31  warning  Async arrow function has a complexity of 3. Maximum allowed is 0                   complexity
+  145:59  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  149:15  error    Empty block statement                                                              no-empty
+  152:15  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  155:31  warning  Refactor this function to reduce its Cognitive Complexity from 2 to the 0 allowed  sonarjs/cognitive-complexity
+  155:31  warning  Async arrow function has a complexity of 4. Maximum allowed is 0                   complexity
+  159:59  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  163:21  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  169:23  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+  169:23  warning  Arrow function has a complexity of 2. Maximum allowed is 0                         complexity
+  171:21  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  174:28  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  175:21  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  175:38  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  178:37  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  179:21  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  179:35  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+  179:35  warning  Arrow function has a complexity of 2. Maximum allowed is 0                         complexity
+  187:27  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  191:26  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  192:31  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+
+client/src/utils/hobbyFieldStatus.js
+  15:8   warning  Function 'getFieldStatus' has a complexity of 4. Maximum allowed is 0              complexity
+  15:17  warning  Refactor this function to reduce its Cognitive Complexity from 3 to the 0 allowed  sonarjs/cognitive-complexity
+
+server/src/modules/ai/chat.controller.js
+   6:1   warning  Function 'isValidMessages' has a complexity of 2. Maximum allowed is 0                 complexity
+   6:10  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed      sonarjs/cognitive-complexity
+  11:1   warning  Function 'getUserId' has a complexity of 3. Maximum allowed is 0                       complexity
+  17:1   warning  Function 'saveRecommendationInBackground' has a complexity of 1. Maximum allowed is 0  complexity
+  18:65  warning  Arrow function has a complexity of 1. Maximum allowed is 0                             complexity
+  24:8   warning  Async function 'chatHandler' has a complexity of 4. Maximum allowed is 0               complexity
+  24:23  warning  Refactor this function to reduce its Cognitive Complexity from 3 to the 0 allowed      sonarjs/cognitive-complexity
+
+server/src/modules/ai/chat.service.js
+   3:1   warning  Function 'formatSubjectLine' has a complexity of 2. Maximum allowed is 0           complexity
+  11:8   warning  Function 'formatRecommendation' has a complexity of 3. Maximum allowed is 0        complexity
+  11:17  warning  Refactor this function to reduce its Cognitive Complexity from 2 to the 0 allowed  sonarjs/cognitive-complexity
+  15:23  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+
+server/src/utils/logger.js
+   4:1   warning  Function 'write' has a complexity of 2. Maximum allowed is 0                       complexity
+   4:10  warning  Refactor this function to reduce its Cognitive Complexity from 2 to the 0 allowed  sonarjs/cognitive-complexity
+  13:3   warning  Method 'error' has a complexity of 1. Maximum allowed is 0                         complexity
+  14:3   warning  Method 'warn' has a complexity of 1. Maximum allowed is 0                          complexity
+  15:3   warning  Method 'info' has a complexity of 1. Maximum allowed is 0                          complexity
+
+✖ 59 problems (1 error, 58 warnings)
+

@@ -8,7 +8,8 @@
     "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\"",
     "dev-server": "cd server && npm run dev",
     "dev-client": "cd client && npm run dev",
-    "setup-db": "cd server && npm run setup-db"
+    "setup-db": "cd server && npm run setup-db",
+    "test:s2": "npm --prefix server run test:s2:chat && npm --prefix client run test:s2:hobbies"
   },
   "devDependencies": {
     "concurrently": "^9.1.0"

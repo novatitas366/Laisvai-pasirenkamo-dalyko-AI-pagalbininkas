@@ -1,0 +1,11 @@
+-----------------|---------|----------|---------|---------|-------------------
+File             | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------|---------|----------|---------|---------|-------------------
+All files        |    97.1 |       95 |     100 |     100 |                   
+ HobbiesForm.jsx |    97.1 |       95 |     100 |     100 | 160-183           
+-----------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 passed, 1 total
+Tests:       21 passed, 21 total
+Snapshots:   0 total
+Time:        4.954 s, estimated 5 s
+Ran all test suites matching HobbiesForm.

@@ -1,0 +1,69 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       3      2     18      1       3 isValidMessages@6-8@server/src/modules/ai/chat.controller.js
+       3      2     13      1       3 getUserId@11-13@server/src/modules/ai/chat.controller.js
+       3      1     10      0       3 (anonymous)@18-20@server/src/modules/ai/chat.controller.js
+       3      2     26      3       5 saveRecommendationInBackground@17-21@server/src/modules/ai/chat.controller.js
+      15      4    108      3      19 chatHandler@24-42@server/src/modules/ai/chat.controller.js
+       3      1     18      2       3 formatSubjectLine@3-5@server/src/modules/ai/chat.service.js
+       1      1     11      0       1 (anonymous)@15-15@server/src/modules/ai/chat.service.js
+       4      2     30      2       5 formatRecommendation@11-15@server/src/modules/ai/chat.service.js
+       7      2     56      4       7 write@4-10@server/src/utils/logger.js
+       2      1     18      2       2 error@13-14@server/src/utils/logger.js
+       2      1     18      2       2 warn@14-15@server/src/utils/logger.js
+       2      1     18      2       2 info@15-16@server/src/utils/logger.js
+       3      1     18      1       3 saveToStorage@11-13@client/src/components/forms/HobbiesForm.jsx
+      11      1     16      0      11 EmptyState@15-25@client/src/components/forms/HobbiesForm.jsx
+       7      3     44      1       7 FieldMessage@34-40@client/src/components/forms/HobbiesForm.jsx
+       9      1     34      1       9 FieldHint@44-52@client/src/components/forms/HobbiesForm.jsx
+       1      1     16      0       1 (anonymous)@65-65@client/src/components/forms/HobbiesForm.jsx
+       1      1     16      0       1 (anonymous)@75-75@client/src/components/forms/HobbiesForm.jsx
+      43      1    102      1      44 HobbyEntry@54-97@client/src/components/forms/HobbiesForm.jsx
+       1      1      1      0       1 (anonymous)@105-105@client/src/components/forms/HobbiesForm.jsx
+       5      2     25      0       5 (anonymous)@115-119@client/src/components/forms/HobbiesForm.jsx
+       9      2     41      0      13 (anonymous)@114-126@client/src/components/forms/HobbiesForm.jsx
+       3      1      8      0       3 (anonymous)@127-129@client/src/components/forms/HobbiesForm.jsx
+       3      1      7      0       3 (anonymous)@130-132@client/src/components/forms/HobbiesForm.jsx
+       6      2     31      0      22 (anonymous)@112-133@client/src/components/forms/HobbiesForm.jsx
+       1      1      8      0       1 (anonymous)@138-138@client/src/components/forms/HobbiesForm.jsx
+       8      3     53      0       8 autoSave@136-143@client/src/components/forms/HobbiesForm.jsx
+       2      1      9      0       2 (anonymous)@145-146@client/src/components/forms/HobbiesForm.jsx
+       4      1     19      0      11 (anonymous)@135-145@client/src/components/forms/HobbiesForm.jsx
+       1      1      8      0       1 (anonymous)@152-152@client/src/components/forms/HobbiesForm.jsx
+       1      1      7      0       1 (anonymous)@156-156@client/src/components/forms/HobbiesForm.jsx
+      12      4     69      0      13 handleSave@148-160@client/src/components/forms/HobbiesForm.jsx
+       1      1     23      0       1 (anonymous)@164-164@client/src/components/forms/HobbiesForm.jsx
+       4      2     19      0       4 addHobby@162-165@client/src/components/forms/HobbiesForm.jsx
+       1      1      6      0       1 (anonymous)@168-168@client/src/components/forms/HobbiesForm.jsx
+       1      1      8      0       1 (anonymous)@168-168@client/src/components/forms/HobbiesForm.jsx
+       3      1     11      1       3 removeHobby@167-169@client/src/components/forms/HobbiesForm.jsx
+       1      2     10      0       1 (anonymous)@172-172@client/src/components/forms/HobbiesForm.jsx
+       1      1      8      0       1 (anonymous)@172-172@client/src/components/forms/HobbiesForm.jsx
+       3      1     13      2       3 updateHobby@171-173@client/src/components/forms/HobbiesForm.jsx
+       1      1      7      0       1 (anonymous)@181-181@client/src/components/forms/HobbiesForm.jsx
+       1      1      9      0       1 (anonymous)@181-181@client/src/components/forms/HobbiesForm.jsx
+       8      1     17      0       8 (anonymous)@180-187@client/src/components/forms/HobbiesForm.jsx
+      60     12    230      0     127 HobbiesForm@99-225@client/src/components/forms/HobbiesForm.jsx
+       6      4     47      2       8 getFieldStatus@15-22@client/src/utils/hobbyFieldStatus.js
+6 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+      5       0.0     0.0        0.0         0     server/src/modules/ai/chat.routes.js
+     30       5.4     2.2       35.0         5     server/src/modules/ai/chat.controller.js
+     10       2.7     1.3       19.7         3     server/src/modules/ai/chat.service.js
+     13       3.2     1.2       27.5         4     server/src/utils/logger.js
+    206       6.8     1.7       27.9        32     client/src/components/forms/HobbiesForm.jsx
+     12       6.0     4.0       47.0         1     client/src/utils/hobbyFieldStatus.js
+
+===========================================================================================================
+!!!! Warnings (cyclomatic_complexity > 10 or length > 1000 or nloc > 1000000 or parameter_count > 100) !!!!
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      60     12    230      0     127 HobbiesForm@99-225@client/src/components/forms/HobbiesForm.jsx
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       276       6.0     1.8       28.5       45            1      0.02    0.22

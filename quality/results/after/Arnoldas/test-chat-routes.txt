@@ -1,0 +1,50 @@
+(node:110017) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:110017) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+  console.error
+    [ERROR] Nepavyko išsaugoti rekomendacijos Error: DB nepasiekiama
+        at Object.<anonymous> (server/tests/chat.routes.test.js:162:46)
+        at Promise.finally.completed (server/node_modules/jest-circus/build/jestAdapterInit.js:1557:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (server/node_modules/jest-circus/build/jestAdapterInit.js:1497:10)
+        at _callCircusTest (server/node_modules/jest-circus/build/jestAdapterInit.js:1007:40)
+        at processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at _runTest (server/node_modules/jest-circus/build/jestAdapterInit.js:947:3)
+        at server/node_modules/jest-circus/build/jestAdapterInit.js:849:7
+        at _runTestsForDescribeBlock (server/node_modules/jest-circus/build/jestAdapterInit.js:862:11)
+        at _runTestsForDescribeBlock (server/node_modules/jest-circus/build/jestAdapterInit.js:857:11)
+        at run (server/node_modules/jest-circus/build/jestAdapterInit.js:761:3)
+        at runAndTransformResultsToJestFormat (server/node_modules/jest-circus/build/jestAdapterInit.js:1918:21)
+        at jestAdapter (server/node_modules/jest-circus/build/runner.js:101:19)
+        at runTestInternal (server/node_modules/jest-runner/build/index.js:275:16)
+        at runTest (server/node_modules/jest-runner/build/index.js:343:7)
+
+       6 |     console[method](`[${level}] ${message}`)
+       7 |   } else {
+    >  8 |     console[method](`[${level}] ${message}`, details)
+         |                    ^
+       9 |   }
+      10 | }
+      11 |
+
+      at write (src/utils/logger.js:8:20)
+      at Object.write (src/utils/logger.js:13:32)
+      at error (src/modules/ai/chat.controller.js:19:12)
+
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |     100 |      100 |     100 |     100 |                   
+ modules/ai          |     100 |      100 |     100 |     100 |                   
+  chat.controller.js |     100 |      100 |     100 |     100 |                   
+  chat.routes.js     |     100 |      100 |     100 |     100 |                   
+  chat.service.js    |     100 |      100 |     100 |     100 |                   
+ utils               |     100 |      100 |     100 |     100 |                   
+  logger.js          |     100 |      100 |     100 |     100 |                   
+---------------------|---------|----------|---------|---------|-------------------
+Test Suites: 4 passed, 4 total
+Tests:       24 passed, 24 total
+Snapshots:   0 total
+Time:        0.461 s, estimated 1 s
+Ran all test suites matching chat\.(routes|controller|service)|logger.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
