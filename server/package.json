@@ -9,6 +9,7 @@
     "dev": "node --watch src/server.js",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit",
     "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --coverage",
+    "test:s2:chat": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --testPathPatterns=chat\\.routes --coverage --collectCoverageFrom=src/modules/ai/chat.routes.js",
     "test:auth-integration": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns auth.integration",
     "test:chat-integration": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns=chat.integration",
     "test:elective-integration": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.cjs --runInBand --forceExit --no-coverage --testPathPatterns=electiveCourses.integration",
