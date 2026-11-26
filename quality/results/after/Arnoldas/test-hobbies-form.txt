@@ -1,0 +1,14 @@
+----------------------|---------|----------|---------|---------|-------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------|---------|----------|---------|---------|-------------------
+All files             |   97.56 |    93.18 |     100 |     100 |                   
+ components/forms     |   97.33 |     92.1 |     100 |     100 |                   
+  HobbiesForm.jsx     |   97.33 |     92.1 |     100 |     100 | 156-179           
+ utils                |     100 |      100 |     100 |     100 |                   
+  hobbyFieldStatus.js |     100 |      100 |     100 |     100 |                   
+----------------------|---------|----------|---------|---------|-------------------
+Test Suites: 2 passed, 2 total
+Tests:       31 passed, 31 total
+Snapshots:   0 total
+Time:        3.256 s, estimated 4 s
+Ran all test suites matching HobbiesForm|hobbyFieldStatus.
