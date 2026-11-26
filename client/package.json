@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "node node_modules/.bin/jest --config jest.config.cjs",
     "test:coverage": "node node_modules/.bin/jest --config jest.config.cjs --coverage",
-    "test:s2:hobbies": "node node_modules/.bin/jest --config jest.config.cjs HobbiesForm --coverage --collectCoverageFrom=src/components/forms/HobbiesForm.jsx"
+    "test:s2:hobbies": "node node_modules/.bin/jest --config jest.config.cjs 'HobbiesForm|hobbyFieldStatus' --coverage --collectCoverageFrom=src/components/forms/HobbiesForm.jsx --collectCoverageFrom=src/utils/hobbyFieldStatus.js"
   },
   "dependencies": {
     "@jridgewell/sourcemap-codec": "^1.5.5",
