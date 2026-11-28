@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import api from '../services/api'
+import { NAME_MAX, DESC_MAX, normalizeName, validateEntry, validateField } from '../utils/electiveValidation'
 
 export default function ElectiveEntryPage() {
   const [entries, setEntries] = useState([
@@ -28,81 +29,30 @@ export default function ElectiveEntryPage() {
   const handleUpdate = (id, field, value) => {
     setSubmitError('')
     setSuccess(false)
-    setEntries(entries.map(entry => {
-      if (entry.id === id) {
-        const updated = { ...entry, [field]: value, error: '' }
-        
-        // Real-time character limit validation
-        if (field === 'name' && value.length > 50) {
-          updated.error = 'Pavadinimas negali viršyti 50 simbolių'
-        } else if (field === 'description' && value.length > 2000) {
-          updated.error = 'Aprašymas negali viršyti 2000 simbolių'
-        } else if (field === 'credits' && value !== '' && (isNaN(Number(value)) || Number(value) <= 0)) {
-          updated.error = 'Kreditai turi būti teigiamas skaičius'
-        }
-        
-        return updated
-      }
-      return entry
-    }))
+    setEntries(entries.map(entry =>
+      entry.id === id
+        ? { ...entry, [field]: value, error: validateField(field, value) }
+        : entry
+    ))
   }
 
   const validate = () => {
-    let isValid = true
-    const newEntries = [...entries]
-    const names = new Set()
-
-    // 1. Check for empty list (all names empty)
-    const hasContent = entries.some(e => e.name.trim().length > 0)
-    if (!hasContent) {
+    if (!entries.some(e => e.name.trim().length > 0)) {
       setSubmitError('Sąrašas negali būti tuščias. Įveskite bent vieno dalyko pavadinimą.')
       return false
     }
 
-    for (let i = 0; i < newEntries.length; i++) {
-      const entry = newEntries[i]
-      const trimmedName = entry.name.trim().toLowerCase()
-
-      // 2. Name cannot be empty
-      if (!entry.name.trim()) {
-        newEntries[i] = { ...entry, error: 'Pavadinimas privalomas' }
-        isValid = false
-        continue
+    const seenNames = new Set()
+    let isValid = true
+    const newEntries = entries.map(entry => {
+      const error = validateEntry(entry, seenNames)
+      if (!error) {
+        seenNames.add(normalizeName(entry.name))
+        return entry
       }
-
-      // 3. Max length (re-check on submit)
-      if (entry.name.length > 50) {
-        newEntries[i] = { ...entry, error: 'Pavadinimas per ilgas (maks. 50)' }
-        isValid = false
-        continue
-      }
-
-      if (entry.description.length > 2000) {
-        newEntries[i] = { ...entry, error: 'Aprašymas per ilgas (maks. 2000)' }
-        isValid = false
-        continue
-      }
-
-      if (entry.credits === '' || entry.credits == null) {
-        newEntries[i] = { ...entry, error: 'Kreditai privalomi' }
-        isValid = false
-        continue
-      }
-
-      if (isNaN(Number(entry.credits)) || Number(entry.credits) <= 0) {
-        newEntries[i] = { ...entry, error: 'Kreditai turi būti teigiamas skaičius' }
-        isValid = false
-        continue
-      }
-
-      // 4. Duplicate prevention
-      if (names.has(trimmedName)) {
-        newEntries[i] = { ...entry, error: 'Šis pavadinimas jau naudojamas sąraše' }
-        isValid = false
-      } else {
-        names.add(trimmedName)
-      }
-    }
+      isValid = false
+      return { ...entry, error }
+    })
 
     setEntries(newEntries)
     return isValid
@@ -191,8 +141,8 @@ export default function ElectiveEntryPage() {
               <div className="md:col-span-3 space-y-2">
                 <label className="text-sm font-medium text-slate-700 flex justify-between">
                   <span>Dalyko pavadinimas <span className="text-slate-300 ml-1 font-normal">#{index + 1}</span></span>
-                  <span className={`text-xs ${entry.name.length > 50 ? 'text-red-500 font-bold' : 'text-slate-400'}`}>
-                    {entry.name.length}/50
+                  <span className={`text-xs ${entry.name.length > NAME_MAX ? 'text-red-500 font-bold' : 'text-slate-400'}`}>
+                    {entry.name.length}/{NAME_MAX}
                   </span>
                 </label>
                 <input
@@ -202,7 +152,7 @@ export default function ElectiveEntryPage() {
                   placeholder="Pvz.: Dirbtinis intelektas"
                   disabled={loading}
                   className={`w-full px-4 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 transition-all ${
-                    entry.error && !entry.name.trim() || entry.name.length > 50
+                    entry.error && !entry.name.trim() || entry.name.length > NAME_MAX
                       ? 'border-red-300 focus:ring-red-200'
                       : 'border-slate-200 focus:ring-brand-500'
                   }`}
@@ -226,8 +176,8 @@ export default function ElectiveEntryPage() {
               <div className="md:col-span-4 space-y-2">
                 <label className="text-sm font-medium text-slate-700 flex justify-between">
                   <span>Aprašymas</span>
-                  <span className={`text-xs ${entry.description.length > 2000 ? 'text-red-500 font-bold' : 'text-slate-400'}`}>
-                    {entry.description.length}/2000
+                  <span className={`text-xs ${entry.description.length > DESC_MAX ? 'text-red-500 font-bold' : 'text-slate-400'}`}>
+                    {entry.description.length}/{DESC_MAX}
                   </span>
                 </label>
                 <textarea
@@ -237,7 +187,7 @@ export default function ElectiveEntryPage() {
                   rows="3"
                   disabled={loading}
                   className={`w-full px-4 py-2.5 text-sm border rounded-xl focus:outline-none focus:ring-2 transition-all resize-none ${
-                    entry.description.length > 2000
+                    entry.description.length > DESC_MAX
                       ? 'border-red-300 focus:ring-red-200'
                       : 'border-slate-200 focus:ring-brand-500'
                   }`}
