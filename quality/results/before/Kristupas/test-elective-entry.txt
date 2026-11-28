@@ -1,0 +1,11 @@
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |   91.95 |    96.82 |   78.57 |    93.9 |                   
+ ElectiveEntryPage.jsx |   91.95 |    96.82 |   78.57 |    93.9 | 22-25,179         
+-----------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 passed, 1 total
+Tests:       20 passed, 20 total
+Snapshots:   0 total
+Time:        1.953 s, estimated 2 s
+Ran all test suites matching ElectiveEntryPage.

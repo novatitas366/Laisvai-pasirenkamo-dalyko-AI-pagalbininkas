@@ -1,0 +1,9 @@
+
+client/src/pages/ElectiveEntryPage.jsx
+  50:23  warning  Arrow function has a complexity of 11. Maximum allowed is 10  complexity
+
+server/src/controllers/electiveCourses.controller.js
+  3:8  warning  Async function 'createElectives' has a complexity of 15. Maximum allowed is 10  complexity
+
+✖ 2 problems (0 errors, 2 warnings)
+

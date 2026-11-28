@@ -1,0 +1,38 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       8      1     46      0       8 addEntry@12-19@client/src/pages/ElectiveEntryPage.jsx
+       1      1      6      1       1 (anonymous)@25-25@client/src/pages/ElectiveEntryPage.jsx
+       6      2     33      1       6 removeEntry@21-26@client/src/pages/ElectiveEntryPage.jsx
+      14     10    107      1      17 (anonymous)@31-47@client/src/pages/ElectiveEntryPage.jsx
+       5      1     29      3      21 handleUpdate@28-48@client/src/pages/ElectiveEntryPage.jsx
+       1      1     12      1       1 (anonymous)@56-56@client/src/pages/ElectiveEntryPage.jsx
+      47     11    288      0      60 validate@50-109@client/src/pages/ElectiveEntryPage.jsx
+      16      4    104      1      19 handleSubmit@111-129@client/src/pages/ElectiveEntryPage.jsx
+       1      1      7      0       1 (anonymous)@179-179@client/src/pages/ElectiveEntryPage.jsx
+       1      1     15      1       1 (anonymous)@201-201@client/src/pages/ElectiveEntryPage.jsx
+       1      1     15      1       1 (anonymous)@219-219@client/src/pages/ElectiveEntryPage.jsx
+       1      1     15      1       1 (anonymous)@235-235@client/src/pages/ElectiveEntryPage.jsx
+      63     10    152      2      88 (anonymous)@170-257@client/src/pages/ElectiveEntryPage.jsx
+      61      4    192      0     288 ElectiveEntryPage@4-291@client/src/pages/ElectiveEntryPage.jsx
+       1      1     12      1       1 (anonymous)@12-12@server/src/controllers/electiveCourses.controller.js
+       9      4     53      1       9 (anonymous)@49-57@server/src/controllers/electiveCourses.controller.js
+      45     15    381      3      67 createElectives@3-69@server/src/controllers/electiveCourses.controller.js
+2 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+    215      16.1     3.5       72.9        14     client/src/pages/ElectiveEntryPage.jsx
+     54      18.3     6.7      148.7         3     server/src/controllers/electiveCourses.controller.js
+
+===========================================================================================================
+!!!! Warnings (cyclomatic_complexity > 10 or length > 1000 or nloc > 1000000 or parameter_count > 100) !!!!
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      47     11    288      0      60 validate@50-109@client/src/pages/ElectiveEntryPage.jsx
+      45     15    381      3      67 createElectives@3-69@server/src/controllers/electiveCourses.controller.js
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       269      16.5     4.1       86.3       17            2      0.12    0.33
