@@ -1,0 +1,58 @@
+
+client/src/pages/ElectiveEntryPage.jsx
+    5:16  warning  Function 'ElectiveEntryPage' has a complexity of 4. Maximum allowed is 0           complexity
+    5:25  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+   13:23  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+   22:28  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+   22:28  warning  Arrow function has a complexity of 2. Maximum allowed is 0                         complexity
+   26:37  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+   29:43  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+   32:34  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+   32:34  warning  Arrow function has a complexity of 2. Maximum allowed is 0                         complexity
+   39:23  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+   39:23  warning  Arrow function has a complexity of 2. Maximum allowed is 0                         complexity
+   40:25  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+   47:42  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+   47:42  warning  Arrow function has a complexity of 2. Maximum allowed is 0                         complexity
+   61:34  warning  Refactor this function to reduce its Cognitive Complexity from 2 to the 0 allowed  sonarjs/cognitive-complexity
+   61:34  warning  Async arrow function has a complexity of 6. Maximum allowed is 0                   complexity
+  120:37  warning  Refactor this function to reduce its Cognitive Complexity from 6 to the 0 allowed  sonarjs/cognitive-complexity
+  120:37  warning  Arrow function has a complexity of 10. Maximum allowed is 0                        complexity
+  129:29  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  151:33  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  169:33  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  185:33  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+
+client/src/utils/electiveValidation.js
+   6:1   warning  Function 'isNotPositiveNumber' has a complexity of 2. Maximum allowed is 0         complexity
+  10:8   warning  Function 'normalizeName' has a complexity of 1. Maximum allowed is 0               complexity
+  14:8   warning  Function 'validateField' has a complexity of 8. Maximum allowed is 0               complexity
+  14:17  warning  Refactor this function to reduce its Cognitive Complexity from 6 to the 0 allowed  sonarjs/cognitive-complexity
+  27:8   warning  Function 'validateEntry' has a complexity of 8. Maximum allowed is 0               complexity
+  27:17  warning  Refactor this function to reduce its Cognitive Complexity from 6 to the 0 allowed  sonarjs/cognitive-complexity
+
+server/src/controllers/electiveCourses.controller.js
+  7:8   warning  Async function 'createElectives' has a complexity of 4. Maximum allowed is 0       complexity
+  7:23  warning  Refactor this function to reduce its Cognitive Complexity from 3 to the 0 allowed  sonarjs/cognitive-complexity
+
+server/src/services/electiveCourses.service.js
+  10:1   warning  Function 'parseCredits' has a complexity of 1. Maximum allowed is 0                complexity
+  14:1   warning  Function 'findNameLengthError' has a complexity of 2. Maximum allowed is 0         complexity
+  14:10  warning  Refactor this function to reduce its Cognitive Complexity from 1 to the 0 allowed  sonarjs/cognitive-complexity
+  15:34  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  21:1   warning  Function 'getCreditsError' has a complexity of 5. Maximum allowed is 0             complexity
+  21:10  warning  Refactor this function to reduce its Cognitive Complexity from 2 to the 0 allowed  sonarjs/cognitive-complexity
+  32:1   warning  Function 'findCreditsError' has a complexity of 3. Maximum allowed is 0            complexity
+  32:10  warning  Refactor this function to reduce its Cognitive Complexity from 3 to the 0 allowed  sonarjs/cognitive-complexity
+  40:8   warning  Function 'validateElectives' has a complexity of 7. Maximum allowed is 0           complexity
+  40:17  warning  Refactor this function to reduce its Cognitive Complexity from 3 to the 0 allowed  sonarjs/cognitive-complexity
+  45:41  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+  54:8   warning  Async function 'findExistingElective' has a complexity of 3. Maximum allowed is 0  complexity
+  54:23  warning  Refactor this function to reduce its Cognitive Complexity from 3 to the 0 allowed  sonarjs/cognitive-complexity
+  63:1   warning  Function 'toRow' has a complexity of 5. Maximum allowed is 0                       complexity
+  63:10  warning  Refactor this function to reduce its Cognitive Complexity from 2 to the 0 allowed  sonarjs/cognitive-complexity
+  73:8   warning  Async function 'insertElectives' has a complexity of 1. Maximum allowed is 0       complexity
+  74:36  warning  Arrow function has a complexity of 1. Maximum allowed is 0                         complexity
+
+✖ 47 problems (0 errors, 47 warnings)
+
